@@ -52,7 +52,7 @@
                                     </div>
 
 
-                                    <form class="form-horizontal mt-4 pt-2" action="https://themesdesign.in/morvin/layouts/index.html">
+                                    <form class="form-horizontal mt-4 pt-2" action="login">
 
                                         <div class="mb-3">
                                             <label for="username">Username</label>

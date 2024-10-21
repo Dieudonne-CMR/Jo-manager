@@ -62,3 +62,10 @@ elseif(@$url[0]=='auth-login'):
 
 endif;
 
+
+//========= les routes en POST : routes d'insertions
+if (@$url[0]=='login'):
+    include_once 'processing/login.php'; 
+    
+//elseif(@$url[0]=='')
+endif;
