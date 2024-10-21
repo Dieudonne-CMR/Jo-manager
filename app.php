@@ -67,5 +67,5 @@ endif;
 if (@$url[0]=='login'):
     include_once 'processing/login.php'; 
     
-//elseif(@$url[0]=='')
+//elseif(@$url[0]=='') ajout pour tester
 endif;
