@@ -47,23 +47,23 @@
                                             <img src="assets/images/logo-dark.png" height="22" alt="logo">
                                         </a>
 
-                                        <h5 class="text-primary mb-2 mt-4">Welcome Back !</h5>
-                                        <p class="text-muted">Sign in to continue to Morvin.</p>
+                                        <h5 class="text-primary mb-2 mt-4">Jo-manager</h5>
+                                        <p class="text-muted">Connectez-vous pour continuer vers Morvin.</p>
                                     </div>
 
 
                                     <form class="form-horizontal mt-4 pt-2" action="login">
 
                                         <div class="mb-3">
-                                            <label for="username">Username</label>
+                                            <label for="username">Nom d'utilisateur</label>
                                             <input type="text" class="form-control" id="username"
-                                                placeholder="Enter username">
+                                                placeholder="Entrez votre nom d'utilisateur">
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="userpassword">Password</label>
+                                            <label for="userpassword">Mot de passe</label>
                                             <input type="password" class="form-control" id="userpassword"
-                                                placeholder="Enter password">
+                                                placeholder="Entrez votre mot de passe">
                                         </div>
 
                                         <div class="mb-3">
@@ -71,17 +71,17 @@
                                                     <input type="checkbox" class="form-check-input"
                                                         id="customControlInline">
                                                     <label class="form-label"
-                                                        for="customControlInline">Remember me</label>
+                                                        for="customControlInline">Se souvenir de moi</label>
                                                 </div>
                                         </div>
 
                                         <div>
                                             <button class="btn btn-primary w-100 waves-effect waves-light"
-                                                type="submit">Log In</button>
+                                                type="submit">Se connecter</button>
                                         </div>
 
                                         <div class="mt-4 text-center">
-                                            <a href="auth-recoverpw.html" class="text-muted"><i class="mdi mdi-lock me-1"></i> Forgot your password?</a>
+                                            <a href="auth-recoverpw.html" class="text-muted"><i class="mdi mdi-lock me-1"></i> Mot de passe oublié ?</a>
                                         </div>
     
 
@@ -93,7 +93,7 @@
                         </div>
 
                         <div class="mt-5 text-center text-white">
-                            <p>Don't have an account ?<a href="auth-register.html" class="fw-bold text-white"> Register</a> </p>
+                            <p>Vous n'avez pas de compte ?<a href="auth-register.html" class="fw-bold text-white"> Enregistrez-vous</a> </p>
                             <p>© <script>document.write(new Date().getFullYear())</script> Morvin. Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="https://1.envato.market/themesdesign" target="_blank">Themesdesign</a></p>
                         </div>
                     </div>
