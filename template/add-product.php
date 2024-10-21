@@ -106,33 +106,27 @@
                                                 <!-- ebd ul -->
                                                 <div class="tab-content twitter-bs-wizard-tab-content">
                                                     <div class="tab-pane" id="basic-info">
-                                                        <h4 class="header-title">Basic Information</h4>
-                                                        <p class="card-title-desc">Fill all information below</p>
+                                                        <h4 class="header-title">Informations basiques</h4>
+                                                        <p class="card-title-desc">Remplissez toutes les informations ci-dessous</p>
     
                                                         <form>
                                                             <div class="mb-3">
-                                                                <label class="form-label" for="productname">Product Name</label>
-                                                                <input id="productname" name="productname" type="text" class="form-control" placeholder="Enter your name">
+                                                                <label class="form-label" for="productname">Nom du Produit</label>
+                                                                <input id="productname" name="productname" type="text" class="form-control" placeholder="Entrez le nom de votre produit">
                                                             </div>
                                                             <div class="row">
+                                                            <!-- end col -->
                                                                 <div class="col-lg-4">
                                                                     <div class="mb-3">
-                                                                        <label class="form-label" for="manufacturername">Manufacturer Name</label>
-                                                                        <input id="manufacturername" name="manufacturername" type="text" class="form-control" placeholder="Enter manufacturer name">
+                                                                        <label class="form-label" for="price">Prix</label>
+                                                                        <input id="price" name="price" type="text" class="form-control" placeholder="Entrez le Prix">
                                                                     </div>
                                                                 </div>
                                                                 <!-- end col -->
                                                                 <div class="col-lg-4">
                                                                     <div class="mb-3">
-                                                                        <label class="form-label" for="manufacturerbrand">Manufacturer Brand</label>
-                                                                        <input id="manufacturerbrand" name="manufacturerbrand" type="text" class="form-control" placeholder="Enter manafacturer brand">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- end col -->
-                                                                <div class="col-lg-4">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label" for="price">Price</label>
-                                                                        <input id="price" name="price" type="text" class="form-control" placeholder="Enter Price">
+                                                                        <label class="form-label" for="price">Prix Promo</label>
+                                                                        <input id="price" name="price" type="text" class="form-control" placeholder="Enter le Prix Promotionnel">
                                                                     </div>
                                                                 </div>
                                                                 <!-- end col -->
@@ -141,46 +135,38 @@
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="mb-3">
-                                                                        <label class="control-label">Category</label>
+                                                                        <label class="control-label">Catégorie</label>
                                                                         <select class="form-control select2">
-                                                                            <option>Select</option>
-                                                                            <option value="EL">Electronic</option>
-                                                                            <option value="FA">Fashion</option>
-                                                                            <option value="FI">Fitness</option>
+                                                                            <option>Sélectionner</option>
+                                                                            <option value="EL">Habillement</option>
+                                                                            <option value="FA">Accessoires</option>
+                                                                            <option value="FI">etc...</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                                 <!-- end col -->
-                                                                <div class="col-md-6">
+                                                                <div class="col-lg-4">
                                                                     <div class="mb-3">
-                                                                        <label class="control-label">Features</label>
-                        
-                                                                        <select class="select2 form-control select2-multiple" multiple="multiple" data-placeholder="Choose ...">
-                                                                            <option value="TO">Touchscreen</option>
-                                                                            <option value="CF">Call Function</option>
-                                                                            <option value="NO" selected>Notifications</option>
-                                                                            <option value="FI" selected>Fitness</option>
-                                                                            <option value="OU">Outdoor</option>
-                                                                        </select>
+                                                                        <label class="form-label" for="price">Date d'Ajout du Produit</label>
+                                                                        <input id="price" name="price" type="date" class="form-control" placeholder="">
                                                                     </div>
                                                                 </div>
-                                                                <!-- end col -->
                                                             </div>
                                                             <!-- end row -->
                                                             <div class="mb-3">
-                                                                <label class="form-label" for="productdesc">Product Description</label>
-                                                                <textarea class="form-control" id="productdesc" rows="5" placeholder="Enter Description"></textarea>
+                                                                <label class="form-label" for="productdesc">Description du Produit</label>
+                                                                <textarea class="form-control" id="productdesc" rows="5" placeholder="Entrez la description de votre produit"></textarea>
                                                             </div>
                                                         </form>
 
                                                         <ul class="pager wizard twitter-bs-wizard-pager-link">
-                                                            <li class="next"><a href="../#"> Product Img <i class="mdi mdi-arrow-right ms-1"></i></a></li>
+                                                            <li class="next"><a href="../#"> Images du Produit <i class="mdi mdi-arrow-right ms-1"></i></a></li>
                                                         </ul>
                                                     </div>
                                                     <!-- end tabpane -->
                                                     <div class="tab-pane" id="product-img">
-                                                        <h4 class="header-title">Product Images</h4>
-                                                        <p class="card-title-desc">Upload product image</p>
+                                                        <h4 class="header-title">Images du Produit</h4>
+                                                        <p class="card-title-desc">Télécharger les images de votre Produit</p>
                                                         <form action="https://themesdesign.in/" method="post" class="dropzone">
                                                             <div class="fallback">
                                                                 <input name="file" type="file" multiple />
@@ -191,11 +177,11 @@
                                                                     <i class="display-4 text-muted mdi mdi-cloud-download-outline"></i>
                                                                 </div>
                                                                 
-                                                                <h4>Drop files here or click to upload.</h4>
+                                                                <h4>Déposez les fichiers ici ou cliquez pour télécharger.</h4>
                                                             </div>
                                                         </form>
                                                         <ul class="pager wizard twitter-bs-wizard-pager-link">
-                                                            <li class="previous"><a href="../#"><i class="mdi mdi-arrow-left me-1"></i> Basic Info</a></li>
+                                                            <li class="previous"><a href="../#"><i class="mdi mdi-arrow-left me-1"></i> Informations basiques</a></li>
                                                             <li class="next"><a href="../#">Meta Data <i class="mdi mdi-arrow-right ms-1"></i></a></li>
                                                         </ul>
                                                     </div>
