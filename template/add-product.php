@@ -112,21 +112,21 @@
                                                         <form>
                                                             <div class="mb-3">
                                                                 <label class="form-label" for="productname">Nom du Produit</label>
-                                                                <input id="productname" name="productname" type="text" class="form-control" placeholder="Entrez le nom de votre produit">
+                                                                <input id="productname" name="nom_produit" type="text" class="form-control" placeholder="Entrez le nom de votre produit">
                                                             </div>
                                                             <div class="row">
                                                             <!-- end col -->
                                                                 <div class="col-lg-4">
                                                                     <div class="mb-3">
                                                                         <label class="form-label" for="price">Prix</label>
-                                                                        <input id="price" name="price" type="text" class="form-control" placeholder="Entrez le Prix">
+                                                                        <input id="price" name="prix" type="text" class="form-control" placeholder="Entrez le Prix">
                                                                     </div>
                                                                 </div>
                                                                 <!-- end col -->
                                                                 <div class="col-lg-4">
                                                                     <div class="mb-3">
                                                                         <label class="form-label" for="price">Prix Promo</label>
-                                                                        <input id="price" name="price" type="text" class="form-control" placeholder="Enter le Prix Promotionnel">
+                                                                        <input id="price" name="prix_promo" type="text" class="form-control" placeholder="Enter le Prix Promotionnel">
                                                                     </div>
                                                                 </div>
                                                                 <!-- end col -->
@@ -144,18 +144,11 @@
                                                                         </select>
                                                                     </div>
                                                                 </div>
-                                                                <!-- end col -->
-                                                                <div class="col-lg-4">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label" for="price">Date d'Ajout du Produit</label>
-                                                                        <input id="price" name="price" type="date" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
                                                             </div>
                                                             <!-- end row -->
                                                             <div class="mb-3">
                                                                 <label class="form-label" for="productdesc">Description du Produit</label>
-                                                                <textarea class="form-control" id="productdesc" rows="5" placeholder="Entrez la description de votre produit"></textarea>
+                                                                <textarea class="form-control" name="decription" id="productdesc" rows="5" placeholder="Entrez la description de votre produit"></textarea>
                                                             </div>
                                                         </form>
 
@@ -169,7 +162,7 @@
                                                         <p class="card-title-desc">Télécharger les images de votre Produit</p>
                                                         <form action="https://themesdesign.in/" method="post" class="dropzone">
                                                             <div class="fallback">
-                                                                <input name="file" type="file" multiple />
+                                                                <input name="images" type="file" multiple />
                                                             </div>
                             
                                                             <div class="dz-message needsclick">
