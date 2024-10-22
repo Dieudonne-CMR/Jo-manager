@@ -56,11 +56,11 @@
                          <div class="row align-items-center">
                              <div class="col-sm-6">
                                  <div class="page-title">
-                                     <h4>Add Product</h4>
+                                     <h4>Ajout de Produits</h4>
                                          <ol class="breadcrumb m-0">
                                              <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
                                              <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
-                                             <li class="breadcrumb-item active">Add Product</li>
+                                             <li class="breadcrumb-item active">Ajout de Produits</li>
                                          </ol>
                                  </div>
                              </div>
@@ -88,12 +88,12 @@
                                                 <ul class="twitter-bs-wizard-nav">
                                                     <li class="nav-item add-product-border">
                                                         <a href="#basic-info" class="nav-link" data-toggle="tab">
-                                                            <span class="step-number">01. Basic Info</span>
+                                                            <span class="step-number">01. Informations Basiques</span>
                                                         </a>
                                                     </li>
                                                     <li class="nav-item add-product-border">
                                                         <a href="#product-img" class="nav-link" data-toggle="tab">
-                                                            <span class="step-number">02. Product Img</span>
+                                                            <span class="step-number">02. Images du Produit</span>
                                                         </a>
                                                     </li>
                                                     

@@ -53,11 +53,11 @@
                          <div class="row align-items-center">
                              <div class="col-sm-6">
                                  <div class="page-title">
-                                     <h4>Orders</h4>
+                                     <h4>Commandes</h4>
                                          <ol class="breadcrumb m-0">
                                              <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
                                              <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
-                                             <li class="breadcrumb-item active">Orders</li>
+                                             <li class="breadcrumb-item active">Commandes</li>
                                          </ol>
                                  </div>
                              </div>
@@ -85,13 +85,13 @@
                                         <div class="card-body  pt-0">
                                             <ul class="nav nav-tabs nav-tabs-custom mb-4">
                                                 <li class="nav-item">
-                                                    <a class="nav-link fw-bold p-3 active" href="#">All Orders</a>
+                                                    <a class="nav-link fw-bold p-3 active" href="#">Toutes les commandes</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link p-3 fw-bold" href="#">Active</a>
+                                                    <a class="nav-link p-3 fw-bold" href="#">Actif</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link p-3 fw-bold" href="#">Unpaid</a>
+                                                    <a class="nav-link p-3 fw-bold" href="#">Impayé</a>
                                                 </li>
                                             </ul>
                                             <div class="table-responsive">
@@ -106,10 +106,10 @@
                                                             </th>
                                                             <th>Order ID</th>
                                                             <th>Date</th>
-                                                            <th>Billing Name</th>
+                                                            <th>Nom de Facturation</th>
                                                             <th>Total</th>
-                                                            <th>Payment Status</th>
-                                                            <th>Invoice</th>
+                                                            <th>Statut de Paiement</th>
+                                                            <th>Facture</th>
                                                             <th style="width: 120px;">Action</th>
                                                         </tr>
                                                     </thead>
@@ -132,10 +132,10 @@
                                                                 $172
                                                             </td>
                                                             <td>
-                                                                <div class="badge badge-soft-success font-size-12">Paid</div>
+                                                                <div class="badge badge-soft-success font-size-12">Payé</div>
                                                             </td>
                                                             <td>
-                                                                <button class="btn btn-light btn-rounded">Invoice <i class="mdi mdi-download ms-2"></i></button>
+                                                                <button class="btn btn-light btn-rounded">Facture <i class="mdi mdi-download ms-2"></i></button>
                                                             </td>
                                                             <td id="tooltip-container1">
                                                                 <a href="javascript:void(0);" class="me-3 text-primary" data-bs-container="#tooltip-container1" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="mdi mdi-pencil font-size-18"></i></a>
@@ -160,10 +160,10 @@
                                                                 $165
                                                             </td>
                                                             <td>
-                                                                <div class="badge badge-soft-warning font-size-12">unpaid</div>
+                                                                <div class="badge badge-soft-warning font-size-12">Impayé</div>
                                                             </td>
                                                             <td>
-                                                                <button class="btn btn-light btn-rounded">Invoice <i class="mdi mdi-download ms-2"></i></button>
+                                                                <button class="btn btn-light btn-rounded">Facture <i class="mdi mdi-download ms-2"></i></button>
                                                             </td>
                                                             <td id="tooltip-container2">
                                                                 <a href="javascript:void(0);" class="me-3 text-primary" data-bs-container="#tooltip-container2" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="mdi mdi-pencil font-size-18"></i></a>

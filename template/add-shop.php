@@ -49,11 +49,11 @@
                          <div class="row align-items-center">
                              <div class="col-sm-6">
                                  <div class="page-title">
-                                     <h4>Form Validation</h4>
+                                     <h4>Création d'une boutique</h4>
                                          <ol class="breadcrumb m-0">
                                              <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
                                              <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
-                                             <li class="breadcrumb-item active">Form Validation</li>
+                                             <li class="breadcrumb-item active">Création d'une Boutique</li>
                                          </ol>
                                  </div>
                              </div>
@@ -82,7 +82,7 @@
                                             <h4 class="header-title">Bootstrap Validation - Normal</h4>
                                             <p class="card-title-desc">For custom Bootstrap form validation messages, you’ll need to add the <code>novalidate</code> boolean attribute to your <code>&lt;form&gt;</code>.</p>
                                             
-                                            <form class="needs-validation" novalidate>
+                                            <form method='post' action='shop' class="needs-validation" novalidate>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="mb-3">

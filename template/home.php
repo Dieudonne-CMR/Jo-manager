@@ -116,8 +116,8 @@
                                                             <div>
                                                                 <ul class="list-unstyled categories-list mb-0">
                                                                     <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Mobile</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Caméra</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Mobile accessories</a></li>
+                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Cemera</a></li>
+                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Accessoires mobiles</a></li>
                                                                     <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Ordinateurs</a></li>
                                                                     <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Laptops</a></li>
                                                                     <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Speakers</a></li>
@@ -168,7 +168,7 @@
                                                         <div id="collapseFour" class="collapse" data-parent="#accordion">
                                                             <div>
                                                                 <ul class="list-unstyled categories-list mb-0">
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Equipement de Gymnastique</a></li>
+                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Equipement de Gym</a></li>
                                                                     <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Matériel de Yoga</a></li>
                                                                     <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Haltères</a></li>
                                                                     <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Suppléments de Protéines</a></li>
