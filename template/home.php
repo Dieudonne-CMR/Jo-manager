@@ -85,15 +85,15 @@
 
                                         <div class="card-body">
 
-                                            <h4 class="header-title">Filters</h4>
+                                            <h4 class="header-title">Filtres</h4>
 
                                             <div class="border p-3 rounded mt-4">
 
-                                                <h5 class="font-size-16">Search</h5>
+                                                <h5 class="font-size-16">Recherche</h5>
 
                                                 <div class="search-box me-2 mt-3">
                                                     <div class="position-relative">
-                                                        <input type="text" class="form-control" placeholder="Search...">
+                                                        <input type="text" class="form-control" placeholder="Recherche...">
                                                         <i class="ti-search search-icon"></i>
                                                     </div>
                                                 </div>
@@ -102,7 +102,7 @@
 
 
                                             <div class="border p-3 rounded mt-4">
-                                                    <h5 class="font-size-16">Categories</h5>
+                                                    <h5 class="font-size-16">Catégories</h5>
     
         
                                                 <div id="accordion" class="custom-accordion categories-accordion">
@@ -116,9 +116,9 @@
                                                             <div>
                                                                 <ul class="list-unstyled categories-list mb-0">
                                                                     <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Mobile</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Cemera</a></li>
+                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Caméra</a></li>
                                                                     <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Mobile accessories</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Computers</a></li>
+                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Ordinateurs</a></li>
                                                                     <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Laptops</a></li>
                                                                     <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Speakers</a></li>
                                                                 </ul>
@@ -128,16 +128,16 @@
         
                                                     <div class="categories-group-card">
                                                         <a href="#collapseTwo" class="categories-group-list" data-bs-toggle="collapse" aria-expanded="true" aria-controls="collapseTwo">
-                                                            <i class="ti-archive font-size-16 align-middle me-2"></i> Furniture
+                                                            <i class="ti-archive font-size-16 align-middle me-2"></i> Fournitures
                                                             <i class="mdi mdi-minus float-end accor-plus-icon"></i>
                                                         </a>
                                                         <div id="collapseTwo" class="collapse show" data-parent="#accordion">
                                                             <div>
                                                                 <ul class="list-unstyled categories-list mb-0">
-                                                                    <li class="active"><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Chairs </a></li>
+                                                                    <li class="active"><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Chaises </a></li>
                                                                     <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Tables</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Beds </a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Seating</a></li>
+                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Lits </a></li>
+                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Sièges</a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -145,16 +145,16 @@
         
                                                     <div class="categories-group-card">
                                                         <a href="#collapseThree" class="categories-group-list collapsed" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseThree">
-                                                            <i class="mdi mdi-pinwheel-outline font-size-16 align-middle me-2"></i> Baby & Kids
+                                                            <i class="mdi mdi-pinwheel-outline font-size-16 align-middle me-2"></i> Bébés et enfants
                                                             <i class="mdi mdi-minus float-end accor-plus-icon"></i>
                                                         </a>
                                                         <div id="collapseThree" class="collapse" data-parent="#accordion">
                                                             <div>
                                                                 <ul class="list-unstyled categories-list mb-0">
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Clothing</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Footwear</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Toys</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Baby care</a></li>
+                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Vetements</a></li>
+                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Chaussures</a></li>
+                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Jouets</a></li>
+                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Soins de bébé</a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -168,10 +168,10 @@
                                                         <div id="collapseFour" class="collapse" data-parent="#accordion">
                                                             <div>
                                                                 <ul class="list-unstyled categories-list mb-0">
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Gym equipment</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Yoga mat</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Dumbbells</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Protein supplements</a></li>
+                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Equipement de Gymnastique</a></li>
+                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Matériel de Yoga</a></li>
+                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Haltères</a></li>
+                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Suppléments de Protéines</a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -180,12 +180,12 @@
                                             </div>
 
                                             <div class="border p-3 rounded mt-4">
-                                                <h5 class="font-size-16">Multi Range</h5>
+                                                <h5 class="font-size-16">Multi-gamme</h5>
     
                                                 <div class="mt-4">
                                                     <div class="form-check mt-2">
                                                         <input type="radio" id="multirange" name="multirange1" class="form-check-input" checked>
-                                                        <label class="custom-control-label" for="multirange"> All</label>
+                                                        <label class="custom-control-label" for="multirange"> Tout</label>
                                                     </div>
                                                     <div class="form-check mt-2">
                                                         <input type="radio" id="multirange1" name="multirange1" class="form-check-input">
@@ -207,7 +207,7 @@
                                         </div>
         
                                             <div class="border p-3 rounded mt-4">
-                                                    <h5 class="font-size-16 mb-4">Price</h5>
+                                                    <h5 class="font-size-16 mb-4">Prix</h5>
         
                                                     <input type="text" id="pricerange">
                                             </div>
@@ -216,34 +216,34 @@
         
                                          
                                                 <div class="border p-3 rounded mt-4">
-                                                        <h5 class="font-size-16 mb-0 custom-accordion"><a href="#collapseExample1" class="text-dark d-block" data-bs-toggle="collapse" >Discount <i class="mdi mdi-minus float-end accor-plus-icon"></i></a></h5>
+                                                        <h5 class="font-size-16 mb-0 custom-accordion"><a href="#collapseExample1" class="text-dark d-block" data-bs-toggle="collapse" >Rabais <i class="mdi mdi-minus float-end accor-plus-icon"></i></a></h5>
             
                                                         <div class="collapse show" id="collapseExample1">
                 
                                                             <div class="mt-4">
                                                                 <div class="form-check mt-2">
                                                                     <input type="radio" id="productdiscountRadio6" name="productdiscountRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productdiscountRadio6">50% or more</label>
+                                                                    <label class="custom-control-label" for="productdiscountRadio6">50% ou plus</label>
                                                                 </div>
                                                                 <div class="form-check mt-2">
                                                                     <input type="radio" id="productdiscountRadio5" name="productdiscountRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productdiscountRadio5">40% or more</label>
+                                                                    <label class="custom-control-label" for="productdiscountRadio5">40% ou plus</label>
                                                                 </div>
                                                                 <div class="form-check mt-2">
                                                                     <input type="radio" id="productdiscountRadio4" name="productdiscountRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productdiscountRadio4">30% or more</label>
+                                                                    <label class="custom-control-label" for="productdiscountRadio4">30% ou plus</label>
                                                                 </div>
                                                                 <div class="form-check mt-2">
                                                                     <input type="radio" id="productdiscountRadio3" name="productdiscountRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productdiscountRadio3">25% or more</label>
+                                                                    <label class="custom-control-label" for="productdiscountRadio3">25% ou plus</label>
                                                                 </div>
                                                                 <div class="form-check mt-2">
                                                                     <input type="radio" id="productdiscountRadio2" name="productdiscountRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productdiscountRadio2">10% or more</label>
+                                                                    <label class="custom-control-label" for="productdiscountRadio2">10% ou plus</label>
                                                                 </div>
                                                                 <div class="form-check mt-2">
                                                                     <input type="radio" id="productdiscountRadio1" name="productdiscountRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productdiscountRadio1">Less than 10%</label>
+                                                                    <label class="custom-control-label" for="productdiscountRadio1">Moins de 10%</label>
                                                                 </div>
                                                             </div>
                 
@@ -251,26 +251,26 @@
                                                 </div>
             
                                                 <div class="border p-3 rounded mt-4">
-                                                        <h5 class="font-size-16 mb-0 custom-accordion"><a href="#collapseExample3" class="text-dark d-block" data-bs-toggle="collapse">Customer Rating <i class="mdi mdi-minus float-end accor-plus-icon"></i></a></h5>
+                                                        <h5 class="font-size-16 mb-0 custom-accordion"><a href="#collapseExample3" class="text-dark d-block" data-bs-toggle="collapse">Evaluation des clients <i class="mdi mdi-minus float-end accor-plus-icon"></i></a></h5>
             
                                                         <div class="collapse show" id="collapseExample3">
                 
                                                             <div class="mt-4">
                                                                 <div class="form-check mt-2">
                                                                     <input type="radio" id="productratingRadio5" name="productratingRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productratingRadio5">5 <i class="mdi mdi-star text-warning"></i>  & Above</label>
+                                                                    <label class="custom-control-label" for="productratingRadio5">5 <i class="mdi mdi-star text-warning"></i>  & Au-dessus</label>
                                                                 </div>
                                                                 <div class="form-check mt-2">
                                                                     <input type="radio" id="productratingRadio1" name="productratingRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productratingRadio1">4 <i class="mdi mdi-star text-warning"></i>  & Above</label>
+                                                                    <label class="custom-control-label" for="productratingRadio1">4 <i class="mdi mdi-star text-warning"></i>  & Au-dessus</label>
                                                                 </div>
                                                                 <div class="form-check mt-2">
                                                                     <input type="radio" id="productratingRadio2" name="productratingRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productratingRadio2">3 <i class="mdi mdi-star text-warning"></i>  & Above</label>
+                                                                    <label class="custom-control-label" for="productratingRadio2">3 <i class="mdi mdi-star text-warning"></i>  & Au-dessus</label>
                                                                 </div>
                                                                 <div class="form-check mt-2">
                                                                     <input type="radio" id="productratingRadio3" name="productratingRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productratingRadio3">2 <i class="mdi mdi-star text-warning"></i>  & Above</label>
+                                                                    <label class="custom-control-label" for="productratingRadio3">2 <i class="mdi mdi-star text-warning"></i>  & Au-dessus</label>
                                                                 </div>
                                                                 <div class="form-check mt-2">
                                                                     <input type="radio" id="productratingRadio4" name="productratingRadio1" class="form-check-input">
