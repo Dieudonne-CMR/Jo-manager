@@ -77,7 +77,7 @@
 
                                         <div>
                                             <button class="btn btn-primary w-100 waves-effect waves-light"
-                                                type="submit">Se connecter</button>
+                                                type="submit" name="connecter">Se connecter</button>
                                         </div>
 
                                         <div class="mt-4 text-center">

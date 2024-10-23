@@ -52,11 +52,11 @@
                          <div class="row align-items-center">
                              <div class="col-sm-6">
                                  <div class="page-title">
-                                     <h4>Shops</h4>
+                                     <h4>Boutiques</h4>
                                          <ol class="breadcrumb m-0">
                                              <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
                                              <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
-                                             <li class="breadcrumb-item active">Shops</li>
+                                             <li class="breadcrumb-item active">Boutiques</li>
                                          </ol>
                                  </div>
                              </div>
@@ -82,17 +82,17 @@
                                 <div class="col-xl-8">
                                     <div class="card m-b-30">
                                         <div class="card-body">
-                                            <h4 class="mt-0 header-title mb-4">Popular shop</h4>
+                                            <h4 class="mt-0 header-title mb-4">Boutiques</h4>
                                             <div class="table-responsive">
                                                 <table class="table table-centered table-nowrap table-hover mb-0">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col">Brand</th>
-                                                            <th scope="col">Name</th>
+                                                            <th scope="col">Marque</th>
+                                                            <th scope="col">Nom</th>
                                                             <th scope="">Email</th>
                                                             <th scope="col">Date</th>
-                                                            <th scope="col">Product</th>
-                                                            <th scope="col">Current Balance</th>
+                                                            <th scope="col">Produit</th>
+                                                            <th scope="col">Balance Actuelle</th>
                                                             
         
                                                         </tr>
