@@ -109,7 +109,7 @@
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label for="validationCustom03" class="form-label">Téléphone</label>
-                                                            <input type="phone" name="localisation" class="form-control" id="validationCustom02"
+                                                            <input type="phone" name="tel_shop" class="form-control" id="validationCustom02"
                                                                 placeholder="Entrez le numéro de téléphone" required> 
                                                         </div>
                                                     </div>
@@ -157,7 +157,7 @@
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <button class="btn btn-primary" type="submit">Soumettre</button>
+                                                    <button class="btn btn-primary" type="submit" name="soumettre">Soumettre</button>
                                                 </div>
                                             </form>
                                         </div>

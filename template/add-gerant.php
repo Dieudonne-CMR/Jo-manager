@@ -108,7 +108,7 @@
                                             <div class="row mb-3">
                                                 <label for="example-tel-input" class="col-sm-2 col-form-label">Telephone</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="example-tel-input">
+                                                    <input class="form-control" name="telephone_gerant" type="tel" placeholder="1-(555)-555-5555" id="example-tel-input">
                                                 </div>
                                             </div>
     
@@ -116,14 +116,13 @@
                                                 <label class="control-label">Catégorie</label>
                                                 <select class="form-control select2">
                                                     <option>Sélectionner</option>
-                                                    <option value="EL">Habillement</option>
-                                                    <option value="FA">Accessoires</option>
-                                                     <option value="FI">etc...</option>                                                                  
+                                                    <option value="EL">Super-Admin</option>
+                                                    <option value="FA">Admin</option>                                                                 
                                                 </select>
                                             </div>
 
                                             <div>
-                                                <button class="btn btn-primary" type="submit">Soumettre</button>
+                                                <button class="btn btn-primary" type="submit" name="soumettre">Soumettre</button>
                                             </div>
 
                                         </form>
