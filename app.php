@@ -67,5 +67,9 @@ endif;
 if (@$url[0]=='login'):
     include_once 'processing/login.php'; 
     
-//elseif(@$url[0]=='')
+elseif(@$url[0]=='gerant'):
+    include_once 'processing/gerant.php'; 
+
+elseif(@$url[0]=='shop'):
+    include_once 'processing/shop.php'; 
 endif;

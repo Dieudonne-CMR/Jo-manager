@@ -56,11 +56,11 @@
                         <div class="row align-items-center">
                             <div class="col-sm-6">
                                 <div class="page-title">
-                                    <h4>Form Elements</h4>
+                                    <h4>Ajout Gerant</h4>
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
-                                        <li class="breadcrumb-item active">Form Elements</li>
+                                        <li class="breadcrumb-item active">Ajout Gerant</li>
                                     </ol>
                                 </div>
                             </div>
@@ -90,36 +90,21 @@
                                         <p class="card-title-desc">Here are examples of <code class="highlighter-rouge">.form-control</code> applied to each
                                             textual HTML5 <code class="highlighter-rouge">&lt;input&gt;</code> <code class="highlighter-rouge">type</code>.</p>
 
-                                        <form action="" method="post">
+                                        <form action="gerant" method="post">
 
                                             <div class="row mb-3">
-                                                <label for="example-text-input" class="col-sm-2 col-form-label">Text</label>
+                                                <label for="example-text-input" class="col-sm-2 col-form-label">Nom</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="text" placeholder="Artisanal kale" id="example-text-input">
+                                                    <input class="form-control" name="nom" type="text" placeholder="Entrez votre Nom" id="example-text-input">
                                                 </div>
                                             </div>
     
                                             <div class="row mb-3">
-                                                <label for="example-search-input" class="col-sm-2 col-form-label">Search</label>
+                                                <label for="example-search-input" class="col-sm-2 col-form-label">Localisation</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" type="search" placeholder="How do I shoot web" id="example-search-input">
+                                                    <input class="form-control" name="localisation_gerant" type="search" placeholder="Entrez votre localisation" id="example-search-input">
                                                 </div>
                                             </div>
-    
-                                            <div class="row mb-3">
-                                                <label for="example-email-input" class="col-sm-2 col-form-label">Email</label>
-                                                <div class="col-sm-10">
-                                                    <input class="form-control" type="email" placeholder="bootstrap@example.com" id="example-email-input">
-                                                </div>
-                                            </div>
-    
-                                            <div class="row mb-3">
-                                                <label for="example-url-input" class="col-sm-2 col-form-label">URL</label>
-                                                <div class="col-sm-10">
-                                                    <input class="form-control" type="url" placeholder="https://getbootstrap.com" id="example-url-input">
-                                                </div>
-                                            </div>
-    
                                             <div class="row mb-3">
                                                 <label for="example-tel-input" class="col-sm-2 col-form-label">Telephone</label>
                                                 <div class="col-sm-10">
@@ -127,15 +112,18 @@
                                                 </div>
                                             </div>
     
-                                            <div class="row mb-3">
-                                                <label for="example-password-input" class="col-sm-2 col-form-label">Password</label>
-                                                <div class="col-sm-10">
-                                                    <input class="form-control" type="password" value="hunter2" id="example-password-input">
-                                                </div>
+                                            <div class="row mb-3">            
+                                                <label class="control-label">Catégorie</label>
+                                                <select class="form-control select2">
+                                                    <option>Sélectionner</option>
+                                                    <option value="EL">Habillement</option>
+                                                    <option value="FA">Accessoires</option>
+                                                     <option value="FI">etc...</option>                                                                  
+                                                </select>
                                             </div>
 
                                             <div>
-                                                <button class="btn btn-primary" type="submit">Submit form</button>
+                                                <button class="btn btn-primary" type="submit">Soumettre</button>
                                             </div>
 
                                         </form>

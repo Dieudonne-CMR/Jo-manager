@@ -49,11 +49,11 @@
                          <div class="row align-items-center">
                              <div class="col-sm-6">
                                  <div class="page-title">
-                                     <h4>Cart</h4>
+                                     <h4>Panier</h4>
                                          <ol class="breadcrumb m-0">
                                              <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
                                              <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
-                                             <li class="breadcrumb-item active">Cart</li>
+                                             <li class="breadcrumb-item active">Panier</li>
                                          </ol>
                                  </div>
                              </div>
@@ -79,10 +79,10 @@
                                                 <table class="table table-centered mb-0 table-nowrap">
                                                     <thead class="bg-light">
                                                         <tr>
-                                                            <th style="width: 120px">Product</th>
-                                                            <th>Product Desc</th>
-                                                            <th>Price</th>
-                                                            <th>Quantity</th>
+                                                            <th style="width: 120px">Produit</th>
+                                                            <th>Description Produit</th>
+                                                            <th>Prix</th>
+                                                            <th>Quantité</th>
                                                             <th>Total</th>
                                                             <th class="text-center">Action</th>
                                                         </tr>
@@ -187,7 +187,7 @@
                                                         <tr class="bg-light text-end">
                                                             
                                                             <th scope="row" colspan="5">
-                                                                Sub Total :
+                                                                Sous-Total :
                                                             </th>
                                                             
                                                             <td>
@@ -197,7 +197,7 @@
                                                         <tr class="bg-light text-end">
                                                             
                                                             <th scope="row" colspan="5">
-                                                                Discount :
+                                                                Rabais :
                                                             </th>
                                                             
                                                             <td>
@@ -207,7 +207,7 @@
                                                         <tr class="bg-light text-end">
                                                             
                                                             <th scope="row" colspan="5">
-                                                                Shipping Charge :
+                                                                Frais d'expédition :
                                                             </th>
                                                             
                                                             <td>
