@@ -55,9 +55,9 @@
                                     <form class="form-horizontal mt-4 pt-2" action="login" method="post">
 
                                         <div class="mb-3">
-                                            <label for="username">Nom d'utilisateur</label>
-                                            <input type="text" name="nom_utilisateur" class="form-control" id="username"
-                                                placeholder="Entrez votre nom d'utilisateur">
+                                            <label for="username">Email</label>
+                                            <input type="email" name="email_utilisateur" class="form-control" id="username"
+                                                placeholder="Entrez votre email">
                                         </div>
 
                                         <div class="mb-3">

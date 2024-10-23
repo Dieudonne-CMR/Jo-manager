@@ -150,10 +150,11 @@
                                                                 <label class="form-label" for="productdesc">Description du Produit</label>
                                                                 <textarea class="form-control" name="decription" id="productdesc" rows="5" placeholder="Entrez la description de votre produit"></textarea>
                                                             </div>
+                                                            
                                                         </form>
 
                                                         <ul class="pager wizard twitter-bs-wizard-pager-link">
-                                                            <li class="next"><a href="../#"> Images du Produit <i class="mdi mdi-arrow-right ms-1"></i></a></li>
+                                                            <li class="next"><a href="#product-img"> Images du Produit <i class="mdi mdi-arrow-right ms-1"></i></a></li>
                                                         </ul>
                                                     </div>
                                                     <!-- end tabpane -->
