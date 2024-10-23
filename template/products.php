@@ -90,8 +90,6 @@
 
                                         <div class="card-body">
 
-                                            <h4 class="header-title">Filtres</h4>
-
                                             <div class="border p-3 rounded mt-4">
 
                                                 <h5 class="font-size-16">Recherche</h5>
@@ -106,182 +104,14 @@
                                             </div>
 
 
-                                            <div class="border p-3 rounded mt-4">
-                                                    <h5 class="font-size-16">Catégories</h5>
-    
-        
-                                                <div id="accordion" class="custom-accordion categories-accordion">
-                                                    <div class="categories-group-card">
-                                                        <a href="#collapseOne" class="categories-group-list collapsed" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseOne">
-                                                            <i class="ti-desktop font-size-16 align-middle me-2"></i> Electronique
-                                                            <i class="mdi mdi-minus float-end accor-plus-icon"></i>
-                                                        </a>
-                                
-                                                        <div id="collapseOne" class="collapse" data-parent="#accordion">
-                                                            <div>
-                                                                <ul class="list-unstyled categories-list mb-0">
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Mobile</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Cemera</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Accessoires mobiles</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Ordinateurs</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Laptops</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Speakers</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-        
-                                                    <div class="categories-group-card">
-                                                        <a href="#collapseTwo" class="categories-group-list" data-bs-toggle="collapse" aria-expanded="true" aria-controls="collapseTwo">
-                                                            <i class="ti-archive font-size-16 align-middle me-2"></i> Fournitures
-                                                            <i class="mdi mdi-minus float-end accor-plus-icon"></i>
-                                                        </a>
-                                                        <div id="collapseTwo" class="collapse show" data-parent="#accordion">
-                                                            <div>
-                                                                <ul class="list-unstyled categories-list mb-0">
-                                                                    <li class="active"><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Chaises </a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Tables</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Lits </a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Sièges</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-        
-                                                    <div class="categories-group-card">
-                                                        <a href="#collapseThree" class="categories-group-list collapsed" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseThree">
-                                                            <i class="mdi mdi-pinwheel-outline font-size-16 align-middle me-2"></i> Bébés et Enfants
-                                                            <i class="mdi mdi-minus float-end accor-plus-icon"></i>
-                                                        </a>
-                                                        <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                                            <div>
-                                                                <ul class="list-unstyled categories-list mb-0">
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Vetements</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Chaussures</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Jouets</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Soins pour Bébé</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-        
-                                                    <div class="categories-group-card">
-                                                        <a href="#collapseFour" class="categories-group-list collapsed" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseFour">
-                                                            <i class="mdi mdi-dumbbell font-size-16 align-middle me-2"></i> Fitness
-                                                            <i class="mdi mdi-minus float-end accor-plus-icon"></i>
-                                                        </a>
-                                                        <div id="collapseFour" class="collapse" data-parent="#accordion">
-                                                            <div>
-                                                                <ul class="list-unstyled categories-list mb-0">
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Equipements de Gym</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Matériel de Yoga</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Haltères</a></li>
-                                                                    <li><a href="#"><i class="mdi mdi-circle-medium me-1"></i> Supplément de protéines</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="border p-3 rounded mt-4">
-                                                <h5 class="font-size-16">Multi-gamme</h5>
-    
-                                                <div class="mt-4">
-                                                    <div class="form-check mt-2">
-                                                        <input type="radio" id="multirange" name="multirange1" class="form-check-input" checked>
-                                                        <label class="custom-control-label" for="multirange"> Tout</label>
-                                                    </div>
-                                                    <div class="form-check mt-2">
-                                                        <input type="radio" id="multirange1" name="multirange1" class="form-check-input">
-                                                        <label class="custom-control-label" for="multirange1"> $1 - $10</label>
-                                                    </div>
-                                                    <div class="form-check mt-2">
-                                                        <input type="radio" id="multirange2" name="multirange1" class="form-check-input">
-                                                        <label class="custom-control-label" for="multirange2"> $10 - $100</label>
-                                                    </div>
-                                                    <div class="form-check mt-2">
-                                                        <input type="radio" id="multirange3" name="multirange1" class="form-check-input">
-                                                        <label class="custom-control-label" for="multirange3"> $100 - $500</label>
-                                                    </div>
-                                                    <div class="form-check mt-2">
-                                                        <input type="radio" id="multirange4" name="multirange1" class="form-check-input">
-                                                        <label class="custom-control-label" for="multirange4"> $500</label>
-                                                    </div>
-                                                </div>
-                                        </div>
-        
-                                            <div class="border p-3 rounded mt-4">
-                                                    <h5 class="font-size-16 mb-4">Prix</h5>
-        
-                                                    <input type="text" id="pricerange">
-                                            </div>
-
-
-        
-                                         
-                                                <div class="border p-3 rounded mt-4">
-                                                        <h5 class="font-size-16 mb-0 custom-accordion"><a href="#collapseExample1" class="text-dark d-block" data-bs-toggle="collapse" >Rabais <i class="mdi mdi-minus float-end accor-plus-icon"></i></a></h5>
-            
-                                                        <div class="collapse show" id="collapseExample1">
-                
-                                                            <div class="mt-4">
-                                                                <div class="form-check mt-2">
-                                                                    <input type="radio" id="productdiscountRadio6" name="productdiscountRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productdiscountRadio6">50% ou plus</label>
-                                                                </div>
-                                                                <div class="form-check mt-2">
-                                                                    <input type="radio" id="productdiscountRadio5" name="productdiscountRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productdiscountRadio5">40% ou plus</label>
-                                                                </div>
-                                                                <div class="form-check mt-2">
-                                                                    <input type="radio" id="productdiscountRadio4" name="productdiscountRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productdiscountRadio4">30% ou plus</label>
-                                                                </div>
-                                                                <div class="form-check mt-2">
-                                                                    <input type="radio" id="productdiscountRadio3" name="productdiscountRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productdiscountRadio3">25% ou plus</label>
-                                                                </div>
-                                                                <div class="form-check mt-2">
-                                                                    <input type="radio" id="productdiscountRadio2" name="productdiscountRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productdiscountRadio2">10% ou plus</label>
-                                                                </div>
-                                                                <div class="form-check mt-2">
-                                                                    <input type="radio" id="productdiscountRadio1" name="productdiscountRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productdiscountRadio1">Moins de 10%</label>
-                                                                </div>
-                                                            </div>
-                
-                                                        </div>
-                                                </div>
+                                                 
             
                                                 <div class="border p-3 rounded mt-4">
-                                                        <h5 class="font-size-16 mb-0 custom-accordion"><a href="#collapseExample3" class="text-dark d-block" data-bs-toggle="collapse">Evaluation des Clients <i class="mdi mdi-minus float-end accor-plus-icon"></i></a></h5>
+                                                        
             
                                                         <div class="collapse show" id="collapseExample3">
                 
-                                                            <div class="mt-4">
-                                                                <div class="form-check mt-2">
-                                                                    <input type="radio" id="productratingRadio5" name="productratingRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productratingRadio5">5 <i class="mdi mdi-star text-warning"></i>  & Au-dessus</label>
-                                                                </div>
-                                                                <div class="form-check mt-2">
-                                                                    <input type="radio" id="productratingRadio1" name="productratingRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productratingRadio1">4 <i class="mdi mdi-star text-warning"></i>  & Au-dessus</label>
-                                                                </div>
-                                                                <div class="form-check mt-2">
-                                                                    <input type="radio" id="productratingRadio2" name="productratingRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productratingRadio2">3 <i class="mdi mdi-star text-warning"></i>  & Au-dessus</label>
-                                                                </div>
-                                                                <div class="form-check mt-2">
-                                                                    <input type="radio" id="productratingRadio3" name="productratingRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productratingRadio3">2 <i class="mdi mdi-star text-warning"></i>  & Au-dessus</label>
-                                                                </div>
-                                                                <div class="form-check mt-2">
-                                                                    <input type="radio" id="productratingRadio4" name="productratingRadio1" class="form-check-input">
-                                                                    <label class="custom-control-label" for="productratingRadio4">1 <i class="mdi mdi-star text-warning"></i></label>
-                                                                </div>
-                                                            </div>
+                                                            
                 
                                                         </div>
                                                     </div>
