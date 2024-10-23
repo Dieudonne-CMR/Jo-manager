@@ -1,6 +1,6 @@
 <?php
 include('class.db.php');
-$db=
+// $db=
 
  // Création des tables
  $tables = [
@@ -14,7 +14,8 @@ $db=
         Mat_Shop INT,
         Rôle VARCHAR(50) NOT NULL,
         Date_Ajout DATE NOT NULL,
-        FOREIGN KEY (Mat_Shop) REFERENCES Shop(ID_Shop)
+        Permission INT,
+        -- FOREIGN KEY (Mat_Shop) REFERENCES Shop(ID_Shop)
     )",
 
     // Table Shop
@@ -58,7 +59,7 @@ $db=
         Mat_Shop INT,
         Mat_Cat VARCHAR(100) NOT NULL,
         Date_Ajout DATE NOT NULL,
-        FOREIGN KEY (Mat_Shop) REFERENCES Shop(ID_Shop)
+        -- FOREIGN KEY (Mat_Shop) REFERENCES Shop(ID_Shop)
     )",
 
     // Table Commande
@@ -89,7 +90,7 @@ $db=
 
 // Exécution des requêtes de création de tables
 foreach ($tables as $table) {
-    $pdo->exec($table);
+    $Db->exec($table);
     echo "Table créée avec succès.<br>";
 }
 
