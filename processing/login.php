@@ -24,6 +24,7 @@ if(!empty($_POST['nom_utilisateur'])):
         ];
         $reponse=0;
       endif;
+      var_dump($_SESSION['auth']);
 
   endif;
   echo json_encode($reponse);
