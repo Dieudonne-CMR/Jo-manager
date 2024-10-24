@@ -1,8 +1,9 @@
 <?php
+
 class DB{
     private $host= "localhost";
-    private $dbname="jo-manager";
-    private $password= "";
+    private $dbname="jo_manager";
+    private $password="";
     private $name="root";
     public $db;
 
@@ -15,23 +16,19 @@ class DB{
         $this->name=$name;
        }
 
+       session_start();
         try{
 
-            //============= Connexion à MySQL
-            $this->db = new PDO("mysql:host=$this->host", $this->dbname, $this->password);
-            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            //========== Création de la base de données
-            $sql = "CREATE DATABASE IF NOT EXISTS $this->dbname";
-            $this->db->exec($sql);
-            echo "Base de données '$this->dbname' créée avec succès.<br>";
+            // //============= Connexion à MySQL
+            // $this->db = new PDO("mysql:host=$this->host", $this->dbname, $this->password);
+            // $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             //========== Connexion à la base de données créée
             $this->db =new PDO('mysql:host='.$this->host.'; dbname='.$this->dbname,$this->name,$this->password,
             array(PDO::MYSQL_ATTR_INIT_COMMAND =>'SET NAMES UTF8', PDO::ATTR_ERRMODE=>PDO::ERRMODE_WARNING));
             // die('ok');
         }catch(PDOException $e){
-            die("<h1 class='text-danger'>desole nous avons pas pu trouver la base de donnee</h1>");
+            die("<h1 class='text-danger'>Desole nous avons pas pu trouver la base de donnee</h1>");
         }
     }
     
@@ -60,6 +57,6 @@ class DB{
 
 // Appel de la classe bonjout en 
 $DB=new DB();
-$Db=$DB->db;
+// $Db=$DB->db;
 ?>
 

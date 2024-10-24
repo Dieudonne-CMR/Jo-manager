@@ -1,4 +1,7 @@
 <?php 
+include_once ("data_base/class.db.php");
+include_once ('fonction/fontion.php');
+include_once ('includes/main_header/main_header.php');
 
 $url="";
 if(isset($_GET['url'])):
@@ -15,61 +18,68 @@ endif;
 
 
 // les routes du projet
+//============== afficher la page d'une boutique
+// var_dump(@$url);
 
-if(@$url==''):
-
+if(@$url[0]=='home' || @$url==''):
     include_once("template/home.php");
+endif;
 
-elseif(@$url[0]=='Accueil_sup_ad'):
-
+//============ afficher la d'accueille du supper administrateur
+if(@$url[0]=='Accueil_sup_ad'):
     include('template/accueil_sup_ad.php');
+endif;
 
-elseif(@$url[0]=='shops'):
+if(@$url[0]=='shops'):
 
     include('template/shops.php');
+endif;
 
-elseif(@$url[0]=='products'):
+if(@$url[0]=='products'):
 
     include_once('template/products.php');
+endif;
 
-elseif(@$url[0]=='product-detail'):
+if(@$url[0]=='product-detail'):
 
     include_once('template/product-detail.php');
+endif;
 
-elseif(@$url[0]=='achat'):
+if(@$url[0]=='achat'):
 
     include_once('template/achat.php');
+endif;
 
-elseif(@$url[0]=='panier'):
+if(@$url[0]=='panier'):
 
     include_once('template/panier.php');
+endif;
 
-elseif(@$url[0]=='add-product'):
+if(@$url[0]=='add-product'):
 
     include_once('template/add-product.php');
+endif;
 
-elseif(@$url[0]=='add-gerant'):
+if(@$url[0]=='add-gerant'):
 
     include_once 'template/add-gerant.php';
 
-elseif(@$url[0]=='add-shop'):
-    
+endif;
+
+if(@$url[0]=='add-shop'):
     include_once("template/add-shop.php");
-
-elseif(@$url[0]=='auth-login'):
-
-        include_once('template/auth-login.php');
-
 endif;
 
 
 //========= les routes en POST : routes d'insertions
 if (@$url[0]=='login'):
     include_once 'processing/login.php'; 
+endif;
     
-elseif(@$url[0]=='gerant'):
+if(@$url[0]=='gerant'):
     include_once 'processing/gerant.php'; 
+endif;
 
-elseif(@$url[0]=='shop'):
+if(@$url[0]=='shop'):
     include_once 'processing/shop.php'; 
 endif;
