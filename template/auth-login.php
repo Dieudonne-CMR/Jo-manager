@@ -55,14 +55,14 @@
                                     <form class="form-horizontal mt-4 pt-2" action="login" method="post">
 
                                         <div class="mb-3">
-                                            <label for="username">Nom d'utilisateur</label>
-                                            <input type="text" name="nom_utilisateur" class="form-control" id="username"
+                                            <label for="matricule">Matricule</label>
+                                            <input type="text" name="matricule" class="form-control" id="matricule"
                                                 placeholder="Entrez votre nom d'utilisateur">
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="userpassword">Mot de passe</label>
-                                            <input type="password" name="mot_de_passe" class="form-control" id="userpassword"
+                                            <label for="password">Mot de passe</label>
+                                            <input type="password" name="password" class="form-control" id="password"
                                                 placeholder="Entrez votre mot de passe">
                                         </div>
 

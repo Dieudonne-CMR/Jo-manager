@@ -60,6 +60,6 @@ class DB{
 
 // Appel de la classe bonjout en 
 $DB=new DB();
-$Db=$DB->db;
+// $Db=$DB->db;
 ?>
 
