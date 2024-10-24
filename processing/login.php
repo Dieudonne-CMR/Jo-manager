@@ -1,8 +1,30 @@
 <?php
-  if(isset($_POST["connecter"])):
-    if(!empty($_POST['nom_utilisateur']) AND !empty($_POST['mot_de_passe'])):
+include_once ("../data_base/class.db.php");
+include_once ('../fonction/fontion.php');
+// var_dump($_POST);
+$reponse=1;
 
-      $nom_utilisateur = $_POST["nom_utilisateur"];
-      $mot_de_passe = $_POST["mot_de_passe"];
-    endif;
+if(!empty($_POST['nom_utilisateur'])):
+  if(!empty($_POST['mot_de_passe'])):
+    $nom_user=test_input($_POST['nom_utilisateur']);
+    $mot_de_passe=test_input($_POST['mot_de_passe']);
+
+    $auth= $DB->query("SELECT * FROM membre WHERE Matricule=:mat OR Nom=:mat LIMIT 1",['mat'=>$nom_user]);
+
+    // $auth= select_table_where('membre','Nom','password');
+
+           
+    if(count($auth)>0):
+        $_SESSION['auth']=[];
+        $_SESSION['auth']=[
+            'Mat_Shop'=>$auth[0]->Mat_Shop,
+            'permission'=>$auth[0]->Permission,
+            'password'=>$auth[0]->password,
+            'Matricule'=>$auth[0]->Matricule,
+        ];
+        $reponse=0;
+      endif;
+
   endif;
+  echo json_encode($reponse);
+endif;

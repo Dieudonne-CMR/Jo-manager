@@ -7,10 +7,10 @@
 
     
     <meta charset="utf-8" />
-    <title>Login page | Morvin - Admin & Dashboard Template</title>
+    <title>jo-manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesdesign" name="author" />
+    <meta content="jo-manager" name="description" />
+    <meta content="jo-manager" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
@@ -20,7 +20,9 @@
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -52,7 +54,7 @@
                                     </div>
 
 
-                                    <form class="form-horizontal mt-4 pt-2" action="login" method="post">
+                                    <form class="form-horizontal mt-4 pt-2" action="+6login" id="login" method="post">
 
                                         <div class="mb-3">
                                             <label for="username">Email</label>
@@ -114,6 +116,8 @@
     <script src="assets/libs/node-waves/waves.min.js"></script>
 
     <script src="assets/js/app.js"></script>
+
+    <script src="assets/js/login.js"></script>
 
 </body>
 
