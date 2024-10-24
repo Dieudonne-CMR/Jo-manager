@@ -1,20 +1,30 @@
 <?php
-session_start();
-  if(isset($_POST["connecter"])):
-    if(!empty($_POST['matricule']) AND !empty($_POST['password'])):
-      $nom_utilisateur = $_POST["matricule"];
-      $mot_de_passe = $_POST["password"];
+include_once ("../data_base/class.db.php");
+include_once ('../fonction/fontion.php');
+// var_dump($_POST);
+$reponse=1;
 
-          // VERIFICATION DE L'EXISTANCE DE L'UTILISATEUR
+if(!empty($_POST['nom_utilisateur'])):
+  if(!empty($_POST['mot_de_passe'])):
+    $nom_user=test_input($_POST['nom_utilisateur']);
+    $mot_de_passe=test_input($_POST['mot_de_passe']);
 
-          $user= $DB->query("SELECT matricule FROM membre WHERE id_membre:id");
-          
-          if($controlUser == 0)
-          {
-             
+    $auth= $DB->query("SELECT * FROM membre WHERE Matricule=:mat OR Nom=:mat LIMIT 1",['mat'=>$nom_user]);
+
+    // $auth= select_table_where('membre','Nom','password');
+
            
-          }
-      
-      
-    endif;
+    if(count($auth)>0):
+        $_SESSION['auth']=[];
+        $_SESSION['auth']=[
+            'Mat_Shop'=>$auth[0]->Mat_Shop,
+            'permission'=>$auth[0]->Permission,
+            'password'=>$auth[0]->password,
+            'Matricule'=>$auth[0]->Matricule,
+        ];
+        $reponse=0;
+      endif;
+
   endif;
+  echo json_encode($reponse);
+endif;
