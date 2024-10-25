@@ -57,8 +57,8 @@
                                     <form class="form-horizontal mt-4 pt-2" action="+6login" id="login" method="post">
 
                                         <div class="mb-3">
-                                            <label for="username">Email</label>
-                                            <input type="email" name="email_utilisateur" class="form-control" id="username"
+                                            <label for="username">Matricule / votre nom</label>
+                                            <input type="text" name="matricule" class="form-control" id="username"
                                                 placeholder="Entrez votre email">
                                         </div>
 

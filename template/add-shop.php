@@ -51,8 +51,7 @@
                                  <div class="page-title">
                                      <h4>Création d'une boutique</h4>
                                          <ol class="breadcrumb m-0">
-                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
-                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
+                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
                                              <li class="breadcrumb-item active">Création d'une Boutique</li>
                                          </ol>
                                  </div>
@@ -79,10 +78,12 @@
                                 <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h4 class="header-title">Bootstrap Validation - Normal</h4>
-                                            <p class="card-title-desc">For custom Bootstrap form validation messages, you’ll need to add the <code>novalidate</code> boolean attribute to your <code>&lt;form&gt;</code>.</p>
                                             
-                                            <form method='post' action='shop' class="needs-validation" novalidate>
+                                            <?php /*
+                                            <h4 class="header-title">La zonne  de création de la boutique</h4>
+                                            <p class="card-title-desc">For custom Bootstrap form validation messages, you’ll need to add the <code>novalidate</code> boolean attribute to your <code>&lt;form&gt;</code>.</p> */?>
+                                            
+                                            <form method='post' id="uploadForm" action='aj-shop' class="needs-validation" novalidate>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
@@ -106,14 +107,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label for="validationCustom03" class="form-label">Téléphone</label>
                                                             <input type="phone" name="tel_shop" class="form-control" id="validationCustom02"
                                                                 placeholder="Entrez le numéro de téléphone" required> 
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label for="validationCustom04" class="form-label">Email</label>
                                                             <input type="emeail" name="email" class="form-control" id="validationCustom04"
@@ -128,7 +129,9 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label for="validationCustom01" class="form-label">Logo</label>
-                                                            <input type="file" name="logo" class="form-control" id="validationCustom01"
+                                                             <!-- voir image avant de soumettre -->
+                                                            <img id="previewlogo" src="" alt="Aperçu de l'image" style="max-width: 300px; display: none;">
+                                                            <input type="file" name="logo" id="logoUpload" class="form-control" 
                                                                 placeholder="" required>
                                                             <div class="valid-feedback">
                                                                 Ca a l'air bien!
@@ -138,24 +141,19 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label for="validationCustom02" class="form-label">Bannière</label>
-                                                            <input type="file" name="banniere" class="form-control" id="validationCustom02"
-                                                                placeholder=""  required>
+
+                                                            <!-- voir image avant de soumettre -->
+                                                            <img id="preview" src="" alt="Aperçu de l'image" style="max-width: 300px; display: none;">
+
+                                                            <input type="file" name="banniere" id="imageUpload" class="form-control" 
+                                                                placeholder="" accept="image/*" required>
                                                             <div class="valid-feedback">
                                                                 Ca a l'air bien!
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-check mb-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck"
-                                                        required>
-                                                    <label class="form-check-label" for="invalidCheck">
-                                                        Accepter les termes et conditions
-                                                    </label>
-                                                    <div class="invalid-feedback">
-                                                        Vous devez être d'accord avant de soumettre.
-                                                    </div>
-                                                </div>
+                                               
                                                 <div>
                                                     <button class="btn btn-primary" type="submit" name="soumettre">Soumettre</button>
                                                 </div>
@@ -202,7 +200,50 @@
         <script src="assets/js/pages/form-validation.init.js"></script>
 
         <script src="assets/js/app.js"></script>
+        <script src="assets/js/aj-shop.js"></script>
+        <!-- <script>
+        // Sélectionne le champ input et l'image de prévisualisation
+        const imageInput = document.getElementById('imageUpload');
+        const previewImage = document.getElementById('preview');
 
+        const logoInput = document.getElementById('logoUpload');
+        const previewlogo = document.getElementById('previewlogo');
+
+        // Écouteur d'événements pour le changement de fichier
+        imageInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];  // Récupère le fichier sélectionné
+            if (file) {
+                const reader = new FileReader();
+                
+                // Lorsque le fichier est chargé, afficher l'aperçu
+                reader.onload = (e) => {
+                    previewImage.src = e.target.result;  // URL de l'image
+                    previewImage.style.display = 'block';  // Affiche l'image de prévisualisation
+
+                    previewlogo.src = e.target.result;  // URL de l'image
+                    previewlogo.style.display = 'block';  // Affiche l'image de prévisualisation
+                };
+
+                // Lecture du fichier comme URL de données
+                reader.readAsDataURL(file);
+            }
+
+
+            if (file) {
+                const reader = new FileReader();
+                
+                // Lorsque le fichier est chargé, afficher l'aperçu
+                reader.onload = (e) => {n
+
+                    previewlogo.src = e.target.result;  // URL de l'image
+                    previewlogo.style.display = 'block';  // Affiche l'image de prévisualisation
+                };
+
+                // Lecture du fichier comme URL de données
+                reader.readAsDataURL(file);
+            }
+        });
+    </script> -->
     </body>
 
 <!-- Mirrored from themesdesign.in/morvin/layouts/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2024 05:03:26 GMT -->
