@@ -83,3 +83,7 @@ endif;
 if(@$url[0]=='shop'):
     include_once 'processing/shop.php'; 
 endif;
+
+if(@$url[0]=='aj-product'):
+    include_once 'processing/aj-product.php'; 
+endif;

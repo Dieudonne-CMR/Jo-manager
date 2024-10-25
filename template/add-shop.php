@@ -110,7 +110,7 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label for="validationCustom03" class="form-label">Téléphone</label>
-                                                            <input type="phone" name="tel_shop" class="form-control" id="validationCustom02"
+                                                            <input type="phone" name="tel_shop" class="form-control" id="validationCustom03"
                                                                 placeholder="Entrez le numéro de téléphone" required> 
                                                         </div>
                                                     </div>
@@ -126,21 +126,10 @@
                                                     </div>    
                                                 </div>
                                                 <div class="row">
+                                                    
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
-                                                            <label for="validationCustom01" class="form-label">Logo</label>
-                                                             <!-- voir image avant de soumettre -->
-                                                            <img id="previewlogo" src="" alt="Aperçu de l'image" style="max-width: 300px; display: none;">
-                                                            <input type="file" name="logo" id="logoUpload" class="form-control" 
-                                                                placeholder="" required>
-                                                            <div class="valid-feedback">
-                                                                Ca a l'air bien!
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <label for="validationCustom02" class="form-label">Bannière</label>
+                                                            <label for="validationCustom05" class="form-label">Bannière</label>
 
                                                             <!-- voir image avant de soumettre -->
                                                             <img id="preview" src="" alt="Aperçu de l'image" style="max-width: 300px; display: none;">

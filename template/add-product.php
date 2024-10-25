@@ -91,17 +91,6 @@
                                                             <span class="step-number">01. Informations Basiques</span>
                                                         </a>
                                                     </li>
-                                                    <li class="nav-item add-product-border">
-                                                        <a href="#product-img" class="nav-link" data-toggle="tab">
-                                                            <span class="step-number">02. Images du Produit</span>
-                                                        </a>
-                                                    </li>
-                                                    
-                                                    <li class="nav-item">
-                                                        <a href="#metadata" class="nav-link" data-toggle="tab">
-                                                            <span class="step-number">03. Meta Data</span>
-                                                        </a>
-                                                    </li>
                                                 </ul>
                                                 <!-- ebd ul -->
                                                 <div class="tab-content twitter-bs-wizard-tab-content">
@@ -109,7 +98,7 @@
                                                         <h4 class="header-title">Informations basiques</h4>
                                                         <p class="card-title-desc">Remplissez toutes les informations ci-dessous</p>
     
-                                                        <form>
+                                                    <form metho="post" action="aj-product">
                                                             <div class="mb-3">
                                                                 <label class="form-label" for="productname">Nom du Produit</label>
                                                                 <input id="productname" name="nom_produit" type="text" class="form-control" placeholder="Entrez le nom de votre produit">
@@ -150,67 +139,18 @@
                                                                 <label class="form-label" for="productdesc">Description du Produit</label>
                                                                 <textarea class="form-control" name="decription" id="productdesc" rows="5" placeholder="Entrez la description de votre produit"></textarea>
                                                             </div>
-                                                            
-                                                        </form>
+                                                        <div class="tab-pane" id="product-img">
+                                                                <h4 class="header-title">Images du Produit</h4>
+                                                                <p class="card-title-desc">Télécharger les images de votre Produit</p>
 
-                                                        <ul class="pager wizard twitter-bs-wizard-pager-link">
-                                                            <li class="next"><a href="#product-img"> Images du Produit <i class="mdi mdi-arrow-right ms-1"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- end tabpane -->
-                                                    <div class="tab-pane" id="product-img">
-                                                        <h4 class="header-title">Images du Produit</h4>
-                                                        <p class="card-title-desc">Télécharger les images de votre Produit</p>
-                                                        <form action="https://themesdesign.in/" method="post" class="dropzone">
-                                                            <div class="fallback">
-                                                                <input name="images" type="file" multiple />
-                                                            </div>
-                            
-                                                            <div class="dz-message needsclick">
-                                                                <div class="mb-3">
-                                                                    <i class="display-4 text-muted mdi mdi-cloud-download-outline"></i>
-                                                                </div>
-                                                                
-                                                                <h4>Déposez les fichiers ici ou cliquez pour télécharger.</h4>
-                                                            </div>
-                                                        </form>
-                                                        <ul class="pager wizard twitter-bs-wizard-pager-link">
-                                                            <li class="previous"><a href="../#"><i class="mdi mdi-arrow-left me-1"></i> Informations basiques</a></li>
-                                                            <li class="next"><a href="../#">Meta Data <i class="mdi mdi-arrow-right ms-1"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="tab-pane" id="metadata">
-                                                        <h4 class="header-title">Meta Data</h4>
-                                                        <p class="card-title-desc">Fill all information below</p>
-    
-                                                        <form>
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label" for="metatitle">Meta title</label>
-                                                                        <input id="metatitle" name="metatitle" type="text" class="form-control" placeholder="Enter meta title">
+                                                                    <div class="fallback">
+                                                                        <input name="images" type="file" multiple />
                                                                     </div>
-                                                                </div><!-- end col -->
-                                                                <div class="col-sm-6">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label" for="metakeywords">Meta Keywords</label>
-                                                                        <input id="metakeywords" name="metakeywords" type="text" class="form-control" placeholder="Enter keywords">
-                                                                    </div>
-                                                                </div><!-- end col -->
-                                                            </div>
-                                                            <!-- end row -->
-                                                            <div class="mb-3">
-                                                                <label class="form-label" for="metadescription">Meta Description</label>
-                                                                <textarea class="form-control" id="metadescription" rows="5" placeholder="Enter Description"></textarea>
-                                                            </div>
-                                                        </form>
-                                                        <!-- end form -->
+                                                        </div>
                                                         <ul class="pager wizard twitter-bs-wizard-pager-link">
-                                                            <li class="previous"><a href="../#"><i class="mdi mdi-arrow-left me-1"></i> Product Img</a></li>
-                                                            <li class="float-end"><a href="../#">Save Changes <i class="mdi mdi-arrow-right ms-1"></i></a></li>
+                                                            <li class="next"><button class="btn btn-primary" type="submit" name="enregistrer">Enregistrer</button></li>
                                                         </ul>
-                                                        <!-- end ul -->
-                                                    </div>
+                                                    </form>
                                                     <!-- end tabpane -->
                                                 </div>
                                             </div>
