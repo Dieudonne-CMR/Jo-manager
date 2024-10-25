@@ -4,12 +4,12 @@ include_once ('../fonction/fontion.php');
 // var_dump($_POST);
 $reponse=1;
 
-if(!empty($_POST['nom_utilisateur'])):
+if(!empty($_POST['matricule'])):
   if(!empty($_POST['mot_de_passe'])):
-    $nom_user=test_input($_POST['nom_utilisateur']);
+    $mat_user=test_input($_POST['matricule']);
     $mot_de_passe=test_input($_POST['mot_de_passe']);
 
-    $auth= $DB->query("SELECT * FROM membre WHERE Matricule=:mat OR Nom=:mat LIMIT 1",['mat'=>$nom_user]);
+    $auth= $DB->query("SELECT * FROM membre WHERE Matricule=:mat OR Nom=:mat LIMIT 1",['mat'=>$mat_user]);
 
     // $auth= select_table_where('membre','Nom','password');
 
