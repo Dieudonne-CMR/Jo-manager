@@ -8,8 +8,8 @@ if(isset($_POST['nom']) AND !empty($_POST['nom'])):
     $telephone_gerant = test_input($_POST['telephone_gerant']);
     $mat_boutik= test_input($_POST['mat-boutik']);
     $role= test_input($_POST['role']); 
-    $mat_gerant = random_int(0,800); 
-    $password= 'JO-'.random_int(0,800);
+    $mat_gerant = 'JO-'.random_int(0,800); 
+    $password= 'Password-'.random_int(0,800);
     // var_dump($role);
 
     $gerant=select_table_where('membre','Telephone',$telephone_gerant );

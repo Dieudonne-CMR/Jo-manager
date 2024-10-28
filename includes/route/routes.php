@@ -5,7 +5,6 @@ if(isset($_GET['url'])):
     $url=explode('/',$_GET['url']);
 endif;
 
-
 //=========================================== Route supper admin
 if($gest_boutik==0):
 
@@ -81,8 +80,7 @@ endif;
 //======== Les actions
 //------deconnexion
 
-if(@$url[0]=='deconnexion' AND !empty($url[1])): 
-    $d=$url[1];
-    require "path_action/deconnexion.php";
+if(@$url[0]=='deconnexion'): 
+    require "processing/deconnexion.php";
 endif; 
 // fin de
