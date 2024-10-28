@@ -9,7 +9,7 @@
 
     <meta charset="utf-8" />
 
-    <?php $titre = 'ajouter un gerant';
+    <?php $titre = 'ajouter un produit';
     include_once('includes/meta.php') ?>
 
     <!-- twitter-bootstrap-wizard css -->
