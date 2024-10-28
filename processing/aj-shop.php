@@ -1,47 +1,35 @@
 <?php
-
-    $host = 'localhost';
-    $dbname = 'jo_manager';
-    $username = 'root';     // username par défaut
-    $password = '';         //password par défaut
+// var_dump($_POST);
 
   if(isset($_POST["soumettre"])):
-    if(!empty($_POST['nom_shop']) AND  !empty($_POST['localisation']) AND !empty($_POST['tel_shop']) AND !empty($_POST['email']) AND !empty($_POST["banniere"])):
+    if(!empty($_POST['nom_shop'])):
       
-      $nom_shop = htmlspecialchars($_POST['nom_shop']);
-      $localisation = htmlspecialchars($_POST['localisation']);
-      $tel_shop = htmlspecialchars($_POST['tel_shop']);
-      $email = htmlspecialchars($_POST['email']);
-      // $logo = htmlspecialchars($_POST['logo']);
-      $banniere = htmlspecialchars($_POST['banniere']);
+      $mat_shop='B'.random_int(0,800);
+      $nom_shop = test_input($_POST['nom_shop']);
+      $localisation = test_input($_POST['localisation']);
+      $tel_shop = test_input($_POST['tel_shop']);
+      $email = test_input($_POST['email']);
 
-
-
-      try {
-            //connexion à mysql
-
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname","$username","$password");
-      } catch (PDOException $exc) {
-        echo $exc->getMessage();
-        exit();
-       }
-
-       //requete d'insertion dans la TABLE shop
-       $sql = "INSERT INTO `shop`(`nom_shop`, `localisation`, `tel_shop`, `email`, 
-              , `banniere`) VALUES(:nom_shop, :localisation, :tel_shop, :email,
-               :banniere)";
-              $res = $pdo->prepare($sql);
-              $exec = $res->execute(array(":nom_shop"=>$nom_shop, ":localisation"=>$localisation,
-                                          ":tel_shop"=>$tel_shop, ":email"=>$email, 
-                                          ,":banniere"=>$banniere));
-
-        if($exec){
-          echo 'Ajout de la boutique réussi';
-        }else{
-          echo "Échec de l'opération d'insertion";
-        }
+      $nom_logo=traiter_image($dossier_logo, $_FILES['logo']);
+      $nom_banniere=traiter_image($dossier_logo, $_FILES['banniere']);
       
-
-
+      
+      $DB->query("INSERT INTO Shop (Mat_Shop,Nom_Shop,Localisation, Telephone,Email,Mat_admin,logo,Banniere) 
+      VALUES(:mat_shop, :nom_shop, :localisation, :telephone, :email, :mat_admin,:logo,:banniere)",
+        [
+          'mat_shop'=>$mat_shop,
+          "nom_shop"=>$nom_shop,
+          'localisation'=>$localisation,
+          'telephone'=>$tel_shop,
+          'email'=>$email,
+          'mat_admin'=>$mat_membre,
+          'logo'=> $nom_logo,
+          'banniere'=>$nom_banniere,
+        ]
+      );
+      
+      $_SESSION['ok']= 'ok';
+      var_dump($_SESSION['ok'], $nom_banniere );
+      header("location:add-shop");
     endif;
   endif;

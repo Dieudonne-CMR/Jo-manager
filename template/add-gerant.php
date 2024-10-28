@@ -10,12 +10,7 @@
     <meta charset="utf-8" />
    <meta>
 
-    <title>Form Wizard | Morvin - Admin & Dashboard Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesdesign" name="author" />
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+   <?php $titre='ajouter un gerant'; include_once('includes/meta.php') ?>
 
     <!-- twitter-bootstrap-wizard css -->
     <link rel="stylesheet" href="assets/libs/twitter-bootstrap-wizard/prettify.css">
@@ -58,17 +53,17 @@
                                 <div class="page-title">
                                     <h4>Ajout Gerant</h4>
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashbord</a></li>
+                                        <!-- <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li> -->
                                         <li class="breadcrumb-item active">Ajout Gerant</li>
                                     </ol>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <?php /*<div class="col-sm-6">
                                 <div class="float-end d-none d-sm-block">
                                     <a href="#" class="btn btn-success">Add Widget</a>
                                 </div>
-                            </div>
+                            </div> */?>
                         </div>
                     </div>
                 </div>
@@ -86,16 +81,15 @@
                                 <div class="card">
                                     <div class="card-body">
 
-                                        <h4 class="header-title">Textual inputs</h4>
-                                        <p class="card-title-desc">Here are examples of <code class="highlighter-rouge">.form-control</code> applied to each
-                                            textual HTML5 <code class="highlighter-rouge">&lt;input&gt;</code> <code class="highlighter-rouge">type</code>.</p>
+                                        <h4 class="header-title">L'ajout du gerant dant une boutique </h4>
+                                        <br>
 
-                                        <form action="gerant" method="post">
+                                        <form action="aj-gerant" method="post" id="aj-gerant">
 
                                             <div class="row mb-3">
                                                 <label for="example-text-input" class="col-sm-2 col-form-label">Nom</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" name="nom" type="text" placeholder="Entrez votre Nom" id="example-text-input">
+                                                    <input class="form-control" name="nom" type="text" placeholder="Entrez votre Nom" id="example-text-input" required>
                                                 </div>
                                             </div>
     
@@ -108,21 +102,42 @@
                                             <div class="row mb-3">
                                                 <label for="example-tel-input" class="col-sm-2 col-form-label">Telephone</label>
                                                 <div class="col-sm-10">
-                                                    <input class="form-control" name="telephone_gerant" type="tel" placeholder="1-(555)-555-5555" id="example-tel-input">
+                                                    <input class="form-control" name="telephone_gerant" type="tel" placeholder="+237 699 99 99 99" id="example-tel-input">
                                                 </div>
                                             </div>
-    
-                                            <div class="row mb-3">            
-                                                <label class="control-label">Catégorie</label>
-                                                <select class="form-control select2">
-                                                    <option>Sélectionner</option>
-                                                    <option value="EL">Super-Admin</option>
-                                                    <option value="FA">Admin</option>                                                                 
-                                                </select>
+
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class=" mb-3">
+                                                        <label class="col-sm-4 col-form-label">Boutique</label>
+                                                        <div class="col-sm-12">
+                                                            <select class="form-control select2 " name="mat-boutik" required>
+                                                            <option selected="" disabled="" value="">Choose...</option>
+                                                                <?php foreach(select_table('shop') as $value): ?>
+                                                                    <option value="<?= $value -> Mat_Shop ?>" ><?= $value -> Nom_Shop ?></option>
+                                                                <?php endforeach ?>                                                                
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class=" mb-3">
+                                                        <label class="col-sm-2 col-form-label">Role</label>
+                                                        <div class="col-sm-12">
+                                                            <select class="form-control select2" required name="role">
+                                                            <option selected="" disabled="" value="">--Sélectionner--</option>
+                                                                <?php foreach(select_table('role') as $value): ?>
+                                                                    <option value="<?= $value -> id ?>" <?= $value -> id=='2' ?  'selected':'' ?>><?= $value -> role ?></option>
+                                                                <?php endforeach ?>                                                                
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
 
+
                                             <div>
-                                                <button class="btn btn-primary" type="submit" name="soumettre">Soumettre</button>
+                                                <button class="btn btn-primary" type="submit" name="soumettre">Enregistrer</button>
                                             </div>
 
                                         </form>
@@ -169,6 +184,7 @@
     <script src="assets/js/pages/form-wizard.init.js"></script>
 
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/aj-gerant.js"></script>
 
 </body>
 

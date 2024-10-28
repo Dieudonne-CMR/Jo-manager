@@ -9,14 +9,6 @@ function test_input($data) {
 }
 
 
-function select_table($nom_table)
-{
-    global $DB;
-
-    $recup = $DB->query("SELECT * FROM $nom_table ");
-    return $recup;
-}
-
 //======= recuper les donner d'une table lorsque $nom_champ== $val
 function select_table_where($nom_table, $nom_champ, $val)
 {
@@ -38,7 +30,7 @@ function traiter_image($chemin, $FILES)
 
 
     $name_file = substr($name_file, 0, 5);
-    $name_file = date('y-m-d-s') . 'akila_blog' . random_int(0,945). '.' . $extension_file;
+    $name_file = date('y-m-d-s') . 'jo_retail' . random_int(0,945). '.' . $extension_file;
 
     if (isset($name_file)):
         if ($file_size < $size_max):
@@ -60,6 +52,27 @@ function traiter_image($chemin, $FILES)
 
     return $results;
 }
+
+//==== traitement d'image multiple
+function traite_image_multiple($dossier_image,$name_fille){
+    $uploadedImages = [];
+    if (!empty($_FILES[$name_fille]['name'][0])) {
+        foreach ($_FILES[$name_fille]['name'] as $key => $name) {
+            $tmpName = $_FILES[$name_fille]['tmp_name'][$key];
+            $newName = uniqid('img_', true) . '.' . pathinfo($name, PATHINFO_EXTENSION);
+            $filePath = $dossier_image . $newName;
+
+            if (move_uploaded_file($tmpName, $filePath)) {
+                $uploadedImages[] = $newName;
+            } else {
+                echo json_encode(["message" => "Erreur lors du téléchargement des images."]);
+                exit;
+            }
+        }
+    }
+    return $uploadedImages;
+}
+
 
 //======= supprimer les images dans un dossier
 function delect_file($pash, $name_file)

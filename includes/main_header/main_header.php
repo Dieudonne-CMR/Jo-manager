@@ -16,3 +16,9 @@ $mat_shop=$membre[0]->Mat_Shop;
 $telphone= $membre[0]->Telephone;
 $permission=$membre[0]->Permission;
 $mat_membre=$membre[0]->Matricule;
+$id_role=$membre[0]->Role;
+//======== permet de connetre le type de membre
+$role= select_table_where('role','id',$id_role);
+// var_dump($role);
+$gest_boutik = $role[0]->gestion_boutik; //   si $gest_boutik==1 c'est un gerant si  $gest_boutik==0 c'est admin 
+$role_membre = $role[0]->role;
