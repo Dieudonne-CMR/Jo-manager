@@ -252,8 +252,11 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="products">Produits</a></li>
                         <li><a href="achat">Achat</a></li>
-                        <li><a href="panier">Panier</a></li>
-                        <li><a href="add-product">Ajout Produits</a></li>
+                        <?php if($gest_boutik==1): // zone des gerant de boutique?>
+                            <li><a href="panier">Panier</a></li>
+                            <li><a href="add-product">Ajout Produits</a></li>
+                        <?php endif ?>
+
                     </ul>
                 </li>
                 <!-- permission admin -->

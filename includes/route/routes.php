@@ -9,7 +9,7 @@ endif;
 if($gest_boutik==0):
 
     //--- afficher la d'accueille du supper administrateur
-    if(@$url[0]=='Accueil_sup_ad' || @$url==''):
+    if(@$url[0]=='Accueil_sup_ad' || @$url=='' || 'home'):
         include('template/accueil_sup_ad.php');
     endif;
     //-------- ajoute d'un gerant

@@ -33,10 +33,6 @@
 
             <div class="container">
 
-                <div class="home-btn"><a href="https://themesdesign.in/" class="text-white router-link-active"><i
-                            class="fas fa-home h2"></i></a></div>
-
-
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
                         <div class="card">

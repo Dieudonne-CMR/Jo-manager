@@ -9,6 +9,7 @@ else:
         header('location:auth-login.php');
     endif;
     
+    // var_dump($membre);
     // session_destroy();
     
     $nom_membre=$membre[0]->Nom;
