@@ -41,6 +41,7 @@
 
         <!-- header  -->
         <?php include_once "includes/header.php" ?>
+        
 
 
         <!-- ============================================================== -->
@@ -58,7 +59,6 @@
                                 <div class="page-title">
                                     <h4>Produits</h4>
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
                                         <li class="breadcrumb-item active">Produits</li>
                                     </ol>
@@ -107,18 +107,57 @@
 
                                             <div class="collapse show" id="collapseExample3">
 
-
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-
                             <div class="col-lg-9">
-                                <div class="row">
-                                    <div class="col-xl-4 col-sm-6">
+                                <div class="row" >
+                                    <?php foreach(select_table_where("Produits","Mat_Shop",$mat_shop) as $value):    ?>
+                                        <div class="col-xl-4 col-sm-6">
+                                          <div class="card">
+                                            <div class="card-body">
+                                                <div class="product-img">
+                                                    <div class="product-ribbon  bg-primary">
+                                                        25% Off
+                                                    </div>
+                                                    <img src="<?php //je n'ai pas reussi à implementer en utilisant le chemin d'accès ?>" alt="" class="img-fluid mx-auto d-block">
+                                                </div>
+
+                                                <div class="text-center">
+
+                                                    <a href="#" class="text-dark">
+                                                        <h5 class="font-size-18"><?php echo $value -> nom_produit; ?></h5>
+                                                    </a>
+
+                                                    <h4 class="mt-3 mb-0"><?php echo $value -> prix_promo;   ?><span class="font-size-14 text-muted me-2"><del><?php echo $value -> prix;   ?></del></span></h4>
+
+                                                    <div class="mt-3">
+                                                        <ul class="list-inline">
+                                                            <li class="list-inline-item">
+                                                                <i class="mdi mdi-star text-warning"></i>
+                                                                <i class="mdi mdi-star text-warning"></i>
+                                                                <i class="mdi mdi-star text-warning"></i>
+                                                                <i class="mdi mdi-star text-warning"></i>
+                                                                <i class="mdi mdi-star-half text-warning"></i>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div class="product-action mt-2">
+                                                        <div class="d-grid">
+                                                            <a href="javascript:;" class="btn btn-primary"><i class="bx bxs-cart-add"></i>Add to Cart</a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    <?php endforeach;    ?>
+                                    <?php /* <div class="col-xl-4 col-sm-6">
                                         <div class="card">
                                             <div class="card-body">
                                                 <div class="product-img">
@@ -158,271 +197,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-sm-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="product-img">
-
-
-                                                    <img src="assets/images/product/img-8.png" alt="" class="img-fluid mx-auto d-block">
-                                                </div>
-
-                                                <div class="text-center">
-                                                    <a href="#" class="text-dark">
-                                                        <h5 class="font-size-18">Home & Office Chair Crime</h5>
-                                                    </a>
-
-                                                    <h4 class="mt-3 mb-0">$280</h4>
-
-                                                    <div class="mt-3">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item">
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-xl-4 col-sm-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="product-img">
-
-                                                    <div class="product-ribbon  bg-primary">
-                                                        25% Off
-                                                    </div>
-
-
-                                                    <img src="assets/images/product/img-9.png" alt="" class="img-fluid mx-auto d-block">
-                                                </div>
-
-                                                <div class="text-center">
-                                                    <a href="#" class="text-dark">
-                                                        <h5 class="font-size-18">Home & Office Chair White</h5>
-                                                    </a>
-
-                                                    <h4 class="mt-3 mb-0">$380 <span class="font-size-14 text-muted me-2"><del>$420</del></span></h4>
-
-                                                    <div class="mt-3">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item">
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star-half text-warning"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-xl-4 col-sm-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="product-img">
-
-                                                    <img src="assets/images/product/img-10.png" alt="" class="img-fluid mx-auto d-block">
-                                                </div>
-
-                                                <div class="text-center">
-                                                    <a href="#" class="text-dark">
-                                                        <h5 class="font-size-18">Home & Office Chair Coffee</h5>
-                                                    </a>
-
-                                                    <h4 class="mt-3 mb-0">$520</h4>
-
-                                                    <div class="mt-3">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item">
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-sm-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="product-img">
-
-                                                    <div class="product-ribbon  bg-primary">
-                                                        25% Off
-                                                    </div>
-
-                                                    <img src="assets/images/product/img-11.png" alt="" class="img-fluid mx-auto d-block">
-                                                </div>
-
-                                                <div class="text-center">
-                                                    <a href="#" class="text-dark">
-                                                        <h5 class="font-size-18">Home & Office Chair Blue</h5>
-                                                    </a>
-
-                                                    <h4 class="mt-3 mb-0">$280 <span class="font-size-14 text-muted me-2"><del>$320</del></span></h4>
-
-                                                    <div class="mt-3">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item">
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star-half text-warning"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-sm-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="product-img">
-
-
-                                                    <img src="assets/images/product/img-12.png" alt="" class="img-fluid mx-auto d-block">
-
-                                                </div>
-
-                                                <div class="text-center">
-                                                    <a href="#" class="text-dark">
-                                                        <h5 class="font-size-18">Home & Office Chair Black</h5>
-                                                    </a>
-
-                                                    <h4 class="mt-3 mb-0">$330 </h4>
-
-                                                    <div class="mt-3">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item">
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-xl-4 col-sm-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="product-img">
-
-                                                    <img src="assets/images/product/img-14.png" alt="" class="img-fluid mx-auto d-block">
-                                                </div>
-
-                                                <div class="text-center">
-                                                    <a href="#" class="text-dark">
-                                                        <h5 class="font-size-18">Home & Office Chair Coffee</h5>
-                                                    </a>
-
-                                                    <h4 class="mt-3 mb-0">$430</h4>
-
-                                                    <div class="mt-3">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item">
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="col-xl-4 col-sm-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="product-img">
-
-
-                                                    <img src="assets/images/product/img-13.png" alt="" class="img-fluid mx-auto d-block">
-
-                                                </div>
-
-                                                <div class="text-center">
-                                                    <a href="#" class="text-dark">
-                                                        <h5 class="font-size-18">Home & Office Chair Black</h5>
-                                                    </a>
-
-                                                    <h4 class="mt-3 mb-0">$130 </h4>
-
-                                                    <div class="mt-3">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item">
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-sm-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="product-img">
-
-                                                    <div class="product-ribbon  bg-primary">
-                                                        25% Off
-                                                    </div>
-
-                                                    <img src="assets/images/product/img-6.png" alt="" class="img-fluid mx-auto d-block">
-                                                </div>
-
-                                                <div class="text-center">
-                                                    <a href="#" class="text-dark">
-                                                        <h5 class="font-size-18">Home & Office Chair Dark</h5>
-                                                    </a>
-
-                                                    <h4 class="mt-3 mb-0">$220 <span class="font-size-14 text-muted me-2"><del>$320</del></span></h4>
-
-                                                    <div class="mt-3">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item">
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star text-warning"></i>
-                                                                <i class="mdi mdi-star-half text-warning"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </div>*/?> 
                                 </div>
 
                                 <div class="row">
