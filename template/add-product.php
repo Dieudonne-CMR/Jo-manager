@@ -115,10 +115,12 @@
                                                                     <label class="control-label">Catégorie</label>
                                                                     <select class="form-control select2" name="mat_Cat" required>
                                                                         <option selected="" disabled="" value="" >--Sélectionner--</option>
+
                                                                         <?php foreach(select_table('categorie') as $value): ?>
                                                                             <option value="<?= $value-> Mat_Cat ?>"> <?= $value-> Nom?> </option>
 
                                                                         <?php endforeach?>
+                                                                        
                                                                     </select>
                                                                 </div>
                                                             </div>

@@ -9,15 +9,15 @@ function test_input($data) {
 }
 
 
-//======= recuper les donner d'une table lorsque $nom_champ== $val
-function select_table_where($nom_table, $nom_champ, $val)
-{
-    global $DB;
+// //======= recuper les donner d'une table lorsque $nom_champ== $val
+// function select_table_where($nom_table, $nom_champ, $val)
+// {
+//     global $DB;
 
-    $recup = $DB->query("SELECT * FROM $nom_table WHERE $nom_champ = :var", array("var" => $val));
-    return $recup;
-}
-//======== Traitement des images et insertion dans un dossier 
+//     $recup = $DB->query("SELECT * FROM $nom_table WHERE $nom_champ = :var", array("var" => $val));
+//     return $recup;
+// }
+// //======== Traitement des images et insertion dans un dossier 
 
 function traiter_image($chemin, $FILES)
 {
