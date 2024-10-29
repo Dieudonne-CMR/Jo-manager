@@ -17,6 +17,8 @@ function select_table($nom_table)
     return $recup;
 }
 
+
+
 //======= recuper les donner d'une table lorsque $nom_champ== $val
 function select_table_where($nom_table, $nom_champ, $val)
 {
