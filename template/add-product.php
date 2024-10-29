@@ -182,8 +182,6 @@
                 </div>
                 <!-- End Page-content -->
 
-
-
                 <?php include_once('includes/footer.php') ?>
             </div>
             <!-- end main content-->

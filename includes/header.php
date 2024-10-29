@@ -237,12 +237,7 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="shops" class=" waves-effect">
-                        <i class="dripicons-calendar"></i>
-                        <span>Boutiques</span>
-                    </a>
-                </li>
+            
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -262,6 +257,12 @@
                 <!-- permission admin -->
                 <?php if($gest_boutik==0): ?>
                     <li>
+                        <a href="shops" class=" waves-effect">
+                            <i class="dripicons-calendar"></i>
+                            <span>Boutiques</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="add-shop" class=" waves-effect">
                             <i class="dripicons-wallet"></i>
                             <span>Créé Boutique</span>
@@ -272,6 +273,13 @@
                         <a href="add-gerant" class=" waves-effect">
                             <i class="fas fa-people-arrows"></i>
                             <span>Ajout Gerant</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="liste-gerant" class=" waves-effect">
+                            <i class="fas fa-atom"></i>
+                            <span>Liste des gerants</span>
                         </a>
                     </li>
                 <?php endif ?>

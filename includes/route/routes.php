@@ -1,4 +1,12 @@
 <?php 
+
+
+// $nom_shop= select_table_where('shop','Mat_Shop', $mat_shop);
+
+// var_dump($nom_shop[0]->Nom_Shop);
+// var_dump(select_table_where('shop','Mat_Shop', $mat_shop)[0]->Nom_Shop);
+
+
 $url="";
 
 if(isset($_GET['url'])):
@@ -9,17 +17,32 @@ endif;
 if($gest_boutik==0):
 
     //--- afficher la d'accueille du supper administrateur
-    if(@$url[0]=='Accueil_sup_ad' || @$url=='' || 'home'):
+    if(@$url[0]=='Accueil_sup_ad'):
         include('template/accueil_sup_ad.php');
     endif;
+     //--- afficher la d'accueille du supper administrateur
+     if(@$url==''):
+        include('template/accueil_sup_ad.php');
+    endif;
+     //--- afficher la d'accueille du supper administrateur
+    if(@$url[0]=='home'):
+        include('template/accueil_sup_ad.php');
+    endif;
+
     //-------- ajoute d'un gerant
     if(@$url[0]=='add-gerant'): 
         include_once 'template/add-gerant.php';
     endif;
-    //------- Ajout d'une boutique
+    //------- Ajout d'une boutique 
     if(@$url[0]=='add-shop'):
         include_once("template/add-shop.php");
     endif;
+    //------liste des gerants
+    if(@$url[0]=='liste-gerant'):
+        include_once("template/liste-gerant.php");
+    endif;
+
+
 
 elseif($gest_boutik==1): 
 

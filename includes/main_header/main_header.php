@@ -5,7 +5,7 @@ if(empty($_SESSION['auth']['Matricule']) || empty($_SESSION['auth']['password'])
 else:
 
     $membre = select_table_where('membre','Matricule',$_SESSION['auth']['Matricule']);
-    if(empty($membre)):
+    if(sizeof($membre) < 1):
         header('location:auth-login.php');
     endif;
     
