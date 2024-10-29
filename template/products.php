@@ -123,16 +123,16 @@
                                                     <div class="product-ribbon  bg-primary">
                                                         25% Off
                                                     </div>
-                                                    <img src="<?php //je n'ai pas reussi à implementer en utilisant le chemin d'accès ?>" alt="" class="img-fluid mx-auto d-block">
+                                                    <img src="<?php echo $image_produit.$value -> Img1 ?>" alt="" class="img-fluid mx-auto d-block">
                                                 </div>
 
                                                 <div class="text-center">
 
                                                     <a href="#" class="text-dark">
-                                                        <h5 class="font-size-18"><?php echo $value -> nom_produit; ?></h5>
+                                                        <h5 class="font-size-18"><?php echo $value -> Nom_Produit; ?></h5>
                                                     </a>
 
-                                                    <h4 class="mt-3 mb-0"><?php echo $value -> prix_promo;   ?><span class="font-size-14 text-muted me-2"><del><?php echo $value -> prix;   ?></del></span></h4>
+                                                    <h4 class="mt-3 mb-0"><?php echo $value -> Prix_Promo;   ?><span class="font-size-14 text-muted me-2"><del><?php echo $value -> Prix;   ?></del></span></h4>
 
                                                     <div class="mt-3">
                                                         <ul class="list-inline">
