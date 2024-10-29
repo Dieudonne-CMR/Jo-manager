@@ -103,14 +103,14 @@
                                                                 </div>
                                                             </div>
                                                             <!-- end col -->
-                                                            <div class="col-lg-4">
+                                                            <div class="col-lg-3">
                                                                 <div class="mb-3">
                                                                     <label class="form-label" for="price">Prix Promo</label>
                                                                     <input id="price" name="prix_promo" type="text" class="form-control" placeholder="Enter le Prix Promotionnel">
                                                                 </div>
                                                             </div>
                                                             <!-- end col -->
-                                                            <div class="col-md-4">
+                                                            <div class="col-md-3">
                                                                 <div class="mb-3">
                                                                     <label class="control-label">Catégorie</label>
                                                                     <select class="form-control select2" name="mat_Cat" required>
@@ -122,6 +122,14 @@
                                                                         <?php endforeach?>
                                                                         
                                                                     </select>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- end col -->
+                                                            <div class="col-lg-2">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="price">Quantité</label>
+                                                                    <input id="quantité" name="quantite" type="number" class="form-control" min="1" placeholder="Quantite" required>
                                                                 </div>
                                                             </div>
                                                         </div>
