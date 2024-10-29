@@ -7,7 +7,7 @@
 
                 <!-- LOGO -->
             <div class="navbar-brand-box">
-            <a href="index.html" class="logo logo-dark">
+            <a href="home" class="logo logo-dark">
                 <span class="logo-sm">
                     <img src="assets/images/logo-sm.png" alt="" height="22">
                 </span>
@@ -16,7 +16,7 @@
                 </span>
             </a>
 
-            <a href="index.html" class="logo logo-light">
+            <a href="home" class="logo logo-light">
                 <span class="logo-sm">
                     <img src="assets/images/logo-sm.png" alt="" height="22">
                 </span>
@@ -33,12 +33,12 @@
 
             <div class="topbar-social-icon me-3 d-none d-md-block">
                 <ul class="list-inline title-tooltip m-0">
+                    <?php /*
                     <li class="list-inline-item">
                         <a href="email-inbox.html" data-bs-toggle="tooltip" data-placement="top" title="Email">
                             <i class="mdi mdi-email-outline"></i>
                         </a>
                     </li>
-                
                     <li class="list-inline-item">
                         <a href="chat.html" data-bs-toggle="tooltip" data-placement="top" title="Chat">
                             <i class="mdi mdi-tooltip-outline"></i>
@@ -49,7 +49,8 @@
                         <a href="calendar.html" data-bs-toggle="tooltip" data-placement="top" title="Calendar">
                             <i class="mdi mdi-calendar"></i>
                         </a>
-                    </li>
+                    </li> 
+                */?>
 
                     <li class="list-inline-item">
                         <a href="pages-invoice.html" data-bs-toggle="tooltip" data-placement="top" title="Printer">
@@ -78,43 +79,6 @@
                 </button>
             </div>
 
-            <div class="dropdown d-none d-md-block ms-2">
-                <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="me-2" src="assets/images/flags/us.jpg" alt="Header Language" height="16"> English <span class="mdi mdi-chevron-down"></span>
-                </button>
-                <div class="dropdown-menu dropdown-menu-end">
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle"> German </span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle"> Italian </span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/french.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle"> French </span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle"> Spanish </span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle"> Russian </span>
-                    </a>
-                </div>
-            </div>
-
-
-    
-
-    
 
             <div class="dropdown d-none d-lg-inline-block ms-1">
                 <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
@@ -140,6 +104,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div data-simplebar style="max-height: 230px;">
                         <a href="#" class="text-reset notification-item">
                             <div class="media">
@@ -201,6 +166,7 @@
                             </div>
                         </a>
                     </div>
+
                     <div class="p-2 border-top">
                         <a class="btn btn-sm btn-link font-size-14 w-100 text-center" href="javascript:void(0)">
                             <i class="mdi mdi-arrow-right-circle me-1"></i> View More..
@@ -214,17 +180,16 @@
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-7.jpg"
                         alt="Header Avatar">
-                    <span class="d-none d-xl-inline-block ms-1">James</span>
+                    <span class="d-none d-xl-inline-block ms-1"><?= explode(' ',$nom_membre)[0] ?></span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
                     <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle-outline font-size-16 align-middle me-1"></i> Profile</a>
-                    <a class="dropdown-item" href="#"><i class="mdi mdi-wallet-outline font-size-16 align-middle me-1"></i> My Wallet</a>
+                    <?php /*<a class="dropdown-item" href="#"><i class="mdi mdi-wallet-outline font-size-16 align-middle me-1"></i> My Wallet</a> */?>
                     <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-end">11</span><i class="mdi mdi-cog-outline font-size-16 align-middle me-1"></i> Settings</a>
-                    <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline font-size-16 align-middle me-1"></i> Lock screen</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="#"><i class="mdi mdi-power font-size-16 align-middle me-1 text-danger"></i> Logout</a>
+                    <a class="dropdown-item text-danger" href="deconnexion"><i class="mdi mdi-power font-size-16 align-middle me-1 text-danger"></i> Déconnexion</a>
                 </div>
             </div>
 
@@ -251,8 +216,8 @@
                     <span class="avatar-online bg-success"></span>
                 </div>
                 <div class="user-info">
-                    <h5 class="mt-3 font-size-16 text-white">James Raphael</h5>
-                    <span class="font-size-13 text-white-50">Administrator</span>
+                    <h5 class="mt-3 font-size-16 text-white"><?= explode(' ',$nom_membre)[0] ?></h5>
+                    <span class="font-size-13 text-white-50"><?= $role_membre ?></span>
                 </div>
             </div>
         </div>
@@ -272,12 +237,7 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="shops" class=" waves-effect">
-                        <i class="dripicons-calendar"></i>
-                        <span>Boutiques</span>
-                    </a>
-                </li>
+            
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -287,24 +247,42 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="products">Produits</a></li>
                         <li><a href="achat">Achat</a></li>
-                        <li><a href="panier">Panier</a></li>
-                        <li><a href="add-product">Ajout Produits</a></li>
+                        <?php if($gest_boutik==1): // zone des gerant de boutique?>
+                            <li><a href="panier">Panier</a></li>
+                            <li><a href="add-product">Ajout Produits</a></li>
+                        <?php endif ?>
+
                     </ul>
                 </li>
+                <!-- permission admin -->
+                <?php if($gest_boutik==0): ?>
+                    <li>
+                        <a href="shops" class=" waves-effect">
+                            <i class="dripicons-calendar"></i>
+                            <span>Boutiques</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="add-shop" class=" waves-effect">
+                            <i class="dripicons-wallet"></i>
+                            <span>Créé Boutique</span>
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="add-shop" class=" waves-effect">
-                        <i class="dripicons-wallet"></i>
-                        <span>Créé Boutique</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="add-gerant" class=" waves-effect">
+                            <i class="fas fa-people-arrows"></i>
+                            <span>Ajout Gerant</span>
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="add-gerant" class=" waves-effect">
-                        <i class="fas fa-people-arrows"></i>
-                        <span>Ajout Gerant</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="liste-gerant" class=" waves-effect">
+                            <i class="fas fa-atom"></i>
+                            <span>Liste des gerants</span>
+                        </a>
+                    </li>
+                <?php endif ?>
 
             </ul>
         </div>

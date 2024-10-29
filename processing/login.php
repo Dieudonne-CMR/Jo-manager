@@ -9,10 +9,11 @@ if(!empty($_POST['matricule'])):
     $mat_user=test_input($_POST['matricule']);
     $mot_de_passe=test_input($_POST['mot_de_passe']);
 
-    $auth= $DB->query("SELECT * FROM membre WHERE Matricule=:mat OR Nom=:mat LIMIT 1",['mat'=>$mat_user]);
+    $auth= $DB->query("SELECT * FROM membre WHERE Matricule=:mat AND password=:pass  LIMIT 1",
+      ['mat'=>$mat_user,'pass'=> $mot_de_passe]);
 
     // $auth= select_table_where('membre','Nom','password');
-
+    // var_dump($auth);
            
     if(count($auth)>0):
         $_SESSION['auth']=[];
