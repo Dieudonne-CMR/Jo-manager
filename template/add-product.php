@@ -146,27 +146,26 @@
 
                                                             <div class="row">
                                                                 <div class="col-sm-4 mb-3">
-                                                                    <!-- voir image avant de soumettre -->
-                                                                    <img id="imgPreview1" class="mb-3" src="" alt="Aperçu de l'image" style="max-width: 100px; display: none;">
                                                                     <div class="fallback">
                                                                         <input type="file" name="images[]"  multiple class="form-control" id="imgUpload1" accept="image/*" />
                                                                     </div>
+                                                                    <!-- voir image avant de soumettre -->
+                                                                    <img id="imgPreview1" class="mt-3" src="" alt="Aperçu de l'image" style="max-width: 100px; display: none;">
                                                                 </div>
 
                                                                 <div class="col-sm-4 mb-3">
-                                                                    <img id="imgPreview2" class="mb-3" src="" alt="Aperçu de l'image" style="max-width: 100px; display: none;">
                                                                     <div class="fallback">
                                                                         <input type="file" name="images[]" class="form-control" id="imgUpload2" accept="image/*" />
                                                                     </div>
+                                                                    <img id="imgPreview2" class="mt-3" src="" alt="Aperçu de l'image" style="max-width: 100px; display: none;">
                                                                 </div>
                                                                 <div class="col-sm-4 mb-3">
-                                                                    <img id="imgPreview3" src="" class="mb-3" alt="Aperçu de l'image"  style="max-width: 100px; display: none;">
                                                                     <div class="fallback">
                                                                         <input type="file" name="images[]" class="form-control" id="imgUpload3" accept="image/*" />
                                                                     </div>
+                                                                    <img id="imgPreview3" src="" class="mt-3" alt="Aperçu de l'image"  style="max-width: 100px; display: none;">
                                                                 </div>
                                                             </div>
-
                                                         </div>
                                                         <ul class="pager wizard twitter-bs-wizard-pager-link">
                                                             <li class="next"><button class="btn btn-primary" type="submit" name="enregistrer">Enregistrer</button></li>

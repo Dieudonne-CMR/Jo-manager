@@ -65,8 +65,8 @@ function traite_image_multiple($dossier_image,$name_fille){
             if (move_uploaded_file($tmpName, $filePath)) {
                 $uploadedImages[] = $newName;
             } else {
-                echo json_encode(["message" => "Erreur lors du téléchargement des images."]);
-                exit;
+                // echo json_encode(["message" => "Erreur lors du téléchargement des images."]);
+                // exit;
             }
         }
     }

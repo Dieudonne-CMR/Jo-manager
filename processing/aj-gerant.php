@@ -9,7 +9,7 @@ if(isset($_POST['nom']) AND !empty($_POST['nom'])):
     $mat_boutik= test_input($_POST['mat-boutik']);
     $role= test_input($_POST['role']); 
     $mat_gerant = 'JO-'.random_int(0,800); 
-    $password= 'Password-'.random_int(0,800);
+    $password= 'Pw-'.random_int(0,10000);
     // var_dump($role);
 
     $gerant=select_table_where('membre','Telephone',$telephone_gerant );

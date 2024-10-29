@@ -17,7 +17,7 @@ $(document).ready(function() {
                     title: 'Succès',
                     text: "L'ajout du gerant vient d'etre effectué !",
                 }).then(() => {
-                    window.location.href = 'add-gerant';
+                    window.location.href = 'liste-gerant';
                 });
             } 
 
