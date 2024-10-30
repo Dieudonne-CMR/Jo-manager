@@ -1,9 +1,3 @@
-<?php
-    include("../fonction/fontion.php");
-
-?>
-
-
 
 <!doctype html>
 <html lang="en">
