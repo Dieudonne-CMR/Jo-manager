@@ -3,7 +3,7 @@
 
     
 <!-- Mirrored from themesdesign.in/morvin/layouts/tables-editable.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2024 05:03:52 GMT -->
-<head>
+    <head>
         
         
         <?php $titre = 'Liste des gerants';
@@ -52,7 +52,7 @@
                                  <div class="page-title">
                                      <h4>Editable Table</h4>
                                          <ol class="breadcrumb m-0">
-                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
+                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Jo-manager</a></li>
                                              <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
                                              <li class="breadcrumb-item active">Editable Table</li>
                                          </ol>
@@ -60,7 +60,7 @@
                              </div>
                              <div class="col-sm-6">
                                 <div class="float-end d-none d-sm-block">
-                                    <a href="#" class="btn btn-success">Add Widget</a>
+                                    <a href="#" class="btn btn-success">Ajouter gérant</a>
                                 </div>
                              </div>
                          </div>
@@ -78,76 +78,35 @@
                                     <div class="card">
                                         <div class="card-body">
             
-                                            <h4 class="header-title">Datatable Editable</h4>
-                                            <p class="card-title-desc">Table Edits is a lightweight jQuery plugin for making table rows editable.</p>
+                                            <h4 class="header-title">Liste des gérants</h4>
+                                            <p class="card-title-desc">Ici vous avez la possibilité de consulter la liste de tous les gérants des boutiques de la plateforme.</p>
             
                                             <div class="table-responsive">
                                                 <table class="table table-editable table-nowrap align-middle table-edits">
                                                     <thead>
                                                         <tr>
                                                             <th>ID</th>
-                                                            <th>Name</th>
-                                                            <th>Age</th>
-                                                            <th>Gender</th>
-                                                            <th>Edit</th>
+                                                            <th>Nom</th>
+                                                            <th>Localisation</th>
+                                                            <th>Téléphone</th>
+                                                            <th>Boutique</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr data-id="1">
-                                                            <td data-field="id" style="width: 80px">1</td>
-                                                            <td data-field="name">David McHenry</td>
-                                                            <td data-field="age">24</td>
-                                                            <td data-field="gender">Male</td>
-                                                            <td style="width: 100px">
-                                                                <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
-                                                                    <i class="fas fa-pencil-alt"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr data-id="2">
-                                                            <td data-field="id">2</td>
-                                                            <td data-field="name">Frank Kirk</td>
-                                                            <td data-field="age">22</td>
-                                                            <td data-field="gender">Male</td>
-                                                            <td>
-                                                                <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
-                                                                    <i class="fas fa-pencil-alt"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr data-id="3">
-                                                            <td data-field="id">3</td>
-                                                            <td data-field="name">Rafael Morales</td>
-                                                            <td data-field="age">26</td>
-                                                            <td data-field="gender">Male</td>
-                                                            <td>
-                                                                <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
-                                                                    <i class="fas fa-pencil-alt"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr data-id="4">
-                                                            <td data-field="id">4</td>
-                                                            <td data-field="name">Mark Ellison</td>
-                                                            <td data-field="age">32</td>
-                                                            <td data-field="gender">Male</td>
-                                                            <td>
-                                                                <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
-                                                                    <i class="fas fa-pencil-alt"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr data-id="5">
-                                                            <td data-field="id">5</td>
-                                                            <td data-field="name">Minnie Walter</td>
-                                                            <td data-field="age">27</td>
-                                                            <td data-field="gender">Female</td>
-                                                            <td>
-                                                                <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
-                                                                    <i class="fas fa-pencil-alt"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
+                                                        <?php $i=0; foreach(select_table_where('membre','Role', 2) as $value):$i++;?>
+                                                            <tr data-id= <?php echo $i ; ?>>
+                                                                <td data-field="id" style="width: 80px"><?php echo $i; ?></td>
+                                                                <td data-field="Nom"><?php echo $value -> Nom ; ?></td>
+                                                                <td data-field="Localisation"><?php echo $value -> Localisation ; ?></td>
+                                                                <td data-field="Telephone"><?php echo $value -> Telephone ; ?></td>
+                                                                <td data-field="Boutique"><?php echo select_table_where('shop','Mat_Shop', $value -> Mat_Shop)[0]->Nom_Shop; ?></td>
+                                                                <td style="width: 100px">
+                                                                    <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
+                                                                        <i class="fas fa-pencil-alt"></i>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        <?php endforeach; ?>
                                                     </tbody>
                                                 </table>
                                             </div>

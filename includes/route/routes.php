@@ -42,6 +42,8 @@ if($gest_boutik==0):
         include_once("template/liste-gerant.php");
     endif;
 
+    
+
 
 
 elseif($gest_boutik==1): 
@@ -83,6 +85,17 @@ if(@$url[0]=='add-product'):
     include_once('template/add-product.php');
 endif;
 
+ //------cette route nous permet faire la modification d'une boutique
+ if(@$url[0]=='parameter-shop'):
+    $recup = select_table_where('shop','Mat_Shop',$mat_shop);
+    // var_dump($recup);
+    if(sizeof($recup)<1):
+        header("location:home");
+    endif;
+    $recup = $recup[0];
+    include_once("template/parameter-shop.php");
+endif;
+
 
 
 //=== les routes en POST : routes d'insertions
@@ -97,6 +110,10 @@ endif;
 
 if(@$url[0]=='aj-product'):
     include_once 'processing/aj-product.php'; 
+endif;
+
+if(@$url[0]=='mod-shop'):
+    include_once 'processing/mod-shop.php'; 
 endif;
 
 

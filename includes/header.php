@@ -251,9 +251,19 @@
                             <li><a href="panier">Panier</a></li>
                             <li><a href="add-product">Ajout Produits</a></li>
                         <?php endif ?>
-
+                        
                     </ul>
                 </li>
+
+                <?php if($gest_boutik==1): // zone des gerant de boutique?>
+                    <li>
+                        
+                        <a href="parameter-shop" class=" waves-effect">
+                            <i class="fas fa-cog"></i>
+                            <span>Parametre boutique</span>
+                        </a>
+                    </li>
+                <?php endif ?>
                 <!-- permission admin -->
                 <?php if($gest_boutik==0): ?>
                     <li>
@@ -282,6 +292,9 @@
                             <span>Liste des gerants</span>
                         </a>
                     </li>
+
+                    
+
                 <?php endif ?>
 
             </ul>
