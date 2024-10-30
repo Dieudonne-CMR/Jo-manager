@@ -45,6 +45,27 @@ function traiter_image($chemin, $FILES)
     return $results;
 }
 
+//==== traitement d'image multiple
+function traite_image_multiple($dossier_image,$name_fille){
+    $uploadedImages = [];
+    if (!empty($_FILES[$name_fille]['name'][0])) {
+        foreach ($_FILES[$name_fille]['name'] as $key => $name) {
+            $tmpName = $_FILES[$name_fille]['tmp_name'][$key];
+            $newName = uniqid('img_', true) . '.' . pathinfo($name, PATHINFO_EXTENSION);
+            $filePath = $dossier_image . $newName;
+
+            if (move_uploaded_file($tmpName, $filePath)) {
+                $uploadedImages[] = $newName;
+            } else {
+                // echo json_encode(["message" => "Erreur lors du téléchargement des images."]);
+                // exit;
+            }
+        }
+    }
+    return $uploadedImages;
+}
+
+
 //======= supprimer les images dans un dossier
 function delect_file($pash, $name_file)
 {
