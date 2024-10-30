@@ -110,7 +110,7 @@
 
                                                     <div class="product-action mt-2">
                                                         <div class="d-grid">
-                                                            <a href="javascript:;" class="btn btn-primary"><i class="bx bxs-cart-add"></i>Add to Cart</a>
+                                                            <a href="javascript:;" class="btn btn-primary"><i class="bx bxs-cart-add"></i>Ajouter au panier</a>
                                                         </div>
                                                     </div>
 
