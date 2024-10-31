@@ -139,6 +139,7 @@
                                                             <div class="valid-feedback">
                                                                 ça a l'air bien!
                                                             </div>
+                                                            <input type="hidden" name="mat_shop" value="<?php echo $recup->Mat_Shop?>">
                                                             
                                                             <!-- voir image avant de soumettre -->
                                                             <img id="bannerPreview" src="" alt="Aperçu de l'image" style="max-width: 100px; display: none;">
@@ -197,10 +198,16 @@
                 Swal.fire({
                     icon: 'success',
                     title: 'Succès',
-                    text: 'Connexion réussie !',
+                    text: 'Modification réussie !',
                 }).then(() => {
-                    window.location.href = 'shops   ';
+                    window.location.href = 'modifi-shop';
                 });
+            <?php elseif($ok == 'non'): ?>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'error',
+                    text: 'echec de modification !',
+                })
             <?php endif ?>
         </script>
     </body>
