@@ -6,19 +6,10 @@
 <head>
         
         
-        <meta charset="utf-8" />
-
-       <meta>
-
-        <title>Shops | Morvin - Admin & Dashboard Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesdesign" name="author" />
+        <?php $titre = 'Liste des boutiques';
+        include_once('includes/meta.php') ?>
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
-
-            <!-- plugin css -->
-    <link href="assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
 
         <!-- Bootstrap Css -->
         <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -27,6 +18,14 @@
         <!-- App Css-->
         <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
+
+          <!-- DataTables -->
+          <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+          <link href="assets/libs/datatables.net-autoFill-bs4/css/autoFill.bootstrap4.min.html" rel="stylesheet" type="text/css" />
+          <link href="assets/libs/datatables.net-keytable-bs4/css/keyTable.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+  
+          <!-- Responsive datatable examples -->
+          <link href="assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />   
 
     </head>
 
@@ -61,7 +60,7 @@
                              </div>
                              <div class="col-sm-6">
                                 <div class="float-end d-none d-sm-block">
-                                    <a href="#" class="btn btn-success">Add Widget</a>
+                                    <a href="#" class="btn btn-success">Ajouter une boutique</a>
                                 </div>
                              </div>
                          </div>
@@ -78,7 +77,7 @@
 
 
                             <div class="row">
-                                <div class="col-xl-8">
+                                <div class="col-xl-12">
                                     <div class="card m-b-30">
                                         <div class="card-body">
                                             <h4 class="mt-0 header-title mb-4">Boutiques</h4>
@@ -86,128 +85,34 @@
                                                 <table class="table table-centered table-nowrap table-hover mb-0">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col">Marque</th>
-                                                            <th scope="col">Nom</th>
-                                                            <th scope="">Email</th>
-                                                            <th scope="col">Date</th>
-                                                            <th scope="col">Produit</th>
-                                                            <th scope="col">Balance Actuelle</th>
-                                                            
-        
+                                                            <th scope="col">Logo</th>
+                                                            <th scope="col">Nom de la boutique</th>
+                                                            <th scope="col">Localisation</th>
+                                                            <th scope="col">Email</th>
+                                                            <th scope="col">Telephone</th>
+                                                            <th scope="col" style="text-align: center">Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <img src="assets/images/companies/img-1.png" alt="" class="avatar-sm">
-                                                            </td>
-                                                            <td>
-                                                               <h5 class="font-size-16"> Nedick's</h5>
-                                                               <p class="text-muted mb-0">
-                                                                <i class="mdi mdi-account me-1"></i> Wayne McClain
-                                                            </p>
-                                                            </td>
-                                                            <td>WayneMcclain@gmail.com</td>
-                                                            <td>07/10/2020</td>
-                                                            <td>86</td>
-                                                            <td>
-                                                                $12,456
-                                                            </td>
-                                                            
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>
-                                                                <img src="assets/images/companies/img-2.png" alt="" class="avatar-sm">
-                                                            </td>
-                                                            <td>
-                                                               <h5 class="font-size-16"> Brendle's</h5>
-                                                               <p class="text-muted mb-0">
-                                                                <i class="mdi mdi-account me-1"></i>  David Marshall
-                                                            </p>
-                                                            </td>
-                                                            <td> Davidmarshall@gmail.com</td>
-                                                            <td>12/10/2020</td>
-                                                            <td>72</td>
-                                                            <td>
-                                                                $10,352
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>
-                                                                <img src="assets/images/companies/img-3.png" alt="" class="avatar-sm">
-                                                            </td>
-                                                            <td>
-                                                               <h5 class="font-size-16"> Tech Hifi</h5>
-                                                               <p class="text-muted mb-0">
-                                                                <i class="mdi mdi-account me-1"></i>  Katia Stapleton
-                                                            </p>
-                                                            </td>
-                                                            <td> Katiastapleton@gmail.com</td>
-                                                            <td>14/10/2020</td>
-                                                            <td>75</td>
-                                                            <td>
-                                                                $9,963
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>
-                                                                <img src="assets/images/companies/img-5.png" alt="" class="avatar-sm">
-                                                            </td>
-                                                            <td>
-                                                               <h5 class="font-size-16"> Packer</h5>
-                                                               <p class="text-muted mb-0">
-                                                                <i class="mdi mdi-account me-1"></i>  Mae Rankin
-                                                            </p>
-                                                            </td>
-                                                            <td>  Maerankingmail.com</td>
-                                                            <td>15/10/2020</td>
-                                                            <td>72</td>
-                                                            <td>
-                                                                $10,352
-                                                            </td>
-                                                        </tr>
-
-
-                                                        <tr>
-                                                            <td>
-                                                                <img src="assets/images/companies/img-4.png" alt="" class="avatar-sm">
-                                                            </td>
-                                                            <td>
-                                                               <h5 class="font-size-16"> Lafayette</h5>
-                                                               <p class="text-muted mb-0">
-                                                                <i class="mdi mdi-account me-1"></i>  Andrew Bivens
-                                                            </p>
-                                                            </td>
-                                                            <td>Andrewbivens@gmail.com</td>
-                                                            <td>20/11/2020</td>
-                                                            <td>65</td>
-                                                            <td>
-                                                                $14,568
-                                                            </td>
-                                                            
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>
-                                                                <img src="assets/images/companies/img-8.png" alt="" class="avatar-sm">
-                                                            </td>
-                                                            <td>
-                                                               <h5 class="font-size-16"> Tech Hifi</h5>
-                                                               <p class="text-muted mb-0">
-                                                                <i class="mdi mdi-account me-1"></i> John McLeroy
-                                                            </p>
-                                                            </td>
-                                                            <td> JohnmcLeroy@gmail.com</td>
-                                                            <td>30/31/2020</td>
-                                                            <td>58</td>
-                                                            <td>
-                                                                $14,654
-                                                            </td>
-                                                        </tr>
-                                                        
+                                                        <?php foreach(select_table('shop') as $value):?>
+                                                            <tr>
+                                                                <td>
+                                                                    <img src="<?php echo $dossier_logo.$value -> logo ; ?>" alt="" class="avatar-sm">
+                                                                </td>
+                                                                <td>
+                                                                <h5 class="font-size-16"> <?php echo $value -> Nom_Shop ; ?> </h5>
+                                                                <p class="text-muted mb-0">
+                                                                    <i class="mdi mdi-account me-1"></i> <?php echo select_table_where('membre','Mat_Shop', $value -> Mat_Shop)[0]->Nom; ?>
+                                                                </p>
+                                                                </td>
+                                                                <td><?php echo $value -> Localisation ; ?></td>
+                                                                <td><?php echo $value -> Email ; ?></td>
+                                                                <td><?php echo $value -> Telephone ; ?></td>
+                                                                <td style="text-align: center; vertical-align: middle;">
+                                                                    <button class="btn btn-primary">Voir</button>
+                                                                </td>
+                                                            </tr>
+                                                        <?php endforeach; ?>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -215,48 +120,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-xl-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h4 class="header-title">Location</h4>
-
-                                            <div id="world-map-markers" style="height: 340px"></div>
-
-                                        <div class="px-4 py-3 mt-1">
-                                            <p class="mb-1">USA <span class="float-end">75%</span></p>
-                                            <div class="progress mt-2" style="height: 6px;">
-                                                <div class="progress-bar progress-bar-striped bg-primary"
-                                                    role="progressbar" style="width: 75%" aria-valuenow="75"
-                                                    aria-valuemin="0" aria-valuemax="75">
-                                                </div>
-                                            </div>
-
-                                            <p class="mt-3 mb-1">Russia <span class="float-end">55%</span></p>
-                                            <div class="progress mt-2" style="height: 6px;">
-                                                <div class="progress-bar progress-bar-striped bg-primary"
-                                                    role="progressbar" style="width: 55%" aria-valuenow="55"
-                                                    aria-valuemin="0" aria-valuemax="55">
-                                                </div>
-                                            </div>
-
-                                            <p class="mt-3 mb-1">Australia <span class="float-end">85%</span></p>
-                                            <div class="progress mt-2" style="height: 6px;">
-                                                <div class="progress-bar progress-bar-striped bg-primary"
-                                                    role="progressbar" style="width: 85%" aria-valuenow="85"
-                                                    aria-valuemin="0" aria-valuemax="85">
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                                        
-                             
         
                             </div>
                             <!-- END ROW -->

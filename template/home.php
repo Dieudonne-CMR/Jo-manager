@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -360,7 +361,7 @@
                                                     <div class="col-xl-4 col-sm-6">
                                                         <div class="card">
                                                             <div class="card-body">
-                                                                <div class="product-img">
+                                                                <div class="product-img">             
 
                                                                     <div class="product-ribbon  bg-primary">
                                                                         25% Off

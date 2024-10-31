@@ -9,15 +9,7 @@ function test_input($data) {
 }
 
 
-// //======= recuper les donner d'une table lorsque $nom_champ== $val
-// function select_table_where($nom_table, $nom_champ, $val)
-// {
-//     global $DB;
-
-//     $recup = $DB->query("SELECT * FROM $nom_table WHERE $nom_champ = :var", array("var" => $val));
-//     return $recup;
-// }
-// //======== Traitement des images et insertion dans un dossier 
+//======== Traitement des images et insertion dans un dossier 
 
 function traiter_image($chemin, $FILES)
 {
@@ -30,7 +22,7 @@ function traiter_image($chemin, $FILES)
 
 
     $name_file = substr($name_file, 0, 5);
-    $name_file = date('y-m-d-s') . 'jo_retail' . random_int(0,945). '.' . $extension_file;
+    $name_file = date('y-m-d-s') . 'akila_blog' . random_int(0,945). '.' . $extension_file;
 
     if (isset($name_file)):
         if ($file_size < $size_max):
