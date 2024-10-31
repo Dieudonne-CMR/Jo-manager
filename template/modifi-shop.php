@@ -85,7 +85,7 @@
                                                         <div class="mb-3">
                                                             <label for="validationCustom02" class="form-label">Localisation</label>
                                                             <input type="text" name="localisation" class="form-control" 
-                                                                placeholder="Entrez la Localisation">
+                                                                placeholder="Entrez la Localisation" value="<?php echo $recup->Localisation ; ?>">
                                                             <div class="valid-feedback">
                                                                 Looks good!
                                                             </div>
@@ -97,14 +97,14 @@
                                                         <div class="mb-3">
                                                             <label for="validationCustom03" class="form-label">Téléphone</label>
                                                             <input type="phone" name="tel_shop" class="form-control" 
-                                                                placeholder="Entrez le numéro de téléphone"> 
+                                                                placeholder="Entrez le numéro de téléphone" value="<?php echo $recup->Telephone ; ?>"> 
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label for="validationCustom04" class="form-label">Email</label>
                                                             <input type="email" name="email" class="form-control" 
-                                                                placeholder="Entrez l'email">
+                                                                placeholder="Entrez l'email" value="<?php echo $recup->Email ; ?>">
                                                             <div class="invalid-feedback">
                                                                 Veuillez fournir un email valide
                                                             </div>
@@ -114,11 +114,12 @@
                                                 <div class="row">
 
                                                     <div class="col-md-6">
+                                                        <img  src="<?php echo $dossier_logo.$recup->logo ; ?>" alt="Aperçu de l'image" style="max-width: 100px;">
                                                         <div class="mb-3">
                                                             <label for="validationCustom01" class="form-label">Logo</label>
 
                                                             <input type="file" name="logo" id="logoUpload" class="form-control" 
-                                                            placeholder="" accept="image/*">
+                                                            placeholder="" accept="image/*" >
                                                             <div class="valid-feedback">
                                                                 ça a l'air bien!
                                                             </div>
@@ -129,14 +130,16 @@
                                                     </div>
                                                     
                                                     <div class="col-md-6">
+                                                        <img  src="<?php echo $dossier_logo.$recup->Banniere ; ?>" alt="Aperçu de l'image" style="max-width: 100px;">
                                                         <div class="mb-3">
                                                             <label for="validationCustom05" class="form-label">Bannière</label>
 
                                                             <input type="file" name="banniere" id="bannerUpload" class="form-control" 
-                                                            placeholder="" accept="image/*">
+                                                            placeholder="" accept="image/*" >
                                                             <div class="valid-feedback">
                                                                 ça a l'air bien!
                                                             </div>
+                                                            <input type="hidden" name="mat_shop" value="<?php echo $recup->Mat_Shop?>">
                                                             
                                                             <!-- voir image avant de soumettre -->
                                                             <img id="bannerPreview" src="" alt="Aperçu de l'image" style="max-width: 100px; display: none;">
@@ -195,10 +198,16 @@
                 Swal.fire({
                     icon: 'success',
                     title: 'Succès',
-                    text: 'Connexion réussie !',
+                    text: 'Modification réussie !',
                 }).then(() => {
-                    window.location.href = 'shops   ';
+                    window.location.href = 'modifi-shop';
                 });
+            <?php elseif($ok == 'non'): ?>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'error',
+                    text: 'echec de modification !',
+                })
             <?php endif ?>
         </script>
     </body>

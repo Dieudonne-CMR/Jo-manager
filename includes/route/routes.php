@@ -86,14 +86,14 @@ if(@$url[0]=='add-product'):
 endif;
 
  //------cette route nous permet faire la modification d'une boutique
- if(@$url[0]=='parameter-shop'):
+ if(@$url[0]=='modifi-shop'):
     $recup = select_table_where('shop','Mat_Shop',$mat_shop);
     // var_dump($recup);
     if(sizeof($recup)<1):
         header("location:home");
     endif;
     $recup = $recup[0];
-    include_once("template/parameter-shop.php");
+    include_once("template/modifi-shop.php");
 endif;
 
 
