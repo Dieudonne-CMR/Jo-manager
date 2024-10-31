@@ -33,10 +33,6 @@
 
             <div class="container">
 
-                <div class="home-btn"><a href="https://themesdesign.in/" class="text-white router-link-active"><i
-                            class="fas fa-home h2"></i></a></div>
-
-
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
                         <div class="card">
@@ -57,9 +53,9 @@
                                     <form class="form-horizontal mt-4 pt-2" action="+6login" id="login" method="post">
 
                                         <div class="mb-3">
-                                            <label for="username">Nom d'utilisateur</label>
-                                            <input type="text" name="nom_utilisateur" class="form-control" id="username"
-                                                placeholder="Entrez votre nom d'utilisateur">
+                                            <label for="username">Matricule / votre nom</label>
+                                            <input type="text" name="matricule" class="form-control" id="username"
+                                                placeholder="Entrez votre email">
                                         </div>
 
                                         <div class="mb-3">

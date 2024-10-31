@@ -9,7 +9,7 @@ include('class.db.php');
         ID_Membre INT AUTO_INCREMENT PRIMARY KEY,
         Nom VARCHAR(255) NOT NULL,
         Localisation VARCHAR(255),
-        Téléphone VARCHAR(15) UNIQUE NOT NULL,
+        Telephone VARCHAR(15) UNIQUE NOT NULL,
         Matricule VARCHAR(100) NOT NULL,
         Mat_Shop INT,
         Rôle VARCHAR(50) NOT NULL,
@@ -53,7 +53,7 @@ include('class.db.php');
 
     // Table Categorie
     "CREATE TABLE IF NOT EXISTS Categorie (
-        ID_Catégorie INT AUTO_INCREMENT PRIMARY KEY,
+        ID_Categorie INT AUTO_INCREMENT PRIMARY KEY,
         Nom VARCHAR(255) NOT NULL,
         Description TEXT,
         Mat_Shop INT,

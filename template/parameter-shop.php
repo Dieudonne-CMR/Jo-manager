@@ -25,6 +25,7 @@
            <!-- header  -->
            <?php include_once "includes/header.php"; 
                 $ok = isset($_SESSION['ok']) ?  $_SESSION['ok']: '' ; unset($_SESSION['ok']);
+
                 
             ?>
 
@@ -68,13 +69,13 @@
                                             <h4 class="header-title">La zonne  de création de la boutique</h4>
                                             <p class="card-title-desc">For custom Bootstrap form validation messages, you’ll need to add the <code>novalidate</code> boolean attribute to your <code>&lt;form&gt;</code>.</p> */?>
                                             
-                                            <form method='post' id="uploadForm" action='aj-shop' class="needs-validation" enctype="multipart/form-data" novalidate >
+                                            <form method='post' id="uploadForm" action='mod-shop' class="needs-validation" enctype="multipart/form-data" novalidate >
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label for="validationCustom01" class="form-label">Nom de la Boutique</label>
                                                             <input type="text" name="nom_shop" class="form-control" id="validationCustom01"
-                                                                placeholder="Entrez le nom de votre Boutique" required>
+                                                                placeholder="Entrez le nom de votre Boutique" required value="<?php echo $recup->Nom_Shop ; ?>">
                                                             <div class="valid-feedback">
                                                                 Looks good!
                                                             </div>

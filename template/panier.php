@@ -51,7 +51,6 @@
                                  <div class="page-title">
                                      <h4>Panier</h4>
                                          <ol class="breadcrumb m-0">
-                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
                                              <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
                                              <li class="breadcrumb-item active">Panier</li>
                                          </ol>
