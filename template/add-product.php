@@ -11,6 +11,7 @@
 
     <?php $titre = 'ajouter un produit';
     include_once('includes/meta.php') ?>
+    <!-- <base href="../"> -->
 
     <!-- twitter-bootstrap-wizard css -->
     <link rel="stylesheet" href="assets/libs/twitter-bootstrap-wizard/prettify.css">
@@ -90,6 +91,17 @@
                                                     <p class="card-title-desc">Remplissez toutes les informations ci-dessous</p>
 
                                                     <form action="aj-product" id="aj-produit" method="post" enctype="multipart/form-data">
+                                                    <?php
+                                                        
+                                                        if (isset($_GET['Mat_Produit'])) {
+                                                            $mat_produit = $_GET['Mat_Produit'];
+
+                                                            // $produit = $DB->query("SELECT * FROM produits WHERE Mat_Produit = ?", [$mat_produit]);
+                                                            $produit = select_table_where('produits','Mat_Produit',$Mat_Produit);
+                                                            var_dump($produit);
+                                                            
+                                                        }
+                                                    ?>
                                                         <div class="mb-3">
                                                             <label class="form-label" for="productname">Nom du Produit</label>
                                                             <input id="productname" name="nom_produit" type="text" class="form-control" placeholder="Entrez le nom de votre produit" required>

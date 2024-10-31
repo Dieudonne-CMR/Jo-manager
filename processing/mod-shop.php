@@ -13,7 +13,7 @@ if(isset($_POST["soumettre"])):
       if(sizeof($R)>0)
       {
         // $nom_logo=traiter_image($dossier_logo, $_FILES['logo']);
-      // $nom_banniere=traiter_image($dossier_logo, $_FILES['banniere']);
+        // $nom_banniere=traiter_image($dossier_logo, $_FILES['banniere']);
       
         $DB->query("UPDATE shop SET Nom_Shop = :nom_shop, Localisation = :localisation, Telephone = :telephone, Email = :email  WHERE Mat_Shop = :mat_shop",
         [
@@ -22,15 +22,11 @@ if(isset($_POST["soumettre"])):
             'telephone' => $tel_shop,
             'email' => $email,
             'mat_shop' => $mat_shop,
-            
         ]
         );
-
         $error="ok";
       }
 
-      
-      
       $_SESSION['ok']= $error;
       header("location:modifi-shop");
     endif;
