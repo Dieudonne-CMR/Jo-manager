@@ -116,13 +116,19 @@
             
                                                 <tbody>
                                                 <?php foreach (select_table_where("Produits", "Mat_Shop", $mat_shop) as $value): ?>
+                                                <?php  ?>
                                                 <tr>
-                                                    <td class="small-frame"><img class="img-fluid" src="<?php echo $image_produit . $value -> Img1; ?>" alt=""></td>
+                                                    <td class="small-frame"><img class="img-fluid" src="<?php echo $image_produit.$value -> Img1; ?>" alt=""></td>
                                                     <td><?php echo $value -> Nom_Produit; ?></td>
                                                     <td><?php echo $value -> Prix; ?></td>
                                                     <td><?php echo $value -> Prix_Promo; ?></td>
                                                     <td><?php echo $value -> quantite; ?></td>
                                                     <td><?php echo $value -> Date_Ajout; ?></td>
+                                                    <td style="text-align: center; vertical-align: middle;">
+                                                        
+                                                        <a href="modifi-product/<?php echo $value->Mat_Produit; ?>" name="envoyer" class="btn btn-primary">Modifier</a>
+                                                        
+                                                    </td>
                                                 </tr>
                                                 <?php endforeach; ?>
                                                 </tbody>

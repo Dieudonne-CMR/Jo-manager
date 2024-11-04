@@ -81,8 +81,19 @@ if(@$url[0]=='panier'):
 endif;
 
 if(@$url[0]=='add-product'):
-
     include_once('template/add-product.php');
+endif;
+
+
+//-----------
+
+if(@$url[0]=='modifi-product'):
+   
+    var_dump(@$url[1]);
+    
+    $mat_pro= test_input($url[1]);
+
+    include_once('template/modifi-product.php');
 endif;
 
  //------cette route nous permet faire la modification d'une boutique
