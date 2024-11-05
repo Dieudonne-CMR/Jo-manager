@@ -44,8 +44,6 @@ if($gest_boutik==0):
 
     
 
-
-
 elseif($gest_boutik==1): 
 
     //-------- page d'accueil pour les gerants dans boutiques
@@ -53,30 +51,26 @@ elseif($gest_boutik==1):
         include_once("template/home.php");
     endif;
 endif;
-//===== fin Route supper admin
 
+//===== fin Route supper admin
 
 if(@$url[0]=='shops'):
     include('template/shops.php');
 endif;
 
 if(@$url[0]=='products'):
-
     include_once('template/products.php');
 endif;
 
 if(@$url[0]=='product-detail'):
-
     include_once('template/product-detail.php');
 endif;
 
 if(@$url[0]=='achat'):
-
     include_once('template/achat.php');
 endif;
 
 if(@$url[0]=='panier'):
-
     include_once('template/panier.php');
 endif;
 
@@ -94,7 +88,7 @@ if(@$url[0]=='modifi-product'):
         header("location:../products");
     else:
         $mat_pro= test_input($url[1]);
-        // ici nous allons verifier que le produit existe avant de modifier 
+        //-------- ici nous allons verifier que le produit existe avant de modifier 
         $product = select_table_where("Produits", "Mat_Produit", $mat_pro) ;
         if(sizeof($product)>0):
             include_once('template/modifi-product.php');
