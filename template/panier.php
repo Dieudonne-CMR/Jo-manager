@@ -1,3 +1,7 @@
+<?php
+// Récupérer le panier depuis la session
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -75,10 +79,12 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="table-responsive">
+                                            
                                                 <table class="table table-centered mb-0 table-nowrap">
                                                     <thead class="bg-light">
                                                         <tr>
                                                             <th style="width: 120px">Produit</th>
+                                                            <th>Nom du Produit</th>
                                                             <th>Description Produit</th>
                                                             <th>Prix</th>
                                                             <th>Quantité</th>
@@ -87,18 +93,30 @@
                                                         </tr>
                                                     </thead><!-- end thead -->
                                                     <tbody>
+                                                    <?php if (!empty($panier)): ?>
+                                                    <?php
+                                                        $totalPanier = 0;
+                                                        foreach ($_SESSION['panier'] as $id => $value):
+                                                            $totalProduit = $produit['prix'] * $produit['quantite'];
+                                                            $totalPanier += $totalProduit;
+                                                        ?>
                                                         <tr>
                                                             <td>
-                                                                <img src="assets/images/product/img-7.png" alt="product-img"
+                                                                <img src="" alt="product-img"
                                                                     title="product-img" class="avatar-md" />
                                                             </td>
                                                             <td>
-                                                                <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset">Home & Office Chair</a></h5>
+                                                                <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset"><?php $produit['nom'];;  ?></a></h5>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset"><?php $produit['quantite']; ?></a></h5>
                                                                 <p class="mb-0">Color : <span class="font-weight-medium">Green</span></p>
                                                             </td>
                                                             <td>
-                                                                $ 200
+                                                            <?php $produit['prix']; ?>
                                                             </td>
+                                                            
+
                                                             <td>
                                                                 <div style="width: 120px;" class="product-cart-touchspin">
                                                                     <input data-toggle="touchspin" type="text" value="02">
@@ -110,82 +128,15 @@
                                                             <td style="width: 90px;" class="text-center">
                                                                 <a href="javascript:void(0);" class="action-icon text-danger"> <i class="mdi mdi-trash-can font-size-18"></i></a>
                                                             </td>
+                                                    
                                                         </tr><!-- end tr -->
-                                                        <tr>
-                                                            <td>
-                                                                <img src="assets/images/product/img-8.png" alt="product-img"
-                                                                    title="product-img" class="avatar-md" />
-                                                            </td>
-                                                            <td>
-                                                                <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset">Home & Office Chair</a></h5>
-                                                                <p class="mb-0">Color : <span class="font-weight-medium">Cream</span></p>
-                                                            </td>
-                                                            <td>
-                                                                $ 225
-                                                            </td>
-                                                            <td>
-                                                                <div style="width: 120px;" class="product-cart-touchspin">
-                                                                    <input data-toggle="touchspin" type="text" value="01">
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                $ 225
-                                                            </td>
-                                                            <td class="text-center">
-                                                                <a href="javascript:void(0);" class="action-icon text-danger"> <i class="mdi mdi-trash-can font-size-18"></i></a>
-                                                            </td>
-                                                        </tr><!-- end tr -->
-                                                        <tr>
-                                                            <td>
-                                                                <img src="assets/images/product/img-9.png" alt="product-img"
-                                                                    title="product-img" class="avatar-md" />
-                                                            </td>
-                                                            <td>
-                                                                <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset">Home & Office Chair</a></h5>
-                                                                <p class="mb-0">Color : <span class="font-weight-medium">White</span></p>
-                                                            </td>
-                                                            <td>
-                                                                $ 275
-                                                            </td>
-                                                            <td>
-                                                                <div style="width: 120px;" class="product-cart-touchspin">
-                                                                    <input data-toggle="touchspin" type="text" value="02">
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                $ 550
-                                                            </td>
-                                                            <td class="text-center">
-                                                                <a href="javascript:void(0);" class="action-icon text-danger"> <i class="mdi mdi-trash-can font-size-18"></i></a>
-                                                            </td>
-                                                        </tr><!-- end tr -->
-                                                        <tr>
-                                                            <td>
-                                                                <img src="assets/images/product/img-11.png" alt="product-img"
-                                                                    title="product-img" class="avatar-md" />
-                                                            </td>
-                                                            <td>
-                                                                <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset">Home & Office Chair</a></h5>
-                                                                <p class="mb-0">Color : <span class="font-weight-medium">Blue</span></p>
-                                                            </td>
-                                                            <td>
-                                                                $ 275
-                                                            </td>
-                                                            <td>
-                                                                <div style="width: 120px;" class="product-cart-touchspin">
-                                                                    <input data-toggle="touchspin" type="text" value="01">
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                $ 275
-                                                            </td>
-                                                            <td class="text-center">
-                                                                <a href="javascript:void(0);" class="action-icon text-danger"> <i class="mdi mdi-trash-can font-size-18"></i></a>
-                                                            </td>
-                                                        </tr><!-- end tr -->
+                                                        <?php endforeach; ?>
+                                                        <?php else: ?>
+                                                            <p>Votre panier est vide.</p>
+                                                        <?php endif; ?>
                                                         <tr class="bg-light text-end">
                                                             
-                                                            <th scope="row" colspan="5">
+                                                            <th scope="row" colspan="6">
                                                                 Sous-Total :
                                                             </th>
                                                             
@@ -195,7 +146,7 @@
                                                         </tr><!-- end tr -->
                                                         <tr class="bg-light text-end">
                                                             
-                                                            <th scope="row" colspan="5">
+                                                            <th scope="row" colspan="6">
                                                                 Rabais :
                                                             </th>
                                                             
@@ -205,7 +156,7 @@
                                                         </tr><!-- end tr -->
                                                         <tr class="bg-light text-end">
                                                             
-                                                            <th scope="row" colspan="5">
+                                                            <th scope="row" colspan="6">
                                                                 Frais d'expédition :
                                                             </th>
                                                             
@@ -215,7 +166,7 @@
                                                         </tr><!-- end tr -->
                                                         <tr class="bg-light text-end">
                                                             
-                                                            <th scope="row" colspan="5">
+                                                            <th scope="row" colspan="6">
                                                                 Total :
                                                             </th>
                                                             

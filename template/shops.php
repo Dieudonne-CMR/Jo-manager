@@ -97,12 +97,12 @@
                                                         <?php foreach(select_table('shop') as $value):?>
                                                             <tr>
                                                                 <td>
-                                                                    <img src="<?php echo $dossier_logo.$value -> logo ; ?>" alt="" class="avatar-sm">
+                                                                    <img src="<?php echo @$dossier_logo.$value -> logo ; ?>" alt="" class="avatar-sm">
                                                                 </td>
                                                                 <td>
-                                                                <h5 class="font-size-16"> <?php echo $value -> Nom_Shop ; ?> </h5>
+                                                                <h5 class="font-size-16"> <?php echo @$value -> Nom_Shop ; ?> </h5>
                                                                 <p class="text-muted mb-0">
-                                                                    <i class="mdi mdi-account me-1"></i> <?php echo select_table_where('membre','Mat_Shop', $value -> Mat_Shop)[0]->Nom; ?>
+                                                                    <i class="mdi mdi-account me-1"></i> <?php echo @select_table_where('membre','Mat_Shop', $value -> Mat_Shop)[0]->Nom; ?>
                                                                 </p>
                                                                 </td>
                                                                 <td><?php echo $value -> Localisation ; ?></td>

@@ -258,9 +258,9 @@
                 <?php if($gest_boutik==1): // zone des gerant de boutique?>
                     <li>
                         
-                        <a href="parameter-shop" class=" waves-effect">
+                        <a href="modifi-shop" class=" waves-effect">
                             <i class="fas fa-cog"></i>
-                            <span>Parametre boutique</span>
+                            <span>Modification Boutique</span>
                         </a>
                     </li>
                 <?php endif ?>

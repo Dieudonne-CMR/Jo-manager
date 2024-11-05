@@ -75,7 +75,7 @@
                         <div class="page-content-wrapper">
 
                             <div class="row" >
-                                <?php foreach(select_table_where("Produits","Mat_Shop",$mat_shop) as $value):    ?>
+                                <?php foreach(select_table_where("Produits","Mat_Shop",$mat_shop) as $id => $value):    ?>
                                     <div class="col-xl-3 col-sm-6">
                                         <div class="card">
                                         <div class="card-body">
@@ -107,11 +107,15 @@
                                                 </div>
 
                                                 <div class="product-action mt-2">
-                                                    <div class="d-grid">
-                                                        <a href="javascript:;" class="btn btn-primary"><i class="bx bxs-cart-add"></i>Ajouter au panier</a>
-                                                    </div>
+                                                    <form action="aj_panier" method="POST">
+                                                        <input type="hidden" name="id" value="<?php echo $id; ?>">
+                                                        <input type="hidden" name="nom" value="<?php echo $value -> Nom_Produit; ?>">
+                                                        <input type="hidden" name="prix" value="<?php echo $value -> Prix; ?>">
+                                                        <div class="d-grid">
+                                                            <button type="submit" class="btn btn-primary"> Ajouter au panier</button>
+                                                        </div>
+                                                    </form>
                                                 </div>
-
                                             </div>
                                         </div>
                                         </div>
@@ -157,6 +161,41 @@
         <script src="assets/js/pages/product-filter-range.init.js"></script>
 
         <script src="assets/js/app.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+            function ajouterAuPanier(ID_Produit, Nom_Produit, Prix) {
+            const data = new FormData();
+            data.append('id', ID_Produit);
+            data.append('nom', Nom_Produit);
+            data.append('prix', Prix);
+                    fetch('ajouter_panier.php', {
+                method: 'POST',
+                body: data
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur réseau');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    alert(data.message || 'Produit ajouté au panier avec succès !');
+                } else {
+                    alert(data.message || 'Une erreur est survenue lors de l\'ajout au panier.');
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                alert('Une erreur est survenue.');
+            });
+         }    
+        </script>
+
+
+
 
     </body>
 
