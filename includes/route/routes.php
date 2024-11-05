@@ -85,18 +85,27 @@ if(@$url[0]=='add-product'):
 endif;
 
 
-//-----------
+//----------- cette route nous permet de faire la modification d'un produit
 
 if(@$url[0]=='modifi-product'):
    
-    var_dump(@$url[1]);
-    
-    $mat_pro= test_input($url[1]);
+    // var_dump(@$url[1]);
+    if(empty($url[1])):
+        header("location:../products");
+    else:
+        $mat_pro= test_input($url[1]);
+        // ici nous allons verifier que le produit existe avant de modifier 
+        $product = select_table_where("Produits", "Mat_Produit", $mat_pro) ;
+        if(sizeof($product)>0):
+            include_once('template/modifi-product.php');
+        else:
+            header("location:../products");
+        endif;
+    endif;
 
-    include_once('template/modifi-product.php');
 endif;
 
- //------cette route nous permet faire la modification d'une boutique
+ //------cette route nous permet de faire la modification d'une boutique
  if(@$url[0]=='modifi-shop'):
     $recup = select_table_where('shop','Mat_Shop',$mat_shop);
     // var_dump($recup);
@@ -127,6 +136,10 @@ if(@$url[0]=='mod-shop'):
     include_once 'processing/mod-shop.php'; 
 endif;
 
+if(@$url[0]=='mod-product'):
+    include_once 'processing/mod-product.php'; 
+endif;
+
 
 //======== Les actions
 //------deconnexion
@@ -134,4 +147,4 @@ endif;
 if(@$url[0]=='deconnexion'): 
     require "processing/deconnexion.php";
 endif; 
-// fin de
+// fin dez
