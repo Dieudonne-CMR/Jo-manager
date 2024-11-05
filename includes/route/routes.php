@@ -58,7 +58,20 @@ if(@$url[0]=='shops'):
     include('template/shops.php');
 endif;
 
-if(@$url[0]=='products'):
+if(@$url[0]=='products'): 
+    
+    $produits=[];
+    if($gest_boutik==0 AND empty($mat_shop)): //--
+        //------recuper les produits de toutes les boutiques
+        $produits= select_table("Produits");
+        $titre='Produits dans les boutiques';
+    else:
+        //------recuper les produits d'une boutique
+        $produits= select_table_where("Produits", "Mat_Shop", $mat_shop);
+        $titre='Liste des Produits';
+
+    endif;
+
     include_once('template/products.php');
 endif;
 

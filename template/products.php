@@ -93,7 +93,7 @@
                                     <div class="card">
                                         <div class="card-body">
             
-                                            <h4 class="">Liste des Produits</h4><br>
+                                            <h4 class=""><?=  $titre ?></h4><br>
             
                                             <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                                 <thead>
@@ -108,7 +108,7 @@
                                                 </thead>
 
                                                 <tbody>
-                                                <?php foreach (select_table_where("Produits", "Mat_Shop", $mat_shop) as $value): ?>
+                                                <?php foreach ($produits as $value): ?>
                                                 <?php  ?>
                                                 <tr>
                                                     <td class="small-frame"><img class="img-fluid" src="<?php echo $image_produit.$value -> Img1; ?>" alt=""></td>
