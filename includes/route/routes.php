@@ -140,6 +140,10 @@ if(@$url[0]=='mod-product'):
     include_once 'processing/mod-product.php'; 
 endif;
 
+if(@$url[0]=='aj_panier'):
+    include_once 'processing/ajouter_au_panier.php'; 
+endif;
+
 
 //======== Les actions
 //------deconnexion
