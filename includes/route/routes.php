@@ -123,6 +123,17 @@ endif;
     include_once("template/modifi-shop.php");
 endif;
 
+ //------cette route nous permet de faire la modification d'un membre
+ if(@$url[0]=='modifi-gerant'):
+    $recup = select_table_where('membre','Mat_Shop',$mat_shop);
+    // var_dump($recup);
+    if(sizeof($recup)<1):
+        header("location:home");
+    endif;
+    $recup = $recup[0];
+    include_once("template/modifi-gerant.php");
+endif;
+
 
 
 //=== les routes en POST : routes d'insertions
@@ -141,6 +152,10 @@ endif;
 
 if(@$url[0]=='mod-shop'):
     include_once 'processing/mod-shop.php'; 
+endif;
+
+if(@$url[0]=='mod-gerant'):
+    include_once 'processing/mod-gerant.php'; 
 endif;
 
 if(@$url[0]=='mod-product'):
