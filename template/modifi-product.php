@@ -11,7 +11,7 @@
 
     <?php $titre = 'ajouter un produit';
     include_once('includes/meta.php') ?>
-    <!-- <base href="../"> -->
+    <base href="../">
 
     <!-- twitter-bootstrap-wizard css -->
     <link rel="stylesheet" href="assets/libs/twitter-bootstrap-wizard/prettify.css">
@@ -54,11 +54,11 @@
                         <div class="row align-items-center">
                             <div class="col-sm-6">
                                 <div class="page-title">
-                                    <h4>Ajout de Produits</h4>
+                                    <h4>Modification de Produits</h4>
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
                                         <!-- <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li> -->
-                                        <li class="breadcrumb-item active">Ajout Produits</li>
+                                        <li class="breadcrumb-item active">Modification Produits</li>
                                     </ol>
                                 </div>
                             </div>
@@ -90,35 +90,25 @@
                                                     <h4 class="header-title">Informations basiques</h4>
                                                     <p class="card-title-desc">Remplissez toutes les informations ci-dessous</p>
 
-                                                    <form action="aj-product" id="aj-produit" method="post" enctype="multipart/form-data">
-                                                    <?php
-                                                        
-                                                        if (isset($_GET['Mat_Produit'])) {
-                                                            $mat_produit = $_GET['Mat_Produit'];
-
-                                                            // $produit = $DB->query("SELECT * FROM produits WHERE Mat_Produit = ?", [$mat_produit]);
-                                                            $produit = select_table_where('produits','Mat_Produit',$Mat_Produit);
-                                                            var_dump($produit);
-                                                            
-                                                        }
-                                                    ?>
+                                                    <form action="mod-product" id="mod-product" method="post" enctype="multipart/form-data">
+                                                        <input id="mat_produit" name="mat_produit"  type="hidden" value="<?php echo $product[0]->Mat_Produit ; ?>">
                                                         <div class="mb-3">
                                                             <label class="form-label" for="productname">Nom du Produit</label>
-                                                            <input id="productname" name="nom_produit" type="text" class="form-control" placeholder="Entrez le nom de votre produit" required>
+                                                            <input id="productname" name="nom_produit" type="text" class="form-control" placeholder="Entrez le nom de votre produit" required value="<?php echo $product[0]->Nom_Produit ; ?>"> 
                                                         </div>
                                                         <div class="row">
                                                             <!-- end col -->
                                                             <div class="col-lg-4">
                                                                 <div class="mb-3">
                                                                     <label class="form-label" for="price">Prix</label>
-                                                                    <input id="price" name="prix" type="text" class="form-control" placeholder="Entrez le Prix" required>
+                                                                    <input id="price" name="prix" type="text" class="form-control" placeholder="Entrez le Prix" required value="<?php echo $product[0]->Prix ; ?>">
                                                                 </div>
                                                             </div>
                                                             <!-- end col -->
                                                             <div class="col-lg-3">
                                                                 <div class="mb-3">
                                                                     <label class="form-label" for="price">Prix Promo</label>
-                                                                    <input id="price" name="prix_promo" type="text" class="form-control" placeholder="Enter le Prix Promotionnel">
+                                                                    <input id="price" name="prix_promo" type="text" class="form-control" placeholder="Enter le Prix Promotionnel" value="<?php echo $product[0]->Prix_Promo ; ?>">
                                                                 </div>
                                                             </div>
                                                             <!-- end col -->
@@ -129,7 +119,7 @@
                                                                         <option selected="" disabled="" value="" >--Sélectionner--</option>
 
                                                                         <?php foreach(select_table('categorie') as $value): ?>
-                                                                            <option value="<?= $value-> Mat_Cat ?>"> <?= $value-> Nom?> </option>
+                                                                            <option name="mat_Cat" value="<?= $value-> Mat_Cat ?>"> <?= $value-> Nom?> </option>
 
                                                                         <?php endforeach?>
                                                                         
@@ -141,7 +131,7 @@
                                                             <div class="col-lg-2">
                                                                 <div class="mb-3">
                                                                     <label class="form-label" for="price">Quantité</label>
-                                                                    <input id="quantité" name="quantite" type="number" class="form-control" min="1" placeholder="Quantite" required>
+                                                                    <input id="quantité" name="quantite" type="number" class="form-control" min="1" placeholder="Quantite" required value="<?php echo $product[0]->quantite ; ?>">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -150,7 +140,7 @@
                                                         <!-- end row -->
                                                         <div class="mb-3">
                                                             <label class="form-label" for="productdesc">Description du Produit</label>
-                                                            <textarea class="form-control" name="decription" id="productdesc" rows="5" placeholder="Entrez la description de votre produit"></textarea>
+                                                            <textarea class="form-control" name="decription" id="productdesc" rows="5" placeholder="Entrez la description de votre produit"> <?php  echo $product[0]->Description ; ?></textarea>
                                                         </div>
                                                         <div class="tab-pane" id="product-img">
                                                             <h4 class="header-title">Images du Produit</h4>

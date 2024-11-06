@@ -44,8 +44,6 @@ if($gest_boutik==0):
 
     
 
-
-
 elseif($gest_boutik==1): 
 
     //-------- page d'accueil pour les gerants dans boutiques
@@ -53,47 +51,76 @@ elseif($gest_boutik==1):
         include_once("template/home.php");
     endif;
 endif;
-//===== fin Route supper admin
 
+//===== fin Route supper admin
 
 if(@$url[0]=='shops'):
     include('template/shops.php');
 endif;
 
-if(@$url[0]=='products'):
+if(@$url[0]=='products'): 
+    
+    $produits=[];
+    if($gest_boutik==0 AND empty($mat_shop)): //--
+        //------recuper les produits de toutes les boutiques
+        $produits= select_table("Produits");
+        $titre='Produits dans les boutiques';
+    else:
+        //------recuper les produits d'une boutique
+        $produits= select_table_where("Produits", "Mat_Shop", $mat_shop);
+        $titre='Liste des Produits';
+
+    endif;
 
     include_once('template/products.php');
 endif;
 
 if(@$url[0]=='product-detail'):
-
     include_once('template/product-detail.php');
 endif;
 
 if(@$url[0]=='achat'):
-
     include_once('template/achat.php');
 endif;
 
 if(@$url[0]=='panier'):
-
     include_once('template/panier.php');
 endif;
 
 if(@$url[0]=='add-product'):
-
     include_once('template/add-product.php');
 endif;
 
- //------cette route nous permet faire la modification d'une boutique
- if(@$url[0]=='parameter-shop'):
+
+//----------- cette route nous permet de faire la modification d'un produit
+
+if(@$url[0]=='modifi-product'):
+   
+    // var_dump(@$url[1]);
+    if(empty($url[1])):
+        header("location:../products");
+    else:
+        $mat_pro= test_input($url[1]);
+        //-------- ici nous allons verifier que le produit existe avant de modifier 
+        $product = select_table_where("Produits", "Mat_Produit", $mat_pro) ;
+        if(sizeof($product)>0):
+            include_once('template/modifi-product.php');
+        else:
+            header("location:../products");
+        endif;
+    endif;
+
+endif;
+
+ //------cette route nous permet de faire la modification d'une boutique
+ if(@$url[0]=='modifi-shop'):
     $recup = select_table_where('shop','Mat_Shop',$mat_shop);
     // var_dump($recup);
     if(sizeof($recup)<1):
         header("location:home");
     endif;
     $recup = $recup[0];
-    include_once("template/parameter-shop.php");
+    include_once("template/modifi-shop.php");
 endif;
 
 
@@ -116,6 +143,14 @@ if(@$url[0]=='mod-shop'):
     include_once 'processing/mod-shop.php'; 
 endif;
 
+if(@$url[0]=='mod-product'):
+    include_once 'processing/mod-product.php'; 
+endif;
+
+if(@$url[0]=='aj_panier'):
+    include_once 'processing/ajouter_au_panier.php'; 
+endif;
+
 
 //======== Les actions
 //------deconnexion
@@ -123,4 +158,4 @@ endif;
 if(@$url[0]=='deconnexion'): 
     require "processing/deconnexion.php";
 endif; 
-// fin de
+// fin dez

@@ -1,35 +1,29 @@
 <!doctype html>
 <html lang="en">
-
-    
+   
 <!-- Mirrored from themesdesign.in/morvin/layouts/tables-datatable.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2024 05:03:44 GMT -->
 <head>
-        
-        
-        <meta charset="utf-8" />
-        <title>Liste des Produits</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesdesign" name="author" />
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <meta charset="utf-8" />
+    <title>Liste des Produits</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesdesign" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-        <!-- Bootstrap Css -->
-        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        <!-- Icons Css -->
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <!-- App Css-->
-        <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
+    <!-- DataTables -->
+    <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
-        
-        <!-- DataTables -->
-        <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-
-        <!-- Responsive datatable examples -->
-        <link href="assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />  
-
+    <!-- Responsive datatable examples -->
+    <link href="assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />  
     </head>
 
     
@@ -99,7 +93,7 @@
                                     <div class="card">
                                         <div class="card-body">
             
-                                            <h4 class="">Liste des Produits</h4><br>
+                                            <h4 class=""><?=  $titre ?></h4><br>
             
                                             <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                                 <thead>
@@ -112,17 +106,20 @@
                                                     <th>Date d'Ajout</th>
                                                 </tr>
                                                 </thead>
-            
-            
+
                                                 <tbody>
-                                                <?php foreach (select_table_where("Produits", "Mat_Shop", $mat_shop) as $value): ?>
+                                                <?php foreach ($produits as $value): ?>
+                                                <?php  ?>
                                                 <tr>
-                                                    <td class="small-frame"><img class="img-fluid" src="<?php echo $image_produit . $value -> Img1; ?>" alt=""></td>
+                                                    <td class="small-frame"><img class="img-fluid" src="<?php echo $image_produit.$value -> Img1; ?>" alt=""></td>
                                                     <td><?php echo $value -> Nom_Produit; ?></td>
                                                     <td><?php echo $value -> Prix; ?></td>
                                                     <td><?php echo $value -> Prix_Promo; ?></td>
                                                     <td><?php echo $value -> quantite; ?></td>
                                                     <td><?php echo $value -> Date_Ajout; ?></td>
+                                                    <td style="text-align: center; vertical-align: middle;">
+                                                        <a href="modifi-product/<?php echo $value->Mat_Produit; ?>" name="envoyer" class="btn btn-primary">Modifier</a>
+                                                    </td>
                                                 </tr>
                                                 <?php endforeach; ?>
                                                 </tbody>
@@ -178,8 +175,6 @@
 
           <!-- Datatable init js -->
         <script src="assets/js/pages/datatables.init.js"></script>   
- 
-
         <script src="assets/js/app.js"></script>
 
     </body>
