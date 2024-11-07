@@ -1,6 +1,7 @@
 <?php
 // Récupérer le panier depuis la session
-
+session_start();
+$panier = $_SESSION['panier'] ?? [];
 ?>
 <!doctype html>
 <html lang="en">
@@ -96,7 +97,7 @@
                                                     <?php if (!empty($panier)): ?>
                                                     <?php
                                                         $totalPanier = 0;
-                                                        foreach ($_SESSION['panier'] as $id => $value):
+                                                        foreach ($_SESSION['panier'] as $id => $produit):
                                                             $totalProduit = $produit['prix'] * $produit['quantite'];
                                                             $totalPanier += $totalProduit;
                                                         ?>
@@ -106,14 +107,14 @@
                                                                     title="product-img" class="avatar-md" />
                                                             </td>
                                                             <td>
-                                                                <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset"><?php $produit['nom'];;  ?></a></h5>
+                                                                <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset"><?php echo $produit['nom'];;  ?></a></h5>
                                                             </td>
                                                             <td>
-                                                                <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset"><?php $produit['quantite']; ?></a></h5>
+                                                                <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset"><?php echo $produit['quantite']; ?></a></h5>
                                                                 <p class="mb-0">Color : <span class="font-weight-medium">Green</span></p>
                                                             </td>
                                                             <td>
-                                                            <?php $produit['prix']; ?>
+                                                            <?php echo $produit['prix']; ?>
                                                             </td>
                                                             
 

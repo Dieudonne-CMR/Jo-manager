@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -164,36 +163,7 @@
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        <script>
-            function ajouterAuPanier(ID_Produit, Nom_Produit, Prix) {
-            const data = new FormData();
-            data.append('id', ID_Produit);
-            data.append('nom', Nom_Produit);
-            data.append('prix', Prix);
-                    fetch('ajouter_panier.php', {
-                method: 'POST',
-                body: data
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Erreur réseau');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.success) {
-                    alert(data.message || 'Produit ajouté au panier avec succès !');
-                } else {
-                    alert(data.message || 'Une erreur est survenue lors de l\'ajout au panier.');
-                }
-            })
-            .catch(error => {
-                console.error('Erreur:', error);
-                alert('Une erreur est survenue.');
-            });
-         }    
-        </script>
-
+       
 
 
 
