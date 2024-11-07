@@ -96,9 +96,10 @@ $panier = $_SESSION['panier'] ?? [];
                                                     <?php if (!empty($panier)): ?>
                                                     <?php
                                                         $totalPanier = 0;
+                                                        //session_destroy($_SESSION['panier']);
                                                         foreach ($_SESSION['panier'] as $id => $produit):
-                                                            $totalProduit = $produit['prix'] * $produit['quantite'];
-                                                            $totalPanier += $totalProduit;
+                                                            //$totalProduit = $produit['prix'] * $produit['quantite'];
+                                                            //$totalPanier += $totalProduit;
                                                         ?>
                                                         <tr>
                                                             <td>
@@ -106,7 +107,7 @@ $panier = $_SESSION['panier'] ?? [];
                                                                     title="product-img" class="avatar-md" />
                                                             </td>
                                                             <td>
-                                                                <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset"><?php echo $produit['nom'];;  ?></a></h5>
+                                                                <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset"><?php echo $produit['nom'];  ?></a></h5>
                                                             </td>
                                                             <td>
                                                                 <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset"><?php echo $produit['quantite']; ?></a></h5>
@@ -117,13 +118,15 @@ $panier = $_SESSION['panier'] ?? [];
                                                             
 
                                                             <td>
-                                                                <div style="width: 120px;" class="product-cart-touchspin">
-                                                                    <input data-toggle="touchspin" type="text" value="02">
-                                                                </div>
+                                                                <button class="modifier-quantite" data-id="<?php echo $id; ?>" data-action="decrement">-</button>
+                                                                <span id="quantite-<?php echo $id; ?>"><?php echo $produit['quantite']; ?></span>
+                                                                <button class="modifier-quantite" data-id="<?php echo $id; ?>" data-action="increment">+</button>
                                                             </td>
+
                                                             <td>
-                                                                $ 400
+                                                            <?php echo $totalProduit; ?>
                                                             </td>
+
                                                             <td style="width: 90px;" class="text-center">
                                                                 <a href="javascript:void(0);" class="action-icon text-danger"> <i class="mdi mdi-trash-can font-size-18"></i></a>
                                                             </td>
@@ -275,6 +278,42 @@ $panier = $_SESSION['panier'] ?? [];
         <script src="assets/js/pages/ecommerce-cart.init.js"></script>
 
         <script src="assets/js/app.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.modifier-quantite').click(function() {
+            var id = $(this).data('id');
+            var action = $(this).data('action');
+
+            console.log(id);
+            console.log(action);
+            $.ajax({
+                url: 'mettre_a_jour_panier.php',
+                method: 'POST',
+                data: {
+                    id: id,
+                    action: action
+                },
+                success: function(response) {
+                    try {
+                        var data = JSON.parse(response);
+                            
+                        if (data.success) {
+                            $('#quantite-' + id).text(data.quantite);
+                            $('#total-' + id).text(data.totalProduit + ' €');
+                            $('#total-panier').text(data.totalPanier + ' €');
+                        } else {
+                            alert(data.message || 'Erreur lors de la mise à jour.');
+                        }
+                    } catch (e) {
+                        console.error('Erreur lors du traitement de la réponse JSON:', e);
+                        alert('Une erreur est survenue. Veuillez réessayer.');
+                    }
+                }
+            });
+        });
+    });
+</script>
 
     </body>
 

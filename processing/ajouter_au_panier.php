@@ -20,4 +20,14 @@ $_SESSION['panier'][$id] = [
 // Rediriger vers la page des produits
 header("Location: panier");
 exit();
+
+function mettre_a_jour_quantite($id, $quantite) {
+    if (isset($_SESSION['panier'][$id])) {
+        $_SESSION['panier'][$id] = $quantite;
+        if ($quantite <= 0) {
+            unset($_SESSION['panier'][$id]); // Supprimer si quantité <= 0
+        }
+    }
+}
+
 ?>
