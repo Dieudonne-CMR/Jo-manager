@@ -239,9 +239,9 @@
                 Swal.fire({
                     icon: 'success',
                     title: 'Succès',
-                    text: 'Connexion réussie !',
+                    text: "Le produit vient d'etre modifier !",
                 }).then(() => {
-                    window.location.href = 'home';
+                    // window.location.href = 'home';
                 });
             <?php endif ?>
         </script>

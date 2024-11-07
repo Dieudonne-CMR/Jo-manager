@@ -30,6 +30,7 @@
                         
                     ]
                 );
+                $_SESSION['ok']='ok';
                 header("Location: modifi-product/$mat_produit");
             
             else:

@@ -42,7 +42,6 @@ if($gest_boutik==0):
         include_once("template/liste-gerant.php");
     endif;
 
-    
 
 elseif($gest_boutik==1): 
 
@@ -59,7 +58,7 @@ if(@$url[0]=='shops'):
 endif;
 
 if(@$url[0]=='products'): 
-    
+
     $produits=[];
     if($gest_boutik==0 AND empty($mat_shop)): //--
         //------recuper les produits de toutes les boutiques
@@ -84,12 +83,21 @@ if(@$url[0]=='achat'):
 endif;
 
 if(@$url[0]=='panier'):
+    //----- Récupérer le panier depuis la session
+    $panier = !empty($_SESSION['panier'][$mat_shop]) ? $_SESSION['panier'][$mat_shop]: [];
+    // unset($_SESSION['panier']);
     include_once('template/panier.php');
 endif;
 
 if(@$url[0]=='add-product'):
     include_once('template/add-product.php');
 endif;
+
+//--------Chechout de la commande
+if(@$url[0]=='checkout'):
+    include_once('template/checkout.php');
+endif;
+
 
 
 //----------- cette route nous permet de faire la modification d'un produit
@@ -136,7 +144,7 @@ endif;
 
 
 
-//=== les routes en POST : routes d'insertions
+//=== les routes en POST : routes d'insertions checkout
     
 if(@$url[0]=='aj-gerant'):
     include_once 'processing/aj-gerant.php'; 
@@ -157,17 +165,23 @@ endif;
 if(@$url[0]=='mod-gerant'):
     include_once 'processing/mod-gerant.php'; 
 endif;
-
+//---------
 if(@$url[0]=='mod-product'):
     include_once 'processing/mod-product.php'; 
 endif;
 
+//-----traitement produit dans le panier
 if(@$url[0]=='aj_panier'):
     include_once 'processing/ajouter_au_panier.php'; 
 endif;
 
+//--------Mise ajour du panier
+if(@$url[0]=='mettre_a_jour_panier'):
+    include_once 'processing/mettre_a_jour_panier.php'; 
+endif;
 
-//======== Les actions
+
+//======== Les actions 
 //------deconnexion
 
 if(@$url[0]=='deconnexion'): 

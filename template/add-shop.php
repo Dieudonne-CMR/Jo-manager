@@ -4,7 +4,8 @@
 <!-- Mirrored from themesdesign.in/morvin/layouts/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2024 05:03:25 GMT -->
 <head>
     <meta charset="utf-8" />
-        <?php $titre='ajouter une boutique'; include_once('includes/meta.php') ?>
+        <?php $titre='ajouter une boutique'; 
+            include_once('includes/meta.php') ?>
 
         <!-- Bootstrap Css -->
         <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />

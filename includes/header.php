@@ -185,7 +185,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle-outline font-size-16 align-middle me-1"></i> Profile</a>
+                    <a class="dropdown-item" href="modifi-gerant"><i class="mdi mdi-account-circle-outline font-size-16 align-middle me-1"></i> Profile</a>
                     <?php /*<a class="dropdown-item" href="#"><i class="mdi mdi-wallet-outline font-size-16 align-middle me-1"></i> My Wallet</a> */?>
                     <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-end">11</span><i class="mdi mdi-cog-outline font-size-16 align-middle me-1"></i> Settings</a>
                     <div class="dropdown-divider"></div>
@@ -263,13 +263,15 @@
                             <span>Modification Boutique</span>
                         </a>
                     </li>
-                    <li>
-                        
-                        <a href="modifi-gerant" class="">
-                            <i class="fas fa-cog"></i>
-                            <span>Modification Infos Gerant</span>
-                        </a>
-                    </li>
+                    <?php /*
+                        <li>
+                            
+                            <a href="modifi-gerant" class="">
+                                <i class="fas fa-cog"></i>
+                                <span>Modification Infos Gerant</span>
+                            </a> 
+                        </li>
+                    */?>
                 <?php endif ?>
                 <!-- permission admin -->
                 <?php if($gest_boutik==0): ?>

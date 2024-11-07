@@ -7,7 +7,7 @@
         
         
         <?php $titre = 'Liste des boutiques';
-        include_once('includes/meta.php') ?>
+         include_once('includes/meta.php') ?>
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 

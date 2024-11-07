@@ -9,12 +9,7 @@
         
         <meta charset="utf-8" />
        <meta>
-        <title>Products | Morvin - Admin & Dashboard Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesdesign" name="author" />
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+       <?php $titre='Accueil pour le gerant'; include_once('includes/meta.php') ?>
 
         <!-- ION Slider -->
         <link href="assets/libs/ion-rangeslider/css/ion.rangeSlider.min.css" rel="stylesheet" type="text/css"/>
@@ -61,7 +56,7 @@
                              </div>
                              <div class="col-sm-6">
                                 <div class="float-end d-none d-sm-block">
-                                    <a href="#" class="btn btn-success">Add Widget</a>
+                                    <a href="panier" class="btn btn-success">Commande <i class="dripicons-basket">0</i></a>
                                 </div>
                              </div>
                          </div>
@@ -75,7 +70,9 @@
                         <div class="page-content-wrapper">
 
                             <div class="row" >
-                                <?php foreach(select_table_where("Produits","Mat_Shop",$mat_shop) as $id => $value):    ?>
+                                <?php foreach(select_table_where("Produits","Mat_Shop",$mat_shop) as $value): 
+                                     $mat_product=$value->Mat_Produit  //-- du produits
+                                ?>
                                     <div class="col-xl-3 col-sm-6">
                                         <div class="card">
                                         <div class="card-body">
@@ -107,10 +104,11 @@
                                                 </div>
 
                                                 <div class="product-action mt-2">
-                                                    <form action="aj_panier" method="POST">
-                                                        <input type="hidden" name="id" value="<?php echo $id; ?>">
+                                                    <form class='ajpanier' action="aj_panier" method="POST">
+                                                        <input type="hidden" name="mat_product" value="<?php echo $mat_product; ?>">
                                                         <input type="hidden" name="nom" value="<?php echo $value -> Nom_Produit; ?>">
                                                         <input type="hidden" name="prix" value="<?php echo $value -> Prix; ?>">
+                                                        <input type="hidden" name="image" value="<?php echo $value -> Img1; ?>">
                                                         <div class="d-grid">
                                                             <button type="submit" class="btn btn-primary"> Ajouter au panier</button>
                                                         </div>
@@ -148,7 +146,8 @@
         <div class="rightbar-overlay"></div>
 
         <!-- JAVASCRIPT -->
-        <script src="assets/libs/jquery/jquery.min.js"></script>
+         
+        <script src="assets/libs/jquery/jquery.min.js"> </script>
         <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="assets/libs/metismenu/metisMenu.min.js"></script>
         <script src="assets/libs/simplebar/simplebar.min.js"></script>
@@ -159,15 +158,15 @@
 
         <!-- init js -->
         <script src="assets/js/pages/product-filter-range.init.js"></script>
-
+        
         <script src="assets/js/app.js"></script>
-
+        
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
+        <script src="assets/js/aj-panier.js"></script>
+        
 
        
-
-
-
     </body>
 
 <!-- Mirrored from themesdesign.in/morvin/layouts/ecommerce-products.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2024 05:01:59 GMT -->
