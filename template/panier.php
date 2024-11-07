@@ -1,6 +1,5 @@
 <?php
 // Récupérer le panier depuis la session
-session_start();
 $panier = $_SESSION['panier'] ?? [];
 ?>
 <!doctype html>
@@ -111,7 +110,6 @@ $panier = $_SESSION['panier'] ?? [];
                                                             </td>
                                                             <td>
                                                                 <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset"><?php echo $produit['quantite']; ?></a></h5>
-                                                                <p class="mb-0">Color : <span class="font-weight-medium">Green</span></p>
                                                             </td>
                                                             <td>
                                                             <?php echo $produit['prix']; ?>
