@@ -263,6 +263,13 @@
                             <span>Modification Boutique</span>
                         </a>
                     </li>
+                    <li>
+                        
+                        <a href="modifi-gerant" class="">
+                            <i class="fas fa-cog"></i>
+                            <span>Modification Infos Gerant</span>
+                        </a>
+                    </li>
                 <?php endif ?>
                 <!-- permission admin -->
                 <?php if($gest_boutik==0): ?>
