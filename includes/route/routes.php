@@ -180,6 +180,10 @@ if(@$url[0]=='mettre_a_jour_panier'):
     include_once 'processing/mettre_a_jour_panier.php'; 
 endif;
 
+//--------sauvegarde d'une commande
+if(@$url[0]=='savr_checkout'):
+    include_once 'processing/save_checkout.php'; 
+endif;
 
 //======== Les actions 
 //------deconnexion
