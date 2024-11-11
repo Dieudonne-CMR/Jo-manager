@@ -9,7 +9,7 @@
 
 
 
-        //requete d'insertion des informations de la commande
+        //requete d'insertion des informations de la commande 
 
 
 
