@@ -181,7 +181,7 @@ if(@$url[0]=='mettre_a_jour_panier'):
 endif;
 
 //--------sauvegarde d'une commande
-if(@$url[0]=='savr_checkout'):
+if(@$url[0]=='save_checkout'):
     include_once 'processing/save_checkout.php'; 
 endif;
 

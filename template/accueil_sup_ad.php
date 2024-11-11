@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+    
 
 
 <!-- Mirrored from themesdesign.in/morvin/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2024 05:02:26 GMT -->
@@ -72,8 +73,63 @@
 
                     <div class="page-content-wrapper">
 
-
-                        <div class="row">
+                    <div class="row">
+                                <div class="col-xl-3">
+                                   <div class="card">
+                                       <div class="card-body">
+                                            <h3>Nombre des Produits en stock :</h3>
+                                            <h3 class="mt-3 font-size-22"><?php echo count(select_table('produits')); ?> </h3>    
+                                            <div class="mt-3">
+                                                <div class="float-end">
+                                                   <p class="mb-0"> </p>
+                                                </div>
+                                            </div>
+                                       </div>
+                                   </div><!-- end cardbody -->
+                                </div><!-- end card -->
+                                <div class="col-xl-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h3>Nombre de Commandes effectuees :</h3>
+                                            <h3 class="mt-3 font-size-22"><?php echo count(select_table('commande')); ?></h3>
+                                            <div class="mt-3">
+                                                 <div class="float-end">
+                                                    
+                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- end card -->
+                                </div><!-- end col -->
+                                <div class="col-xl-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h3>Nombre de Boutiques :</h3>
+                                            <h3 class="mt-3 font-size-22"><?php echo count(select_table('shop')); ?></h3>
+                                            <div class="mt-3">
+                                                <div class="float-end">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- end card -->
+                                </div><!-- end col -->
+                                <div class="col-xl-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                             <h3>Nombre de Clients</h3>
+ 
+                                             <h3 class="mt-3 font-size-24"><?php echo count(select_table('client')); ?></h3>
+ 
+                                             <div class="mt-3">
+                                                 <div class="float-end">
+                                                    
+                                                 </div>
+                                             </div>
+                                        </div>
+                                    </div>
+                                </div><!-- end card -->
+                            </div><!-- end col -->
+                        <?php /*<div class="row">
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
@@ -264,7 +320,7 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div> */ ?>
 
                         <div class="row">
 
