@@ -17,7 +17,7 @@ endif;
 if($gest_boutik==0):
 
     //--- afficher la d'accueille du supper administrateur
-    if(@$url[0]=='Accueil_sup_ad'):
+    if(@$url[0]=='accueil_sup_ad'):
         include('template/accueil_sup_ad.php');
     endif;
      //--- afficher la d'accueille du supper administrateur

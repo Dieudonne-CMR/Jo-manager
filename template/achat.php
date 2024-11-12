@@ -107,7 +107,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <?php foreach (select_table('commande') as $value): ?>
+                                                        <?php foreach (select_table('commande') as $key => $value) : if($key>6): ?>
                                                         <tr>
                                                             <td>
                                                                 <div class="form-check">
@@ -140,6 +140,7 @@
                                                                 <button class="btn btn-light btn-rounded">Facture <i class="mdi mdi-download ms-2"></i></button>
                                                             
                                                         </tr>
+                                                        <?php else: break; endif; ?>
                                                         <?php endforeach; ?>
                                                     </tbody>
                                                 </table>
