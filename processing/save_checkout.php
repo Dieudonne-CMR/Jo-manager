@@ -8,7 +8,7 @@
                 $nom_produit[] = $value['nom'];
             endforeach;
 
-            $nom_produits = implode("/", $nom_produit); //je change mon tableau en chaine de caracteres pour afficher dans la base de donnees
+            $nom_produits = implode(" / ", $nom_produit); //je change mon tableau en chaine de caracteres pour afficher dans la base de donnees
             //------------------------------------------------------------
 
             //var_dump($nom_produits);    // on recupere les informations du panier envoyees via notre formulaire

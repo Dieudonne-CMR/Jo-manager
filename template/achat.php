@@ -102,7 +102,7 @@
                                                             <th>Date</th>
                                                             <th>Nom du client</th>
                                                             <th>Nom de la boutique</th>
-                                                            <th>Produits</th>
+                                                            <th>Produits commandes</th>
                                                             <th>Prix total</th>
                                                         </tr>
                                                     </thead>
