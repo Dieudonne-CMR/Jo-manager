@@ -33,5 +33,6 @@ function mettre_a_jour_quantite($mat_product, $quantite) {
         }
     }
 }
+        
 
 ?>

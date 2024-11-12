@@ -50,11 +50,10 @@
                      <div class="row align-items-center">
                          <div class="col-sm-6">
                              <div class="page-title">
-                                 <h4>Dashboard</h4>
+                                 <h4>Tableau de bord d'administration</h4>
                                      <ol class="breadcrumb m-0">
-                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
-                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                         <li class="breadcrumb-item active">Dashboard</li>
+                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Jo-Retail</a></li>
+                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Tableau de bord d'administration</a></li>
                                      </ol>
                              </div>
                          </div>
@@ -74,253 +73,271 @@
                     <div class="page-content-wrapper">
 
                     <div class="row">
-                                <div class="col-xl-3">
-                                   <div class="card">
-                                       <div class="card-body">
-                                            <h3>Nombre des Produits en stock :</h3>
-                                            <h3 class="mt-3 font-size-22"><?php echo count(select_table('produits')); ?> </h3>    
-                                            <div class="mt-3">
-                                                <div class="float-end">
-                                                   <p class="mb-0"> </p>
-                                                </div>
-                                            </div>
-                                       </div>
-                                   </div><!-- end cardbody -->
-                                </div><!-- end card -->
-                                <div class="col-xl-3">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h3>Nombre de Commandes effectuees :</h3>
-                                            <h3 class="mt-3 font-size-22"><?php echo count(select_table('commande')); ?></h3>
-                                            <div class="mt-3">
-                                                 <div class="float-end">
-                                                    
-                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card -->
-                                </div><!-- end col -->
-                                <div class="col-xl-3">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h3>Nombre de Boutiques :</h3>
-                                            <h3 class="mt-3 font-size-22"><?php echo count(select_table('shop')); ?></h3>
-                                            <div class="mt-3">
-                                                <div class="float-end">
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card -->
-                                </div><!-- end col -->
-                                <div class="col-xl-3">
-                                    <div class="card">
-                                        <div class="card-body">
-                                             <h3>Nombre de Clients</h3>
- 
-                                             <h3 class="mt-3 font-size-24"><?php echo count(select_table('client')); ?></h3>
- 
-                                             <div class="mt-3">
-                                                 <div class="float-end">
-                                                    
-                                                 </div>
-                                             </div>
-                                        </div>
-                                    </div>
-                                </div><!-- end card -->
-                            </div><!-- end col -->
-                        <?php /*<div class="row">
-                            <div class="col-xl-8">
-                                <div class="card">
-                                    <div class="card-body">
-
-                                       
-
-                                        <h4 class="header-title mb-4 float-sm-start">Quick Summary</h4>
-
-                                        <div class="float-sm-end">
-                                            <ul class="nav nav-pills">
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#">Day</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#">Week</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#">Month</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link active" href="#">Year</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="clearfix"></div>
-                                       
-
-                                        <div class="row align-items-center">
-                                            <div class="col-xl-9">
-
-                                                <div>
-                                                    <div id="stacked-column-chart" class="apex-charts" dir="ltr"></div>
-                                                </div>
-
-                                            </div>
-
-
-                                            <div class="col-xl-3">
-                                                <div class="dash-info-widget mt-4 mt-lg-0 py-4 px-3 rounded">
-
-                                                  
-
-                                                    <div class="media dash-main-border pb-2 mt-2">
-                                                        <div class="avatar-sm mb-3 mt-2">
-                                                            <span class="avatar-title rounded-circle bg-white shadow">
-                                                                    <i class="mdi mdi-currency-inr text-primary font-size-18"></i>
-                                                                </span>
-                                                        </div>
-                                                       <div class="media-body ps-3">
-
-                                                        <h4 class="font-size-20">$2354</h4>
-                                                        <p class="text-muted">Earning <a href="#" class="text-primary">Withdraw <i class="mdi mdi-arrow-right"></i></a>
-                                                        </p>
-
-                                                       </div>
-                                                      
-                                                    </div>
-
-                                                  
-
-                                                  
-
-                                                    <div class="media mt-4 dash-main-border pb-2">
-                                                        <div class="avatar-sm mb-3 mt-2">
-                                                            <span class="avatar-title rounded-circle bg-white shadow">
-                                                                    <i class="mdi mdi-credit-card-outline text-primary font-size-18"></i>
-                                                                </span>
-                                                        </div>
-                                                        <div class="media-body ps-3">
-                                                            <h4 class="font-size-20">$1598</h4>
-                                                        <p class="text-muted">To Paid <a href="#" class="text-primary">Pay <i class="mdi mdi-arrow-right"></i></a></p>
-                                                        </div>
-                                                    </div>
-
-                                                 
-
-                                                    <div class="media mt-4">
-                                                        <div class="avatar-sm mb-2 mt-2">
-                                                            <span class="avatar-title rounded-circle bg-white shadow">
-                                                                    <i class="mdi mdi-eye-outline text-primary font-size-18"></i>
-                                                                </span>
-                                                        </div>
-                                                       <div class="media-body ps-3">
-                                                        <h4 class="font-size-20">1230</h4>
-                                                        <p class="text-muted mb-0">To Online <a href="#" class="text-primary">View <i class="mdi mdi-arrow-right"></i></a></p>
-                                                       </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-xl-4">
-                                <div class="row">
-                                    <div class="col-xl-6 col-md-6">
+                                    <div class="col-xl-3">
                                         <div class="card">
                                             <div class="card-body">
                                                 <div class="text-center">
-                                                    <p class="font-size-16">Orders</p>
+                                                    <p class="font-size-16">Produits</p>
+                                                    <div class="mini-stat-icon mx-auto mb-4 mt-3">
+                                                        <span class="avatar-title rounded-circle bg-soft-success">
+                                                                <i class="dripicons-stack text-success font-size-20"></i>
+                                                        </span>
+                                                    </div>
+                                                    <h5 class="font-size-22"><?php echo count(select_table('produits')); ?></h5>
+    
+                                                    <p class="text-muted">Produits en stock</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                <div class="col-xl-3">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="text-center">
+                                                    <p class="font-size-16">Commandes</p>
                                                     <div class="mini-stat-icon mx-auto mb-4 mt-3">
                                                         <span class="avatar-title rounded-circle bg-soft-primary">
                                                                 <i class="mdi mdi-cart-outline text-primary font-size-20"></i>
                                                             </span>
                                                     </div>
-                                                    <h5 class="font-size-22">58</h5>
+                                                    <h5 class="font-size-22"><?php echo count(select_table('commande')); ?></h5>
     
-                                                    <p class="text-muted">70% Target</p>
-
-                                                    <div class="progress mt-3" style="height: 4px;">
-                                                        <div class="progress-bar progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="70">
-                                                        </div>
-                                                        
-                                                    </div>
+                                                    <p class="text-muted">Commandes effectuees</p>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        
-                                    </div>
-
-                                    <div class="col-xl-6 col-md-6">
+                                        </div><!-- end card -->
+                                </div><!-- end col -->
+                                <div class="col-xl-3">
                                         <div class="card">
                                             <div class="card-body">
                                                 <div class="text-center">
-                                                    <p class="font-size-16">Users</p>
+                                                    <p class="font-size-16">Boutiques</p>
+                                                    <div class="mini-stat-icon mx-auto mb-4 mt-3">
+                                                        <span class="avatar-title rounded-circle bg-soft-primary">
+                                                                <i class="text-primary fas fa-warehouse font-size-20"></i>
+                                                            </span>
+                                                    </div>
+                                                    <h5 class="font-size-22"><?php echo count(select_table('shop')); ?></h5>
+    
+                                                    <p class="text-muted">Nombre de Boutiques</p>
+                                                </div>
+                                            </div>
+                                        </div><!-- end card -->
+                                </div><!-- end col -->
+                            <div class="col-xl-3">
+                            <div class="card">
+                                            <div class="card-body">
+                                                <div class="text-center">
+                                                    <p class="font-size-16">Clients</p>
                                                     <div class="mini-stat-icon mx-auto mb-4 mt-3">
                                                         <span class="avatar-title rounded-circle bg-soft-success">
                                                                 <i class="mdi mdi-account-outline text-success font-size-20"></i>
-                                                            </span>
+                                                        </span>
                                                     </div>
-                                                    <h5 class="font-size-22">136</h5>
-    
-                                                    <p class="text-muted">80% Target</p>
-
-                                                    <div class="progress mt-3" style="height: 4px;">
-                                                        <div class="progress-bar progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="80">
-                                                        </div>
-                                                        
-                                                    </div>
+                                                    <h5 class="font-size-22"><?php echo count(select_table('client')); ?></h5>
+                                                    
+                                                    <p class="text-muted">Nombre de Clients</p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div><!-- end card -->
+                            </div><!-- end col -->
+
+                        
+                        
+                            <?php /*<div class="row">
+                                <div class="col-xl-8">
+                                    <div class="card">
+                                        <div class="card-body">
 
                                         
-                                    </div>
-                                </div>
 
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="header-title mb-4">Revenue Stastics</h4>
+                                            <h4 class="header-title mb-4 float-sm-start">Quick Summary</h4>
 
-                                        <div class="media">
+                                            <div class="float-sm-end">
+                                                <ul class="nav nav-pills">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Day</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Week</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Month</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" href="#">Year</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
 
-                                            <h4>$14,235 </h4>
+                                            <div class="clearfix"></div>
+                                        
+
+                                            <div class="row align-items-center">
+                                                <div class="col-xl-9">
+
+                                                    <div>
+                                                        <div id="stacked-column-chart" class="apex-charts" dir="ltr"></div>
+                                                    </div>
+
+                                                </div>
 
 
-                                            <div class="media-body ps-3">
+                                                <div class="col-xl-3">
+                                                    <div class="dash-info-widget mt-4 mt-lg-0 py-4 px-3 rounded">
 
-                                                <div class="dropdown">
-                                                    <button class="btn btn-light btn-sm dropdown-toggle" type="button"
-                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        Today<i class="mdi mdi-chevron-down ms-1"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <a class="dropdown-item" href="#">Yesterday</a>
-                                                        <a class="dropdown-item" href="#">Last Week</a>
-                                                        <a class="dropdown-item" href="#">last Month</a>
+                                                    
+
+                                                        <div class="media dash-main-border pb-2 mt-2">
+                                                            <div class="avatar-sm mb-3 mt-2">
+                                                                <span class="avatar-title rounded-circle bg-white shadow">
+                                                                        <i class="mdi mdi-currency-inr text-primary font-size-18"></i>
+                                                                    </span>
+                                                            </div>
+                                                        <div class="media-body ps-3">
+
+                                                            <h4 class="font-size-20">$2354</h4>
+                                                            <p class="text-muted">Earning <a href="#" class="text-primary">Withdraw <i class="mdi mdi-arrow-right"></i></a>
+                                                            </p>
+
+                                                        </div>
+                                                        
+                                                        </div>
+
+                                                    
+
+                                                    
+
+                                                        <div class="media mt-4 dash-main-border pb-2">
+                                                            <div class="avatar-sm mb-3 mt-2">
+                                                                <span class="avatar-title rounded-circle bg-white shadow">
+                                                                        <i class="mdi mdi-credit-card-outline text-primary font-size-18"></i>
+                                                                    </span>
+                                                            </div>
+                                                            <div class="media-body ps-3">
+                                                                <h4 class="font-size-20">$1598</h4>
+                                                            <p class="text-muted">To Paid <a href="#" class="text-primary">Pay <i class="mdi mdi-arrow-right"></i></a></p>
+                                                            </div>
+                                                        </div>
+
+                                                    
+
+                                                        <div class="media mt-4">
+                                                            <div class="avatar-sm mb-2 mt-2">
+                                                                <span class="avatar-title rounded-circle bg-white shadow">
+                                                                        <i class="mdi mdi-eye-outline text-primary font-size-18"></i>
+                                                                    </span>
+                                                            </div>
+                                                        <div class="media-body ps-3">
+                                                            <h4 class="font-size-20">1230</h4>
+                                                            <p class="text-muted mb-0">To Online <a href="#" class="text-primary">View <i class="mdi mdi-arrow-right"></i></a></p>
+                                                        </div>
+                                                        </div>
                                                     </div>
                                                 </div>
 
+
                                             </div>
-                                        </div>
 
-                                        <div class="mt-3">
-                                            <div id="stastics-chart"></div>
-                                        </div>
 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                        </div> */ ?>
+
+                                <div class="col-xl-4">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-md-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="text-center">
+                                                        <p class="font-size-16">Orders</p>
+                                                        <div class="mini-stat-icon mx-auto mb-4 mt-3">
+                                                            <span class="avatar-title rounded-circle bg-soft-primary">
+                                                                    <i class="mdi mdi-cart-outline text-primary font-size-20"></i>
+                                                                </span>
+                                                        </div>
+                                                        <h5 class="font-size-22">58</h5>
+        
+                                                        <p class="text-muted">70% Target</p>
+
+                                                        <div class="progress mt-3" style="height: 4px;">
+                                                            <div class="progress-bar progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="70">
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            
+                                        </div>
+
+                                        <div class="col-xl-6 col-md-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="text-center">
+                                                        <p class="font-size-16">Users</p>
+                                                        <div class="mini-stat-icon mx-auto mb-4 mt-3">
+                                                            <span class="avatar-title rounded-circle bg-soft-success">
+                                                                    <i class="mdi mdi-account-outline text-success font-size-20"></i>
+                                                            </span>
+                                                        </div>
+                                                        <h5 class="font-size-22">136</h5>
+        
+                                                        <p class="text-muted">80% Target</p>
+
+                                                        <div class="progress mt-3" style="height: 4px;">
+                                                            <div class="progress-bar progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="80">
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="header-title mb-4">Revenue Stastics</h4>
+
+                                            <div class="media">
+
+                                                <h4>$14,235 </h4>
+
+
+                                                <div class="media-body ps-3">
+
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-light btn-sm dropdown-toggle" type="button"
+                                                            id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">
+                                                            Today<i class="mdi mdi-chevron-down ms-1"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                            <a class="dropdown-item" href="#">Yesterday</a>
+                                                            <a class="dropdown-item" href="#">Last Week</a>
+                                                            <a class="dropdown-item" href="#">last Month</a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="mt-3">
+                                                <div id="stastics-chart"></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div> */?> 
 
                         <div class="row">
 
@@ -746,118 +763,33 @@
                             <div class="col-xl-4">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="header-title mb-4">Sales By Social Source
-
-                                        </h4>
+                                        <h4 class="header-title mb-4">Boutiques</h4>
 
                                         <ul class="inbox-wid list-unstyled mb-0">
+                                        <?php foreach (select_table('shop') as $key => $value) : if($key<6): ?>    
                                             <li class="inbox-list-item">
                                                 <a href="#">
                                                     <div class="media">
                                                         <div class="me-3 align-self-center">
-                                                            <div class="avatar-sm rounded bg-primary align-self-center">
+                                                            <div class="avatar-sm rounded align-self-center">
                                                                 <span class="avatar-title">
-                                                                    <i class="ti-facebook text-white font-size-18"></i>
+                                                                    <img src="<?= $dossier_logo . $value -> logo ?>" style="max-width: 60px;" alt="">
                                                                 </span>
                                                             </div>
                                                         </div>
-                                                        <div class="media-body overflow-hidden mt-1">
-                                                            <h5 class="font-size-15 mb-1">Facebook Ads</h5>
-                                                            <p class="text-muted mb-0">3.2k Sale - 4.2k Like</p>
+                                                        <div class="media-body overflow-hidden mt-3">
+                                                            <h5 class="font-size-15 mb-1"><?php echo $value -> Nom_Shop ; ?></h5>
                                                         </div>
                                                         <p class="ms-2 pt-3">
-                                                            <i class="mdi mdi-arrow-top-right text-success me-1"></i>50%
+                                                            <?php echo count(select_table_where('produits', 'Mat_Shop', $value->Mat_Shop)); ?>
                                                         </p>
                                                     </div>
                                                 </a>
                                             </li>
-                                            <li class="inbox-list-item">
-                                                <a href="#">
-                                                    <div class="media">
-                                                        <div class="me-3 align-self-center">
-                                                            <div class="avatar-sm rounded bg-info align-self-center">
-                                                                <span class="avatar-title">
-                                                                    <i
-                                                                        class="ti-twitter-alt text-white font-size-18"></i>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media-body overflow-hidden mt-1">
-                                                            <h5 class="font-size-15 mb-1">Twitter Ads</h5>
-                                                            <p class="text-muted mb-0">3.1k Sale - 3.7k Like</p>
-                                                        </div>
-                                                        <p class="ms-2 pt-3">
-                                                            <i class="mdi mdi-arrow-top-right text-success me-1"></i>45%
-                                                        </p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="inbox-list-item">
-                                                <a href="#">
-                                                    <div class="media">
-                                                        <div class="me-3 align-self-center">
-                                                            <div class="avatar-sm rounded bg-danger align-self-center">
-                                                                <span class="avatar-title">
-                                                                    <i class="ti-linkedin text-white font-size-18"></i>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media-body overflow-hidden mt-1">
-                                                            <h5 class="font-size-15 mb-1">linkedin Ads</h5>
-                                                            <p class="text-muted mb-0">4.3k Sale - 4.3k Like</p>
-                                                        </div>
-                                                        <p class="ms-2 pt-3">
-                                                            <i
-                                                                class="mdi mdi-arrow-bottom-right text-danger me-1"></i>30%
-                                                        </p>
-                                                    </div>
-                                                </a>
-                                            </li>
-
-
-                                            <li class="inbox-list-item">
-                                                <a href="#">
-                                                    <div class="media">
-                                                        <div class="me-3 align-self-center">
-                                                            <div class="avatar-sm rounded bg-danger align-self-center">
-                                                                <span class="avatar-title">
-                                                                    <i class="ti-youtube text-white font-size-18"></i>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media-body overflow-hidden mt-1">
-                                                            <h5 class="font-size-15 mb-1">Youtube Ads</h5>
-                                                            <p class="text-muted mb-0">4.2k Sale - 3.7k Like</p>
-                                                        </div>
-                                                        <p class="ms-2 pt-3">
-                                                            <i class="mdi mdi-arrow-top-right text-success me-1"></i>35%
-                                                        </p>
-                                                    </div>
-                                                </a>
-                                            </li>
-
-                                            <li class="inbox-list-item">
-                                                <a href="#" class="pb-0">
-                                                    <div class="media">
-                                                        <div class="me-3 align-self-center">
-                                                            <div class="avatar-sm rounded bg-dark align-self-center">
-                                                                <span class="avatar-title">
-                                                                    <i class="ti-github text-white font-size-18"></i>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media-body overflow-hidden mt-1">
-                                                            <h5 class="font-size-15 mb-1">GitHub Ads</h5>
-                                                            <p class="text-muted mb-2">4.9k Sale - 4.1k Like</p>
-                                                        </div>
-                                                        <p class="ms-2 pt-3">
-                                                            <i class="mdi mdi-arrow-top-right text-success me-1"></i>40%
-                                                        </p>
-                                                    </div>
-                                                </a>
-                                            </li>
+                                            <?php else: break; endif; ?>
+                                                    <?php endforeach; ?>
                                         </ul>
-
+                                    
 
                                     </div>
                                 </div>
@@ -866,79 +798,34 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="header-title mb-4">Products of the Month</h4>
+                                        <h4 class="header-title mb-4">Commande recentes</h4>
                                         <div class="table-responsive">
                                             <table class="table table-centered table-nowrap mb-0">
                                                 <thead class="thead-light">
                                                     <tr>
-                                                        <th>ID</th>
-                                                        <th>Product</th>
-
-                                                        <th>Customer</th>
-                                                        <th>Price</th>
-                                                        <th>Invoice</th>
+                                                        <th>Mat_Com</th>
+                                                        <th>Produits</th>
+                                                        <th>Boutique</th>
+                                                        <th>Prix</th>
+                                                        <th>Nombre_Prod.</th>
                                                         <th>Status</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                <?php foreach (select_table('commande') as $key => $value) : if($key<6): ?>
                                                     <tr>
-                                                        <td>#2356</td>
-                                                        <td><img src="assets/images/product/img-7.png" width="42" class="me-3" alt="">Green Chair</td>
-                                                        <td>Kenneth Gittens</td>
-                                                        <td>$200.00</td>
-                                                        <td>42</td>
+                                                    
+                                                        <td><?php echo $value -> Mat_Com ; ?></td>
+                                                        <td><i class="dripicons-stack"></i> <?php echo $value -> Produit_acheter ; ?></td>
+                                                        <td><?php echo select_table_where('shop', 'Mat_Shop', $value-> Mat_Shop)[0] -> Nom_Shop; ?></td>
+                                                        <td><?php echo $value -> Prix ; ?> Fcfa</td>
+                                                        <td><?php  ?></td>
                                                         <td><span
                                                                 class="badge badge-pill badge-soft-primary font-size-13">Pending</span>
                                                         </td>
                                                     </tr>
-
-                                                    <tr>
-                                                        <td>#2564</td>
-                                                        <td><img src="assets/images/product/img-8.png" width="42" class="me-3" alt="">Office Chair</td>
-                                                        <td>Alfred Gordon</td>
-                                                        <td>$242.00</td>
-                                                        <td>54</td>
-                                                        <td><span
-                                                                class="badge badge-pill badge-soft-success font-size-13">Active</span>
-                                                        </td>
-                                                    </tr>
-
-                                                   
-
-                                                    <tr>
-                                                        <td>#2125</td>
-                                                        <td><img src="assets/images/product/img-10.png" width="42" class="me-3" alt="">Gray Chair</td>
-                                                        <td>Keena Reyes</td>
-                                                        <td>$320.00</td>
-                                                        <td>65</td>
-                                                        <td><span
-                                                                class="badge badge-pill badge-soft-success font-size-13">Active</span>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>#8587</td>
-                                                        <td><img src="assets/images/product/img-11.png" width="42" class="me-3" alt="">Steel Chair</td>
-                                                        <td>Timothy Zuniga</td>
-                                                        <td>$342.00</td>
-                                                        <td>52</td>
-                                                        <td><span
-                                                                class="badge badge-pill badge-soft-primary font-size-13">Pending</span>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>#2354</td>
-                                                        <td><img src="assets/images/product/img-12.png" width="42" class="me-3" alt="">Home Chair</td>
-                                                        <td>Joann Wiliams</td>
-                                                        <td>$320.00</td>
-                                                        <td>25</td>
-                                                        <td><span
-                                                                class="badge badge-pill badge-soft-primary font-size-13">Pending</span>
-                                                        </td>
-                                                    </tr>
-
-
+                                                    <?php else: break; endif; ?>
+                                                    <?php endforeach; ?>
                                                 </tbody>
                                             </table>
                                         </div>

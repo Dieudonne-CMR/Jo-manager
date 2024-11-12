@@ -23,3 +23,4 @@ function select_table_where($nom_table, $nom_champ, $val)
 }
 //======== Traitement des images et insertion dans un dossier 
 
+
