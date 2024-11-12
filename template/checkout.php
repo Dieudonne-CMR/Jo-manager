@@ -145,70 +145,6 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                 <div class="col-xl-6">
                                     <div class="card">
                                         <div class="card-body">
-                                            <div id="checkout-nav-pills-wizard" class="twitter-bs-wizard">
-                                                <ul class="twitter-bs-wizard-nav">
-                                                    <li class="nav-item chackout-border">
-                                                        <a href="#billing-info" class="nav-link" data-toggle="tab">
-                                                            <span class="step-number">Infos Client</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                                <div class="tab-content twitter-bs-wizard-tab-content">
-                                                    <div class="tab-pane" id="billing-info">
-                                                        <h5 class="header-title">Informations du Client</h5>
-                                                        <p>Veuillez remplir le formulaire relatif a votre Commande</p>        
-
-                                                        <form action='save_checkout' method='POST'>
-                                                            <div>
-                                                                <div>
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4">
-                                                                            <div class="mb-4">
-                                                                                <label class="form-label" for="billing-name">Nom</label>
-                                                                                <input type="text" name='nom_client' class="form-control" id="billing-name" placeholder="Entrez votre nom">
-                                                                            </div>
-                                                                        </div><!-- end col -->
-                                                                        <div class="col-lg-4">
-                                                                        <div class="mb-4 mb-lg-0">
-                                                                                <label class="form-label">Ville</label>
-                                                                                <select class="form-select" name='ville_client' title="Ville">
-                                                                                    <option value="0">Selectionner une ville</option>
-                                                                                    <option value="AF">Douala</option>
-                                                                                    <option value="AL">Yaounde</option>
-                                                                                    <option value="DZ">Bafoussam</option>
-                                                                                    <option value="AS">Kribi</option>
-                                                                                    <option value="AD">Limbe</option>
-                                                                                    <option value="AO">Dschang</option>                                  
-                                                                                </select>
-                                                                            </div>
-                                                                        </div><!-- end col -->
-                                                                        <div class="col-lg-4">
-                                                                            <div class="mb-4">
-                                                                                <label class="form-label" for="billing-phone">Telephone</label>
-                                                                                <input type="number" name='tel_client' class="form-control" id="billing-phone" placeholder="Entrer num. tel.">
-                                                                            </div>
-                                                                        </div><!-- end col -->
-                                                                    </div><!-- end row -->
-                                                                    <div class="mb-4">
-                                                                        <label class="form-label" for="billing-address">Adresse</label>
-                                                                        <textarea class="form-control" name='adresse_client' id="billing-address" rows="3" placeholder="Entrez votre adresse complete"></textarea>
-                                                                    </div>
-                                                                    <input type="hidden" name='panier' value='<?= $panier //je recupere mon panier et le met dans un input pour pouvoir le recuperer ?>'>
-                                                                    <button type='submit' name='soumettre' class="btn btn-primary">
-                                                                             Soumettre
-                                                                    </button> 
-                                                                </div>
-                                                            </div>
-                                                        </form><!-- end form -->
-                                                    </div>
-                                                </div>  
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <div class="card">
-                                        <div class="card-body">
                                             <table class="table table-centered mb-0 table-nowrap">
                                                 <thead>
                                                 <tr>
@@ -259,6 +195,74 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                         </div><!-- end cardbody -->
                                     </div><!-- end card -->
                                 </div><!-- end col -->
+                                <div class="col-xl-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div id="checkout-nav-pills-wizard" class="twitter-bs-wizard">
+                                                <ul class="twitter-bs-wizard-nav">
+                                                    <li class="nav-item chackout-border">
+                                                        <a href="#billing-info" class="nav-link" data-toggle="tab">
+                                                            <span class="step-number">Infos Client</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content twitter-bs-wizard-tab-content">
+                                                    <div class="tab-pane" id="billing-info">
+                                                        <h5 class="header-title">Informations du Client</h5>
+                                                        <p>Veuillez remplir le formulaire relatif a votre Commande</p>        
+
+                                                        <form action='save_checkout' method='POST'>
+                                                            <div>
+                                                                <div>
+                                                                    <div class="row">
+                                                                        <div class="col-lg-4">
+                                                                            <div class="mb-4">
+                                                                                <label class="form-label" for="billing-name">Nom</label>
+                                                                                <input type="text" name='nom_client' class="form-control" id="billing-name" placeholder="Entrez votre nom">
+                                                                            </div>
+                                                                        </div><!-- end col -->
+                                                                        <div class="col-lg-4">
+                                                                        <div class="mb-4 mb-lg-0">
+                                                                                <label class="form-label">Ville</label>
+                                                                                <select class="form-select" name='ville_client' title="Ville">
+                                                                                    <option value="0">Selectionner une ville</option>
+                                                                                    <option value="AF">Douala</option>
+                                                                                    <option value="AL">Yaounde</option>
+                                                                                    <option value="DZ">Bafoussam</option>
+                                                                                    <option value="AS">Kribi</option>
+                                                                                    <option value="AD">Limbe</option>
+                                                                                    <option value="AO">Dschang</option>                                  
+                                                                                </select>
+                                                                            </div>
+                                                                        </div><!-- end col -->
+                                                                        <div class="col-lg-4">
+                                                                            <div class="mb-4">
+                                                                                <label class="form-label" for="billing-phone">Telephone</label>
+                                                                                <input type="number" name='tel_client' class="form-control" id="billing-phone" placeholder="Entrer num. tel.">
+                                                                            </div>
+                                                                        </div><!-- end col -->
+                                                                    </div><!-- end row -->
+                                                                    <div class="mb-4">
+                                                                        <label class="form-label" for="billing-address">Adresse</label>
+                                                                        <textarea class="form-control" name='adresse_client' id="billing-address" rows="3" placeholder="Entrez votre adresse complete"></textarea>
+                                                                    </div>
+                                    
+                                                                    <input type="hidden" name='prix_total_commande' value='<?= $totalPanier //je recupere le prix total de ma commande ?>'>
+                                                                    <input type="hidden" name='mat_produit' value='<?= $mat_produit //je recupere le prix total de ma commande ?>'>
+                                                                    <input type="hidden" name='panier' value='<?= $panier //je recupere le prix total de ma commande ?>'>
+                                                                    <input type="hidden" name='shop' value='<?= $mat_shop //je recupere le matricule de la boutique dans laquelle je suis ?>'>
+                                                                    <button type='submit' name='soumettre' class="btn btn-primary">
+                                                                             Soumettre
+                                                                    </button> 
+                                                                </div>
+                                                            </div>
+                                                        </form><!-- end form -->
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div><!-- end row -->
                         </div>  
                     </div> <!-- container-fluid -->
