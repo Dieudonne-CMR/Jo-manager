@@ -283,7 +283,7 @@
                             <span>Ajout de produits</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="#">Mousse</a></li>
+                            <li><a href="aj_produit_admin">Mousse</a></li>
                             <li><a href="#">Matelas</a></li>
                             
                         </ul>

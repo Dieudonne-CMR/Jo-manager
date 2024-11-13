@@ -81,6 +81,11 @@ if(@$url[0]=='achat'):
     include_once('template/achat.php');
 endif;
 
+
+if(@$url[0]=='aj_produit_admin'):
+    include_once('template/ajout_produit_admin.php');
+endif;
+
 if(@$url[0]=='panier'):
     //----- Récupérer le panier depuis la session
     $panier = !empty($_SESSION['panier'][$mat_shop]) ? $_SESSION['panier'][$mat_shop]: [];
@@ -192,6 +197,11 @@ endif;
 
 if(@$url[0]=='panier'):
     include_once 'processing/supprimer_panier.php'; 
+endif;
+
+//route d'ajout d'un produit par un admin
+if(@$url[0]=='aj_produits_super-admin'):
+    include_once 'processing/aj_produits_super-admin.php'; 
 endif;
 
 //======== Les actions 
