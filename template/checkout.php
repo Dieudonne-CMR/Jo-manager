@@ -134,7 +134,7 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                                         <h5 class="header-title">Informations du Client</h5>
                                                         <p>Veuillez remplir le formulaire relatif a votre Commande</p>        
 
-                                                        <form action='save_checkout' method='POST'>
+                                                        <form class='aj_checkout' action='save_checkout' method='POST'>
                                                             <div>
                                                                 <div>
                                                                     <div class="row">
@@ -221,6 +221,7 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
          <script src="assets/js/pages/ecommerce-checkout.init.js"></script>
 
         <script src="assets/js/app.js"></script>
+        <script src="assets/js/aj_checkout.js"></script>
 
     </body>
 

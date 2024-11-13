@@ -34,10 +34,12 @@
             'Mat_Mem' => $mat_gerant,
         ]
         );
+        
 
 
         unset($_SESSION['panier'][$mat_shop]);
         header("location:home"); 
+        
         
  
 
