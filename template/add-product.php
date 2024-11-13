@@ -98,7 +98,7 @@
 
                                                             // $produit = $DB->query("SELECT * FROM produits WHERE Mat_Produit = ?", [$mat_produit]);
                                                             $produit = select_table_where('produits','Mat_Produit',$Mat_Produit);
-                                                            var_dump($produit);
+                                                            // var_dump($produit);
                                                             
                                                         }
                                                     ?>

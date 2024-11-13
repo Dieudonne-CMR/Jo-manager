@@ -1,5 +1,9 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
+$response=[];
 // Récupérer les données envoyées par le formulaire
 $mat_product = test_input($_POST['mat_product']);
 $nom = test_input($_POST['nom']);
@@ -19,7 +23,10 @@ $_SESSION['panier'][$mat_shop][$mat_product] = [
     'image' => $image,
     'quantite' => (isset($_SESSION['panier'][$mat_shop][$mat_product]) ? $_SESSION['panier'][$mat_shop][$mat_product]['quantite'] + 1 : 1)
 ];
-$response=0;
+$response=json_encode([
+    'ok'=>0,
+    'panier'=> sizeof($_SESSION['panier'][$mat_shop]),
+]);
 echo $response; //-- bien ajouter au panier
 // Rediriger vers la page des produits
 // header("Location: panier");
