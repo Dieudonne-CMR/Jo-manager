@@ -44,9 +44,8 @@ if($gest_boutik==0):
 
 
 elseif($gest_boutik==1): 
-
     //-------- page d'accueil pour les gerants dans boutiques
-    if(@$url[0]=='home' || @$url==''):
+    if(@$url[0]=='home' || @$url=='' || @$url[0]=='accueil_sup_ad'):
         include_once("template/home.php");
     endif;
 endif;
@@ -170,9 +169,14 @@ if(@$url[0]=='mod-product'):
     include_once 'processing/mod-product.php'; 
 endif;
 
-//-----traitement produit dans le panier
+//-----traitement produit dans le panier vide_panier
 if(@$url[0]=='aj_panier'):
     include_once 'processing/ajouter_au_panier.php'; 
+endif;
+//---vider le panier
+if(@$url[0]=='vide_panier'):
+    unset($_SESSION['panier'][$mat_shop]);
+    header("location:home");
 endif;
 
 //--------Mise ajour du panier

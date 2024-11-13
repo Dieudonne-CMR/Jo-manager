@@ -56,7 +56,8 @@
                              </div>
                              <div class="col-sm-6">
                                 <div class="float-end d-none d-sm-block">
-                                    <a href="panier" class="btn btn-success">Commande <i class="dripicons-basket">0</i></a>
+                                    <a href="panier" class="btn btn-success">Panier <i class="dripicons-basket"> <span id="panier"><?= isset($_SESSION['panier'][$mat_shop]) ? sizeof($_SESSION['panier'][$mat_shop]): 0 ?></span></i></a>
+                                    <a href="vide_panier" class="btn btn-danger">Vider <i class="dripicons-basket"> </i></a>
                                 </div>
                              </div>
                          </div>
@@ -73,24 +74,26 @@
                                 <?php foreach(select_table_where("Produits","Mat_Shop",$mat_shop) as $value): 
                                      $mat_product=$value->Mat_Produit  //-- du produits
                                 ?>
-                                    <div class="col-xl-3 col-sm-6">
+
+                                    <div class="col-xl-4 col-sm-6">
                                         <div class="card">
-                                        <div class="card-body">
-                                            <div class="product-img">
-                                            <?php //<div class="product-ribbon  bg-primary"> 25% Off </div>?>
-                                                
+                                            <div class="card-body">
+                                            <div class="product-img pb-3">
+                                               <?php /* <div class="product-ribbon  bg-primary">
+                                                    25% Off
+                                                </div> */?>
                                                 
                                                 <img src="<?php echo $image_produit . $value -> Img1 ?>" alt="" class="img-fluid mx-auto d-block">
                                             </div>
-
+    
                                             <div class="text-center">
-
-                                                <a href="#" class="text-dark">
+    
+                                                <a href="#" class="text-dark " >
                                                     <h5 class="font-size-18"><?php echo $value -> Nom_Produit; ?></h5>
                                                 </a>
-
-                                                <h4 class="mt-3 mb-0"><?php echo $value -> Prix;   ?><span class="font-size-14 text-muted me-2"><del><?php echo $value -> Prix_Promo;   ?></del></span></h4>
-
+    
+                                                <h4 class="mt-3 mb-0"><?php echo $value -> Prix; ?> <span class="font-size-14 text-muted me-2"><del><?php echo $value -> Prix_Promo; ?></del></span></h4>
+    
                                                 <div class="mt-3">
                                                     <ul class="list-inline">
                                                         <li class="list-inline-item">
@@ -114,11 +117,13 @@
                                                         </div>
                                                     </form>
                                                 </div>
+    
                                             </div>
-                                        </div>
+                                            </div>
                                         </div>
                                     </div>
                                 <?php endforeach;    ?>
+
                                 
                             </div>
                             <!-- end row -->

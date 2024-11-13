@@ -11,8 +11,10 @@ $(document).ready(function() {
 
         // Envoie une requête POST avec les données du formulaire
         $.post(url, data, function(response) {
-            console.log(response); // Affiche la réponse dans la console
-            if (response == 0) {
+            donne= JSON.parse(response)// recuper les donnes sous forme de js
+            console.log(donne); // Affiche la réponse dans la console
+            $('#panier').text(donne.panier)
+            if (donne.ok == 0) {
                 Swal.fire({
                     icon: 'success',
                     title: 'Succès',
@@ -22,7 +24,6 @@ $(document).ready(function() {
                 });
             } 
 
-           
         })
         
     });

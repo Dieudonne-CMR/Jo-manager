@@ -254,6 +254,7 @@
                         
                     </ul>
                 </li>
+               
 
                 <?php if($gest_boutik==1): // zone des gerant de boutique?>
                     <li>
@@ -275,6 +276,19 @@
                 <?php endif ?>
                 <!-- permission admin -->
                 <?php if($gest_boutik==0): ?>
+                 <!-- zone d'ajout des produits -->
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="dripicons-cart"></i>
+                            <span>Ajout de produits</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="#">Mousse</a></li>
+                            <li><a href="#">Matelas</a></li>
+                            
+                        </ul>
+                    </li>
+
                     <li>
                         <a href="shops" class=" waves-effect">
                             <i class="dripicons-calendar"></i>

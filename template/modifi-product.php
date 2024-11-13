@@ -149,7 +149,7 @@
                                                                 <div class="col-sm-4 mb-3">
                                                                     <div class="fallback">
                                                                         <img src="<?php echo $image_produit . $product[0]-> Img1 ?>" alt="" style="max-width: 100px;"><br><br>
-                                                                        <input type="file" name="images[]"  multiple class="form-control" id="imgUpload1" accept="image/*" />
+                                                                        <input type="file" name="images1"  multiple class="form-control" id="imgUpload1" accept="image/*" />
                                                                     </div>
                                                                     <!-- voir image avant de soumettre -->
                                                                     <img id="imgPreview1" class="mt-3" src="" alt="Aperçu de l'image" style="max-width: 100px; display: none;">
@@ -158,14 +158,15 @@
                                                                 <div class="col-sm-4 mb-3">
                                                                     <div class="fallback">
                                                                         <img src="<?php echo $image_produit . $product[0]-> Img2 ?>" alt="" style="max-width: 100px;"><br><br>
-                                                                        <input type="file" name="images[]" class="form-control" id="imgUpload2" accept="image/*" />
+                                                                        <input type="file" name="images2" class="form-control" id="imgUpload2" accept="image/*" />
                                                                     </div>
                                                                     <img id="imgPreview2" class="mt-3" src="" alt="Aperçu de l'image" style="max-width: 100px; display: none;">
                                                                 </div>
                                                                 <div class="col-sm-4 mb-3">
                                                                     <div class="fallback">
-                                                                        <img src="<?php echo $image_produit . $product[0]-> Img3 ?>" alt="" style="max-width: 100px;">
-                                                                        <input type="file" name="images[]" class="form-control" id="imgUpload3" accept="image/*" />
+                                                                        <img src="<?php echo $image_produit . $product[0]-> Img3 ?>" alt="" style="max-width: 100px;"> <br> <br>
+
+                                                                        <input type="file" name="images3" class="form-control" id="imgUpload3" accept="image/*" />
                                                                     </div>
                                                                     <img id="imgPreview3" src="" class="mt-3" alt="Aperçu de l'image"  style="max-width: 100px; display: none;">
                                                                 </div>
