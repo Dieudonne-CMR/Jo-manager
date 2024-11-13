@@ -189,6 +189,11 @@ if(@$url[0]=='save_checkout'):
     include_once 'processing/save_checkout.php'; 
 endif;
 
+
+if(@$url[0]=='panier'):
+    include_once 'processing/supprimer_panier.php'; 
+endif;
+
 //======== Les actions 
 //------deconnexion
 

@@ -46,19 +46,15 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                          <div class="row align-items-center">
                              <div class="col-sm-6">
                                  <div class="page-title">
-                                     <h4>Checkout</h4>
+                                     <h4>Validation de la commande</h4>
                                          <ol class="breadcrumb m-0">
-                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
+                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Jo-Retail</a></li>
                                              <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
-                                             <li class="breadcrumb-item active">Checkout</li>
+                                             <li class="breadcrumb-item active">Validation de la commande</li>
                                          </ol>
                                  </div>
                              </div>
-                             <div class="col-sm-6">
-                                <div class="float-end d-none d-sm-block">
-                                    <a href="#" class="btn btn-success">Add Widget</a>
-                                </div>
-                             </div>
+                             
                          </div>
                         </div>
                      </div>
@@ -68,81 +64,8 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                     <div class="container-fluid">
 
                         <div class="page-content-wrapper">
-
-
                             <div class="row">
-                                <div class="col-xl-3">
-                                   <div class="card">
-                                       <div class="card-body">
-                                            <i class="fab fa-cc-visa text-info h1"></i>
-
-                                            <h3 class="mt-3 font-size-22">**** **** **** 2355</h3>
-
-                                            <div class="mt-3">
-                                                <div class="float-end">
-                                                   <p class="mb-0">Expiry date: 11/25 </p>
-                                                </div>
-
-                                                <p class="mb-0 mt-4">James Raphael</p>
-                                            </div>
-                                       </div>
-                                   </div><!-- end cardbody -->
-                                </div><!-- end card -->
-                                <div class="col-xl-3">
-                                    <div class="card">
-                                        <div class="card-body">
-                                             <i class="fab fa-cc-mastercard text-danger h1"></i>
- 
-                                             <h3 class="mt-3 font-size-22">**** **** **** 5452</h3>
- 
-                                             <div class="mt-3">
-                                                 <div class="float-end">
-                                                    <p class="mb-0">Expiry date: 11/23 </p>
-                                                 </div>
- 
-                                                 <p class="mb-0 mt-4">James Raphael</p>
-                                             </div>
-                                        </div>
-                                    </div><!-- end card -->
-                                </div><!-- end col -->
-                                <div class="col-xl-3">
-                                    <div class="card">
-                                        <div class="card-body">
-                                             <i class="fab fa-cc-discover text-success h1"></i>
- 
-                                             <h3 class="mt-3 font-size-22">**** **** **** 2656</h3>
- 
-                                             <div class="mt-3">
-                                                 <div class="float-end">
-                                                    <p class="mb-0">Expiry date: 10/14 </p>
-                                                 </div>
- 
-                                                 <p class="mb-0 mt-4">James Raphael</p>
-                                             </div>
-                                        </div>
-                                    </div><!-- end card -->
-                                </div><!-- end col -->
-                                <div class="col-xl-3">
-                                    <div class="card">
-                                        <div class="card-body">
-                                             <i class="fab fa-cc-amex text-primary h1"></i>
- 
-                                             <h3 class="mt-3 font-size-24">**** **** **** 4575</h3>
- 
-                                             <div class="mt-3">
-                                                 <div class="float-end">
-                                                    <p class="mb-0">Expiry date: 12/14 </p>
-                                                 </div>
- 
-                                                 <p class="mb-0 mt-4">James Raphael</p>
-                                             </div>
-                                        </div>
-                                    </div>
-                                </div><!-- end card -->
-                            </div><!-- end col -->
-
-                            <div class="row">
-                                <div class="col-xl-6">
+                                <div class="col-xl-5">
                                     <div class="card">
                                         <div class="card-body">
                                             <table class="table table-centered mb-0 table-nowrap">
@@ -178,7 +101,7 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                                     <?php endforeach; ?>
                                                         <?php else: ?>
                                                             <p>Votre panier est vide.</p>
-                                                        <?php endif; ?>
+                                                            <?php $totalPanier = 0; ?>                                                        <?php endif; ?>
                                                     <tr>
                                                         <td colspan="1">
                                                         </td>
@@ -195,7 +118,7 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                         </div><!-- end cardbody -->
                                     </div><!-- end card -->
                                 </div><!-- end col -->
-                                <div class="col-xl-6">
+                                <div class="col-xl-7">
                                     <div class="card">
                                         <div class="card-body">
                                             <div id="checkout-nav-pills-wizard" class="twitter-bs-wizard">
@@ -244,7 +167,7 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                                                     </div><!-- end row -->
                                                                     <div class="mb-4">
                                                                         <label class="form-label" for="billing-address">Adresse</label>
-                                                                        <textarea class="form-control" name='adresse_client' id="billing-address" rows="3" placeholder="Entrez votre adresse complete"></textarea>
+                                                                        <input type='text' class="form-control" name='adresse_client' id="billing-address" rows="3" placeholder="Entrez votre adresse complete"></input>
                                                                     </div>
                                     
                                                                     <input type="hidden" name='prix_total_commande' value='<?= $totalPanier //je recupere le prix total de ma commande ?>'>

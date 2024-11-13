@@ -55,11 +55,6 @@
                                          </ol>
                                  </div>
                              </div>
-                             <div class="col-sm-6">
-                                <div class="float-end d-none d-sm-block">
-                                    <a href="#" class="btn btn-success">Add Widget</a>
-                                </div>
-                             </div>
                          </div>
                         </div>
                      </div>
@@ -81,12 +76,7 @@
                                                 <li class="nav-item">
                                                     <a class="nav-link fw-bold p-3 active" href="#">Toutes les commandes</a>
                                                 </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link p-3 fw-bold" href="#">Actif</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link p-3 fw-bold" href="#">Impayé</a>
-                                                </li>
+                                                
                                             </ul>
                                             <div class="table-responsive">
                                                 <table class="table table-centered datatable dt-responsive nowrap " style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -107,7 +97,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <?php foreach (select_table('commande') as $key => $value) : if($key>6): ?>
+                                                        <?php foreach (select_table('commande') as  $value) : ?>
                                                         <tr>
                                                             <td>
                                                                 <div class="form-check">
@@ -140,7 +130,6 @@
                                                                 <button class="btn btn-light btn-rounded">Facture <i class="mdi mdi-download ms-2"></i></button>
                                                             
                                                         </tr>
-                                                        <?php else: break; endif; ?>
                                                         <?php endforeach; ?>
                                                     </tbody>
                                                 </table>

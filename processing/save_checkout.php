@@ -35,8 +35,10 @@
         ]
         );
 
-        $_SESSION['ok']='ok';
+
+        unset($_SESSION['panier'][$mat_shop]);
         header("location:home"); 
+        
  
 
     endif;
