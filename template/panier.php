@@ -74,8 +74,7 @@
                                                     <thead class="bg-light">
                                                         <tr>
                                                             <th style="width: 120px">Produit</th>
-                                                            <th>Nom du Produit</th>
-                                                          
+                                                            <th>Nom du Produit</th>  
                                                             <th>Prix Unitaire</th>
                                                             <th>Quantité</th>
                                                             <th>Total</th>
@@ -94,7 +93,7 @@
                                                             $totalPanier += $totalProduit; //---- Prix total du panier
                                                             // var_dump($totalPanier);
                                                         ?>
-                                                        <tr>
+                                                        <tr id="produit-<?= $produit['mat_produit']; ?>">
                                                             <td>
                                                                 <img src="<?= $image_produit . $produit['image'] ?>" alt="product-img"
                                                                     title="product-img" class="avatar-md" />
@@ -121,13 +120,16 @@
                                                             </td>
 
                                                             <td style="width: 90px;" class="text-center">
-                                                                <a href="javascript:void(0);" class="action-icon text-danger"> <i class="mdi mdi-trash-can font-size-18"></i></a>
+                                                                <button class="supprimer" data-id="<?= $produit['mat_produit']; ?>" class="action-icon text-danger" title="Supprimer"> 
+                                                                    <i class="mdi mdi-trash-can font-size-18"></i>
+                                                                </button>
                                                             </td>
                                                     
                                                         </tr><!-- end tr -->
                                                         <?php endforeach; ?>
                                                         <?php else: ?>
                                                             <p>Votre panier est vide.</p>
+                                                            <?php $totalPanier = 0; ?>
                                                         <?php endif; ?>
                                                         <tr class="bg-light text-end">
                                                         
@@ -257,6 +259,45 @@
             });
         });
     });
+</script>
+<!-- ---------------------------------------------------------------------------------------- -->
+<script>
+    // Attendre que la page soit chargée
+    document.addEventListener('DOMContentLoaded', function () {
+    // Sélectionner tous les boutons de suppression
+    const boutonsSupprimer = document.querySelectorAll('.supprimer');
+
+    // Ajouter un événement de clic à chaque bouton de suppression
+    boutonsSupprimer.forEach(button => {
+        button.addEventListener('click', function () {
+            // Récupérer l'ID du produit à partir de l'attribut 'data-id'
+            const produitId = this.getAttribute('data-id');
+            
+            // Créer une nouvelle requête AJAX
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'supprimer_panier.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            // Lorsque la réponse est reçue, mettre à jour l'interface
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    // Si la suppression est réussie, retirer la ligne du tableau
+                    document.getElementById('produit-' + produitId).remove();
+
+                    // Afficher un message de succès
+                    document.getElementById('message').innerText = 'Produit supprimé avec succès !';
+                } else {
+                    // Si une erreur se produit
+                    document.getElementById('message').innerText = 'Erreur de suppression.';
+                }
+            };
+
+            // Envoyer l'ID du produit à supprimer
+            xhr.send('produit_id=' + produitId);
+        });
+    });
+});
+
 </script>
 
     </body>
