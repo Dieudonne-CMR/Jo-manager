@@ -223,6 +223,8 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
         <script src="assets/js/app.js"></script>
         <script src="assets/js/aj_checkout.js"></script>
 
+
+
     </body>
 
 <!-- Mirrored from themesdesign.in/morvin/layouts/ecommerce-checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2024 05:02:45 GMT -->
