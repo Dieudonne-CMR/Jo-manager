@@ -90,7 +90,7 @@
                                                     <h4 class="header-title">Informations basiques</h4>
                                                     <p class="card-title-desc">Remplissez toutes les informations ci-dessous</p><br>
                                                     
-                                                            <div class='row'>
+                                                        <div class='row'>
                                                                 <div class="col-sm-4 mb-3">
                                                                     <div class="fallback">
                                                                         <!-- Small modal  bouton pour ouvrir la pop up-->
@@ -104,9 +104,9 @@
                                                                                         <h5 class="modal-title" id="staticBackdropLabel">Ajout d'une gamme</h5>
                                                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                                     </div>
-                                                                                    <form action="####">
+                                                                                    <form action="aj_dim-gam-ep" method='post'>
                                                                                         <div class="modal-body">
-                                                                                            <input type="text" name="gamme"  multiple class="form-control" placeholder='Ajoutez une gamme'/>
+                                                                                            <input type="text" name="aj_gamme"  multiple class="form-control" placeholder='Ajoutez une gamme'/>
                                                                                         </div>
                                                                                         <div class="modal-footer">
                                                                                             <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Fermer</button>
@@ -117,7 +117,9 @@
                                                                             </div>
                                                                         </div><br>
                                                                     <label class="form-label" for="productdesc">Gamme</label>
-                                                                    <input type="text" name=""  multiple class="form-control" id="imgUpload1"  />
+                                                                    <select class="form-select" name="gamme" required>
+                                                                        <option value="0">Selectionner une gamme</option>    
+                                                                    </select>
                                                                 </div>
                                                                 
                                                                 
@@ -137,9 +139,9 @@
                                                                                             
                                                                                         </button>
                                                                                     </div>
-                                                                                    <form action="">
+                                                                                    <form action="aj_dim-gam-ep" method='post'>
                                                                                         <div class="modal-body">
-                                                                                            <input type="text" name="dimension"  multiple class="form-control" placeholder='Ajoutez une dimension ' />
+                                                                                            <input type="text" name="aj_dimension"  multiple class="form-control" placeholder='Ajoutez une dimension ' />
                                                                                         </div>
                                                                                         <div class="modal-footer">
                                                                                             <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Fermer</button>
@@ -151,7 +153,9 @@
                                                                         </div><!-- /.modal -->
                                                                     <br>
                                                                     <label class="form-label" for="productdes">Dimensions</label>
-                                                                    <input type="text" name="" class="form-control" />
+                                                                    <select class="form-select" name="dimension" required>
+                                                                        <option value="0">Selectionner une dimension</option>    
+                                                                    </select>
                                                                 </div>   
                                                             </div>
 
@@ -169,9 +173,9 @@
                                                                                             
                                                                                         </button>
                                                                                     </div>
-                                                                                    <form action="">
+                                                                                    <form action="aj_dim-gam-ep" method='post'>
                                                                                         <div class="modal-body">
-                                                                                            <input type="text" name="epaisseur"  multiple class="form-control" placeholder='Ajoutez une epaisseur'/>
+                                                                                            <input type="text" name="aj_epaisseur"  multiple class="form-control" placeholder='Ajoutez une epaisseur'/>
                                                                                         </div>
                                                                                         <div class="modal-footer">
                                                                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -183,7 +187,9 @@
                                                                         </div><!-- /.modal -->
                                                                     <br>
                                                                     <label class="form-label" for="productdesc">Epaisseur</label>
-                                                                    <input type="text" name="" class="form-control" id="imgUpload3" accept="image/*" />
+                                                                    <select class="form-select" name="epaisseur" required>
+                                                                        <option value="0">Selectionner une gamme</option>    
+                                                                    </select>
                                                                 </div>
                                                                 
                                                             </div>
@@ -195,36 +201,36 @@
 
 
 
-                                                 <form action="aj_produits_super-admin" id="" method="post" enctype="multipart/form-data">
+                                            <form action="aj_produits_super-admin" id="" method="post" enctype="multipart/form-data">
                                                        
                                                     <div class="row">
                                                
 
-                                                <div class="col-sm-4 mb-3">
-                                                    <div class="fallback">
-                                                        <label class="form-label" for="productdesc">Prix Achat</label>
-                                                        <input type="text" name="images[]"  multiple class="form-control" id="imgUpload1"  />
-                                                    </div>
-                                                    
-                                                </div>
+                                                        <div class="col-sm-4 mb-3">
+                                                            <div class="fallback">
+                                                                <label class="form-label" for="productdesc">Prix Achat</label>
+                                                                <input type="text" name="prix_achat" class="form-control"/>
+                                                            </div>
+                                                            
+                                                        </div>
 
-                                                <div class="col-sm-4 mb-3">
-                                                    <div class="fallback">
-                                                        <label class="form-label" for="productdesc">Coef. de vente</label>
-                                                        <input type="text" name="" class="form-control" />
-                                                    </div>
-                                                    
-                                                </div>
+                                                        <div class="col-sm-4 mb-3">
+                                                            <div class="fallback">
+                                                                <label class="form-label" for="productdesc">Coef. de vente</label>
+                                                                <input type="text" name="coef_vente" class="form-control"/>
+                                                            </div>
+                                                            
+                                                        </div>
 
-                                                <div class="col-sm-4 mb-3">
-                                                    <div class="fallback">
-                                                        <label class="form-label" for="productdesc">Prix de vente</label>
-                                                        <input type="text" name="" class="form-control" />
-                                                    </div>
+                                                        <div class="col-sm-4 mb-3">
+                                                            <div class="fallback">
+                                                                <label class="form-label" for="productdesc">Prix de vente</label>
+                                                                <input type="text" name="prix_vente" class="form-control" />
+                                                            </div>
 
-                                                </div>
+                                                        </div>
                                                 
-                                            </div>
+                                                    </div>
 
                                             <!-- end row -->
 

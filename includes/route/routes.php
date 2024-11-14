@@ -81,10 +81,23 @@ if(@$url[0]=='achat'):
     include_once('template/achat.php');
 endif;
 
-
+//page d'ajout d'un produit par un admin
 if(@$url[0]=='aj_produit_admin'):
     include_once('template/ajout_produit_admin.php');
 endif;
+
+
+//page d'ajout d'un prospect par un gerant
+if(@$url[0]=='add-prospect'):
+    include_once('template/add-prospect.php');
+endif;
+
+
+//page de listing de tous les prospects 
+if(@$url[0]=='liste_prospects'):
+    include_once('template/liste_prospects.php');
+endif;
+
 
 if(@$url[0]=='panier'):
     //----- Récupérer le panier depuis la session
@@ -194,9 +207,25 @@ if(@$url[0]=='save_checkout'):
     include_once 'processing/save_checkout.php'; 
 endif;
 
+//--------traitement d'ajout d'une campagne
+if(@$url[0]=='aj_campagne'):
+    include_once 'processing/aj_campagne.php'; 
+endif;
+
+
+//--------traitement d'ajout d'un prospect
+if(@$url[0]=='aj_prospect'):
+    include_once 'processing/aj_prospect.php'; 
+endif;
 
 if(@$url[0]=='panier'):
     include_once 'processing/supprimer_panier.php'; 
+endif;
+
+
+//route d'ajout d'une gamme,dimension ou epaisseur
+if(@$url[0]=='aj_dim-gam-ep'):
+    include_once 'processing/aj_dim-gam-ep.php'; 
 endif;
 
 //route d'ajout d'un produit par un admin

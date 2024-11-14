@@ -149,12 +149,12 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                                                                 <label class="form-label">Ville</label>
                                                                                 <select class="form-select" name='ville_client' title="Ville">
                                                                                     <option value="0">Selectionner une ville</option>
-                                                                                    <option value="AF">Douala</option>
-                                                                                    <option value="AL">Yaounde</option>
-                                                                                    <option value="DZ">Bafoussam</option>
-                                                                                    <option value="AS">Kribi</option>
-                                                                                    <option value="AD">Limbe</option>
-                                                                                    <option value="AO">Dschang</option>                                  
+                                                                                    <option value="Douala">Douala</option>
+                                                                                    <option value="Yaounde">Yaounde</option>
+                                                                                    <option value="Bafoussam">Bafoussam</option>
+                                                                                    <option value="Kribi">Kribi</option>
+                                                                                    <option value="Limbe">Limbe</option>
+                                                                                    <option value="Dschang">Dschang</option>                                  
                                                                                 </select>
                                                                             </div>
                                                                         </div><!-- end col -->

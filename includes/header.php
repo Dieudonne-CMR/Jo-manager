@@ -254,6 +254,23 @@
                         
                     </ul>
                 </li>
+
+
+                            <!-- zone de gestion des prospects par le gerant -->
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="dripicons-phone"></i>
+                        <span>Prospects</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <?php if($gest_boutik==1): // zone des gerant de boutique?>
+                            <li><a href="add-prospect">Ajout Prospect</a></li>
+                            <li><a href="liste_prospects">Voir Prospects</a></li>
+                        <?php endif ?>
+                        
+                    </ul>
+                </li>
+                            <!-- ------------------------------------------------- -->
                
 
                 <?php if($gest_boutik==1): // zone des gerant de boutique?>
