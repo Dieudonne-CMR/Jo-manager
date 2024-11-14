@@ -90,7 +90,7 @@
                                                         <thead>
                                                         <tr>
                                                             <th>Nom</th>
-                                                            <th data-priority="1">Numero de Telephone</th>
+                                                            <th data-priority="1"> Telephone</th>
                                                             <th data-priority="3">Type de rencontre</th>
                                                             <th data-priority="1">Besoin</th>
                                                             <th data-priority="3">Statut</th>
@@ -101,13 +101,13 @@
                                                         </thead>
                                                         <tbody>
                                                         <tr>
-                                                            <th><span class="co-name"></span></th>
-                                                            <td>    </td>
-                                                            <td>    </td>
-                                                            <td>    </td>
-                                                            <td>    </td>
-                                                            <td>    </td>
-                                                            <td>    </td>
+                                                            <th>nnn</th>
+                                                            <td>  nnn  </td>
+                                                            <td>   nn </td>
+                                                            <td>  nn  </td>
+                                                            <td>  nnn  </td>
+                                                            <td>  nn  </td>
+                                                            <td><button class='btn btn-primary'>Ajouter</button></td>
                                                         </tr>
                                                         </tbody>
                                                     </table>
