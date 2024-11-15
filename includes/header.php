@@ -300,12 +300,19 @@
                             <span>Ajout de produits</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="aj_produit_admin">Mousse</a></li>
-                            <li><a href="#">Matelas</a></li>
-                            
+                            <?php foreach(select_table('type_produit') as $value): ?>
+                                <li><a href="aj_produit_admin/<?= $value->mat_type; ?>"><?php echo $value-> nom_type ?></a></li>
+                            <?php endforeach;?>    
                         </ul>
                     </li>
 
+                    <li>
+                        <a href="add-type_produit" class=" waves-effect">
+                            <i class="dripicons-calendar"></i>
+                            <span>Ajout Type de produits</span>
+                        </a>
+                    </li>
+                    
                     <li>
                         <a href="shops" class=" waves-effect">
                             <i class="dripicons-calendar"></i>

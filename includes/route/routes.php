@@ -83,7 +83,16 @@ endif;
 
 //page d'ajout d'un produit par un admin
 if(@$url[0]=='aj_produit_admin'):
-    include_once('template/ajout_produit_admin.php');
+
+    $mat_type = $url[1]; 
+    $verif_mat_type = select_table_where('type_produit', 'mat_type', $mat_type);
+    var_dump($verif_mat_type);
+    if (!empty($verif_mat_type)):
+        include_once('template/ajout_produit_admin.php');
+    else:
+        header('Location:../home');
+    endif; 
+    
 endif;
 
 
@@ -96,6 +105,12 @@ endif;
 //page de listing de tous les prospects 
 if(@$url[0]=='liste_prospects'):
     include_once('template/liste_prospects.php');
+endif;
+
+
+//page d;ajout d;un type de produit 
+if(@$url[0]=='add-type_produit'):
+    include_once('template/add-type_produit.php');
 endif;
 
 
@@ -218,6 +233,14 @@ if(@$url[0]=='aj_prospect'):
     include_once 'processing/aj_prospect.php'; 
 endif;
 
+
+
+//--------traitement d'ajout d'un type de produit
+if(@$url[0]=='aj_type_produit'):
+    include_once 'processing/aj_type_produit.php'; 
+endif;
+
+
 if(@$url[0]=='panier'):
     include_once 'processing/supprimer_panier.php'; 
 endif;
@@ -230,7 +253,7 @@ endif;
 
 //route d'ajout d'un produit par un admin
 if(@$url[0]=='aj_produits_super-admin'):
-    include_once 'processing/aj_produits_super-admin.php'; 
+    include_once 'processing/aj_produits_super-admin.php';
 endif;
 
 //======== Les actions 

@@ -166,7 +166,7 @@
                                                             <div class="col-lg-4">
                                                                 <div class="mb-3">
                                                                     <label class="form-label"  for="price">Type de rencontre</label>
-                                                                    <select class="form-control select2" name="type_rencontre" required>
+                                                                    <select class="form-control select2" name="type_rencontre">
                                                                         <option selected="" disabled="" value="" >--Sélectionner--</option> 
                                                                         <option  value="" >boutique</option>       
                                                                     </select>

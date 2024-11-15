@@ -11,7 +11,8 @@
 
     <?php $titre = 'ajouter un produit';
     include_once('includes/meta.php') ?>
-    <!-- <base href="../"> -->
+
+     <base href="../"> 
 
     <!-- twitter-bootstrap-wizard css -->
     <link rel="stylesheet" href="assets/libs/twitter-bootstrap-wizard/prettify.css">

@@ -7,7 +7,7 @@
         
         
         <meta charset="utf-8" />
-        <title>Responsive Table | Morvin - Admin & Dashboard Template</title>
+        <title>liste prospects</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
@@ -100,15 +100,23 @@
                                                         </tr>
                                                         </thead>
                                                         <tbody>
+                                                            <?php foreach(select_table('prospect') as $value):?>
                                                         <tr>
-                                                            <th>nnn</th>
-                                                            <td>  nnn  </td>
-                                                            <td>   nn </td>
-                                                            <td>  nn  </td>
-                                                            <td>  nnn  </td>
-                                                            <td>  nn  </td>
+                                                            <th><?php echo $value -> nom;  ?></th>
+                                                            <td> <?php echo $value -> telephone;  ?>   </td>
+                                                            <td>    </td>
+                                                            <td>   <?php echo $value -> besoin;  ?> </td>
+
+                                                            <td> <?php if (($value->is_client) == 0):
+                                                                            echo 'prospect en cours';
+                                                                        endif;     
+                                                                 ?>   
+                                                            </td>
+
+                                                            <td>  <?php echo $value -> date_rencontre;  ?> </td>
                                                             <td><button class='btn btn-primary'>Ajouter</button></td>
                                                         </tr>
+                                                        <?php endforeach; ?>
                                                         </tbody>
                                                     </table>
                                                 </div>
