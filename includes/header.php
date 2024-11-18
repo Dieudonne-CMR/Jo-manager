@@ -296,7 +296,7 @@
                  <!-- zone d'ajout des produits -->
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="dripicons-cart"></i>
+                            <i class="ti-plus"></i>
                             <span>Ajout de produits</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">

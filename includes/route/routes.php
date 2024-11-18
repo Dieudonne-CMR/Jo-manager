@@ -86,7 +86,7 @@ if(@$url[0]=='aj_produit_admin'):
 
     $mat_type = $url[1]; 
     $verif_mat_type = select_table_where('type_produit', 'mat_type', $mat_type);
-    var_dump($verif_mat_type);
+    //var_dump($verif_mat_type);
     if (!empty($verif_mat_type)):
         include_once('template/ajout_produit_admin.php');
     else:

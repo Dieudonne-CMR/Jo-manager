@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="en">
+<?php
+     
+    /* if (!isset($_GET['matricule'])):
+         die("Type de produit non sélectionné.");
+     else:
+         $matricule_type = $_GET['matricule'];
+     endif;*/
 
+?>
 
 <!-- Mirrored from themesdesign.in/morvin/layouts/ecommerce-add-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2024 05:02:48 GMT -->
 
@@ -107,6 +115,7 @@
                                                                                     </div>
                                                                                     <form action="aj_dim-gam-ep" method='post'>
                                                                                         <div class="modal-body">
+                                                                                            <input type="hidden" name='mat_type' value="<?php echo $mat_type ?>">
                                                                                             <input type="text" name="aj_gamme"  multiple class="form-control" placeholder='Ajoutez une gamme'/>
                                                                                         </div>
                                                                                         <div class="modal-footer">
@@ -119,7 +128,13 @@
                                                                         </div><br>
                                                                     <label class="form-label" for="productdesc">Gamme</label>
                                                                     <select class="form-select" name="gamme" required>
-                                                                        <option value="0">Selectionner une gamme</option>    
+                                                                        
+                                                                        <option selected="" disabled="" value="" >--Sélectionner--</option>
+
+                                                                            <?php foreach(select_table('gamme_produit') as $gam) :?>
+                                                                            <option value="<?= $gam -> mat_gamme ?>"><?= $gam -> nom_gamme ?></option>
+                                                                            <?php endforeach; ?> 
+
                                                                     </select>
                                                                 </div>
                                                                 
@@ -142,6 +157,7 @@
                                                                                     </div>
                                                                                     <form action="aj_dim-gam-ep" method='post'>
                                                                                         <div class="modal-body">
+                                                                                            <input type="hidden" name='mat_type' value="<?php echo $mat_type ?>">
                                                                                             <input type="text" name="aj_dimension"  multiple class="form-control" placeholder='Ajoutez une dimension ' />
                                                                                         </div>
                                                                                         <div class="modal-footer">
@@ -155,7 +171,12 @@
                                                                     <br>
                                                                     <label class="form-label" for="productdes">Dimensions</label>
                                                                     <select class="form-select" name="dimension" required>
-                                                                        <option value="0">Selectionner une dimension</option>    
+                                                                        <option selected="" disabled="" value="" >--Sélectionner--</option>
+
+                                                                            <?php foreach(select_table('dimension') as $dim) :?>
+                                                                            <option value="<?= $dim -> mat_dim ?>"><?= $dim -> dimension ?></option>
+                                                                            <?php endforeach; ?> 
+
                                                                     </select>
                                                                 </div>   
                                                             </div>
@@ -176,7 +197,8 @@
                                                                                     </div>
                                                                                     <form action="aj_dim-gam-ep" method='post'>
                                                                                         <div class="modal-body">
-                                                                                            <input type="text" name="aj_epaisseur"  multiple class="form-control" placeholder='Ajoutez une epaisseur'/>
+                                                                                            <input type="hidden" name='mat_type' value="<?php echo $mat_type ?>">
+                                                                                            <input type="text" name="epaisseur"  multiple class="form-control" placeholder='Ajoutez une epaisseur'/>
                                                                                         </div>
                                                                                         <div class="modal-footer">
                                                                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -189,7 +211,12 @@
                                                                     <br>
                                                                     <label class="form-label" for="productdesc">Epaisseur</label>
                                                                     <select class="form-select" name="epaisseur" required>
-                                                                        <option value="0">Selectionner une gamme</option>    
+                                                                        <option selected="" disabled="" value="" >--Sélectionner--</option>
+
+                                                                        <?php foreach(select_table('epaisseur') as $ep) :?>
+                                                                        <option value="<?= $ep->mat_epaisseur ?>"><?= $ep->epaisseur ?></option>
+                                                                        <?php endforeach; ?> 
+
                                                                     </select>
                                                                 </div>
                                                                 
@@ -262,6 +289,7 @@
                                                     <img id="imgPreview3" src="" class="mt-3" alt="Aperçu de l'image"  style="max-width: 100px; display: none;">
                                                 </div>
                                             </div>
+                                            <input type="hidden" name='mat_type' value="<?php echo $mat_type ?>">
                                             </div>
                                                         <ul class="pager wizard twitter-bs-wizard-pager-link">
                                                             <li class="next"><button class="btn btn-primary" type='submit' name="enregistrer">Enregistrer</button></li>

@@ -9,7 +9,7 @@
 
     <meta charset="utf-8" />
 
-    <?php $titre = 'ajouter un produit';
+    <?php $titre = 'ajouter un type de produit';
     include_once('includes/meta.php') ?>
     <!-- <base href="../"> -->
 
@@ -54,11 +54,11 @@
                         <div class="row align-items-center">
                             <div class="col-sm-6">
                                 <div class="page-title">
-                                    <h4>Ajout de Produits</h4>
+                                    <h4>Ajout type de Produits</h4>
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
                                         <!-- <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li> -->
-                                        <li class="breadcrumb-item active">Ajout Produits</li>
+                                        <li class="breadcrumb-item active">Ajout type de Produits</li>
                                     </ol>
                                 </div>
                             </div>

@@ -172,7 +172,7 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                     
                                                                     <input type="hidden" name='prix_total_commande' value='<?= $totalPanier //je recupere le prix total de ma commande ?>'>
                                                                     <input type="hidden" name='mat_produit' value='<?= $mat_produit //je recupere le prix total de ma commande ?>'>
-                                                                    <input type="hidden" name='panier' value='<?= $panier //je recupere le prix total de ma commande ?>'>
+                                                                    <input type="hidden" name='panier' value='<?= $panier //je recupere mon panier ?>'>
                                                                     <input type="hidden" name='shop' value='<?= $mat_shop //je recupere le matricule de la boutique dans laquelle je suis ?>'>
                                                                     <button type='submit' name='soumettre' class="btn btn-primary">
                                                                              Soumettre
