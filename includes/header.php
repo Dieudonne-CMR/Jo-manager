@@ -254,6 +254,23 @@
                         
                     </ul>
                 </li>
+
+
+                            <!-- zone de gestion des prospects par le gerant -->
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="dripicons-phone"></i>
+                        <span>Prospects</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <?php if($gest_boutik==1): // zone des gerant de boutique?>
+                            <li><a href="add-prospect">Ajout Prospect</a></li>
+                            <li><a href="liste_prospects">Voir Prospects</a></li>
+                        <?php endif ?>
+                        
+                    </ul>
+                </li>
+                            <!-- ------------------------------------------------- -->
                
 
                 <?php if($gest_boutik==1): // zone des gerant de boutique?>
@@ -279,16 +296,23 @@
                  <!-- zone d'ajout des produits -->
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="dripicons-cart"></i>
+                            <i class="ti-plus"></i>
                             <span>Ajout de produits</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="#">Mousse</a></li>
-                            <li><a href="#">Matelas</a></li>
-                            
+                            <?php foreach(select_table('type_produit') as $value): ?>
+                                <li><a href="aj_produit_admin/<?= $value->mat_type; ?>"><?php echo $value-> nom_type ?></a></li>
+                            <?php endforeach;?>    
                         </ul>
                     </li>
 
+                    <li>
+                        <a href="add-type_produit" class=" waves-effect">
+                            <i class="dripicons-calendar"></i>
+                            <span>Ajout Type de produits</span>
+                        </a>
+                    </li>
+                    
                     <li>
                         <a href="shops" class=" waves-effect">
                             <i class="dripicons-calendar"></i>

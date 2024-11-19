@@ -71,7 +71,7 @@
                         <div class="page-content-wrapper">
 
                             <div class="row" >
-                                <?php foreach(select_table_where("Produits","Mat_Shop",$mat_shop) as $value): 
+                                <?php foreach(select_table_where("produits_boutik","Mat_Shop",$mat_shop) as $value): 
                                      $mat_product=$value->Mat_Produit  //-- du produits
                                 ?>
 

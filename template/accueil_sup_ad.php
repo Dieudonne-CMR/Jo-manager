@@ -83,7 +83,7 @@
                                                                 <i class="dripicons-stack text-success font-size-20"></i>
                                                         </span>
                                                     </div>
-                                                    <h5 class="font-size-22"><?php echo count(select_table('produits')); ?></h5>
+                                                    <h5 class="font-size-22"><?php echo count(select_table('produicts_all')); ?></h5>
     
                                                     <p class="text-muted">Produits en stock</p>
                                                 </div>
@@ -781,7 +781,7 @@
                                                             <h5 class="font-size-15 mb-1"><?php echo $value -> Nom_Shop ; ?></h5>
                                                         </div>
                                                         <p class="ms-2 pt-3">
-                                                            <?php echo count(select_table_where('produits', 'Mat_Shop', $value->Mat_Shop)); ?>
+                                                            <?php echo count(select_table_where('produits_boutik', 'Mat_shop', $value->Mat_Shop)); ?>
                                                         </p>
                                                     </div>
                                                 </a>

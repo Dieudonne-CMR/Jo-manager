@@ -134,7 +134,7 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                                         <h5 class="header-title">Informations du Client</h5>
                                                         <p>Veuillez remplir le formulaire relatif a votre Commande</p>        
 
-                                                        <form action='save_checkout' method='POST'>
+                                                        <form class='aj_checkout' action='save_checkout' method='POST'>
                                                             <div>
                                                                 <div>
                                                                     <div class="row">
@@ -149,12 +149,12 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                                                                 <label class="form-label">Ville</label>
                                                                                 <select class="form-select" name='ville_client' title="Ville">
                                                                                     <option value="0">Selectionner une ville</option>
-                                                                                    <option value="AF">Douala</option>
-                                                                                    <option value="AL">Yaounde</option>
-                                                                                    <option value="DZ">Bafoussam</option>
-                                                                                    <option value="AS">Kribi</option>
-                                                                                    <option value="AD">Limbe</option>
-                                                                                    <option value="AO">Dschang</option>                                  
+                                                                                    <option value="Douala">Douala</option>
+                                                                                    <option value="Yaounde">Yaounde</option>
+                                                                                    <option value="Bafoussam">Bafoussam</option>
+                                                                                    <option value="Kribi">Kribi</option>
+                                                                                    <option value="Limbe">Limbe</option>
+                                                                                    <option value="Dschang">Dschang</option>                                  
                                                                                 </select>
                                                                             </div>
                                                                         </div><!-- end col -->
@@ -172,7 +172,7 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                     
                                                                     <input type="hidden" name='prix_total_commande' value='<?= $totalPanier //je recupere le prix total de ma commande ?>'>
                                                                     <input type="hidden" name='mat_produit' value='<?= $mat_produit //je recupere le prix total de ma commande ?>'>
-                                                                    <input type="hidden" name='panier' value='<?= $panier //je recupere le prix total de ma commande ?>'>
+                                                                    <input type="hidden" name='panier' value='<?= $panier //je recupere mon panier ?>'>
                                                                     <input type="hidden" name='shop' value='<?= $mat_shop //je recupere le matricule de la boutique dans laquelle je suis ?>'>
                                                                     <button type='submit' name='soumettre' class="btn btn-primary">
                                                                              Soumettre
@@ -221,6 +221,9 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
          <script src="assets/js/pages/ecommerce-checkout.init.js"></script>
 
         <script src="assets/js/app.js"></script>
+        <script src="assets/js/aj_checkout.js"></script>
+
+
 
     </body>
 
