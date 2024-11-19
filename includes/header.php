@@ -305,13 +305,6 @@
                             <?php endforeach;?>    
                         </ul>
                     </li>
-
-                    <li>
-                        <a href="add-type_produit" class=" waves-effect">
-                            <i class="dripicons-calendar"></i>
-                            <span>Ajout Type de produits</span>
-                        </a>
-                    </li>
                     
                     <li>
                         <a href="shops" class=" waves-effect">

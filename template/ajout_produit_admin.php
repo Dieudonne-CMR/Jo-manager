@@ -99,8 +99,11 @@
                                                     <h4 class="header-title">Informations basiques</h4>
                                                     <p class="card-title-desc">Remplissez toutes les informations ci-dessous</p><br>
                                                     
-                                                        <div class='row'>
-                                                                <div class="col-sm-4 mb-3">
+                                <?php if($mat_type): ?>
+
+                                            <div class='row'>
+                                                <?php if($mat_type !== 'Type-125'): //cette condition permet de preciser qu le type Drap n'a pas gamme dim et eppaisseur ?>   
+                                                        <div class="col-sm-4 mb-3">
                                                                     <div class="fallback">
                                                                         <!-- Small modal  bouton pour ouvrir la pop up-->
                                                                             <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".staticBackdrop"><i class="ti-plus"></i></button>
@@ -136,166 +139,316 @@
                                                                             <?php endforeach; ?> 
 
                                                                     </select>
+                                                        </div>
+                                                        </div>
+                                                                
+                                                                
+                                                        
+
+                                                            <?php if($mat_type !== 'type-190'): //Condition pour illustrer que le type 'Oreiller' n'a pas dimension et epaisseur?>
+                                                                <div class="col-sm-4 mb-3">
+                                                                    <div class="fallback">
+                                                                    
+                                                                            <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#myModal"><i class="ti-plus"></i></button>
+                                                                            <!-- sample modal content -->
+                                                                            <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                                <div class="modal-dialog">
+                                                                                    <div class="modal-content">
+                                                                                        <div class="modal-header">
+                                                                                            <h5 class="modal-title mt-0" id="myModalLabel">Ajout d'une dimension</h5>
+                                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                                                
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <form action="aj_dim-gam-ep" method='post'>
+                                                                                            <div class="modal-body">
+                                                                                                <input type="hidden" name='mat_type' value="<?php echo $mat_type ?>">
+                                                                                                <input type="text" name="aj_dimension"  multiple class="form-control" placeholder='Ajoutez une dimension ' />
+                                                                                            </div>
+                                                                                            <div class="modal-footer">
+                                                                                                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Fermer</button>
+                                                                                                <button type="submit" name='submit_dimension' class="btn btn-primary waves-effect waves-light">Sauvegarder</button>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div><!-- /.modal-content -->
+                                                                                </div><!-- /.modal-dialog -->
+                                                                            </div><!-- /.modal -->
+                                                                        <br>
+                                                                        <label class="form-label" for="productdes">Dimensions</label>
+                                                                        <select class="form-select" name="dimension" required>
+                                                                            <option selected="" disabled="" value="" >--Sélectionner--</option>
+
+                                                                                <?php foreach(select_table('dimension') as $dim) :?>
+                                                                                <option value="<?= $dim -> mat_dim ?>"><?= $dim -> dimension ?></option>
+                                                                                <?php endforeach; ?> 
+
+                                                                        </select>
+                                                                    </div>   
                                                                 </div>
                                                                 
                                                                 
-                                                            </div>
+                                                                <div class="col-sm-4 mb-3">
+                                                                    <div class="fallback">
+                                                                            <!-- Small modal -->
+                                                                            <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable"><i class="ti-plus"></i></button>
+                                                                        
+                                                                            <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                                                                <div class="modal-dialog modal-dialog-scrollable">
+                                                                                    <div class="modal-content">
+                                                                                        <div class="modal-header">
+                                                                                            <h5 class="modal-title mt-0" id="exampleModalScrollableTitle">Ajout d'une epaisseur</h5>
+                                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                                                
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <form action="aj_dim-gam-ep" method='post'>
+                                                                                            <div class="modal-body">
+                                                                                                <input type="hidden" name='mat_type' value="<?php echo $mat_type ?>">
+                                                                                                <input type="text" name="epaisseur"  multiple class="form-control" placeholder='Ajoutez une epaisseur'/>
+                                                                                            </div>
+                                                                                            <div class="modal-footer">
+                                                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                                                                <button type="submit" name='submit_epaisseur' class="btn btn-primary">Sauvegarder</button>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div><!-- /.modal-content -->
+                                                                                </div><!-- /.modal-dialog -->
+                                                                            </div><!-- /.modal -->
+                                                                        <br>
+                                                                        <label class="form-label" for="productdesc">Epaisseur</label>
+                                                                        <select class="form-select" name="epaisseur" required>
+                                                                            <option selected="" disabled="" value="" >--Sélectionner--</option>
+
+                                                                            <?php foreach(select_table('epaisseur') as $ep) :?>
+                                                                            <option value="<?= $ep->mat_epaisseur ?>"><?= $ep->epaisseur ?></option>
+                                                                            <?php endforeach; ?> 
+
+                                                                        </select>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                            <?php endif; ?>
+
+                                                <?php else: ?>
 
                                                             <div class="col-sm-4 mb-3">
-                                                                <div class="fallback">
-                                                                
-                                                                        <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#myModal"><i class="ti-plus"></i></button>
-                                                                        <!-- sample modal content -->
-                                                                        <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                                            <div class="modal-dialog">
+                                                                    <div class="fallback">
+                                                                        <!-- Small modal  bouton pour ouvrir la pop up-->
+                                                                            <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".staticBackdrop"><i class="ti-plus"></i></button>
+                                                                                    
+                                                                                    <!-- Modal fenetre pop up pour ajouter une gamme -->
+                                                                        <div class="modal fade staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                                            <div class="modal-dialog" role="document">
                                                                                 <div class="modal-content">
                                                                                     <div class="modal-header">
-                                                                                        <h5 class="modal-title mt-0" id="myModalLabel">Ajout d'une dimension</h5>
-                                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                                                                            
-                                                                                        </button>
+                                                                                        <h5 class="modal-title" id="staticBackdropLabel">Ajout d'une matiere</h5>
+                                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                                     </div>
                                                                                     <form action="aj_dim-gam-ep" method='post'>
                                                                                         <div class="modal-body">
                                                                                             <input type="hidden" name='mat_type' value="<?php echo $mat_type ?>">
-                                                                                            <input type="text" name="aj_dimension"  multiple class="form-control" placeholder='Ajoutez une dimension ' />
+                                                                                            <input type="text" name="aj_gamme"  multiple class="form-control" placeholder='Ajoutez une matiere'/>
                                                                                         </div>
                                                                                         <div class="modal-footer">
                                                                                             <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Fermer</button>
-                                                                                            <button type="submit" name='submit_dimension' class="btn btn-primary waves-effect waves-light">Sauvegarder</button>
+                                                                                            <button type="" name='submit_gamme' class="btn btn-primary waves-effect waves-light">Sauvegarder</button>
                                                                                         </div>
                                                                                     </form>
-                                                                                </div><!-- /.modal-content -->
-                                                                            </div><!-- /.modal-dialog -->
-                                                                        </div><!-- /.modal -->
-                                                                    <br>
-                                                                    <label class="form-label" for="productdes">Dimensions</label>
-                                                                    <select class="form-select" name="dimension" required>
-                                                                        <option selected="" disabled="" value="" >--Sélectionner--</option>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div><br>
+                                                                    <label class="form-label" for="productdesc">Matiere</label>
+                                                                    <select class="form-select" name="gamme" required>
+                                                                        
+                                                                        <option selected=""  value="" >--Sélectionner--</option>
 
-                                                                            <?php foreach(select_table('dimension') as $dim) :?>
-                                                                            <option value="<?= $dim -> mat_dim ?>"><?= $dim -> dimension ?></option>
-                                                                            <?php endforeach; ?> 
-
-                                                                    </select>
-                                                                </div>   
-                                                            </div>
-
-                                                            <div class="col-sm-4 mb-3">
-                                                                <div class="fallback">
-                                                                        <!-- Small modal -->
-                                                                        <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable"><i class="ti-plus"></i></button>
-                                                                    
-                                                                        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                                                                            <div class="modal-dialog modal-dialog-scrollable">
-                                                                                <div class="modal-content">
-                                                                                    <div class="modal-header">
-                                                                                        <h5 class="modal-title mt-0" id="exampleModalScrollableTitle">Ajout d'une epaisseur</h5>
-                                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                                                                            
-                                                                                        </button>
-                                                                                    </div>
-                                                                                    <form action="aj_dim-gam-ep" method='post'>
-                                                                                        <div class="modal-body">
-                                                                                            <input type="hidden" name='mat_type' value="<?php echo $mat_type ?>">
-                                                                                            <input type="text" name="epaisseur"  multiple class="form-control" placeholder='Ajoutez une epaisseur'/>
-                                                                                        </div>
-                                                                                        <div class="modal-footer">
-                                                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                                                                                            <button type="submit" name='submit_epaisseur' class="btn btn-primary">Sauvegarder</button>
-                                                                                        </div>
-                                                                                    </form>
-                                                                                </div><!-- /.modal-content -->
-                                                                            </div><!-- /.modal-dialog -->
-                                                                        </div><!-- /.modal -->
-                                                                    <br>
-                                                                    <label class="form-label" for="productdesc">Epaisseur</label>
-                                                                    <select class="form-select" name="epaisseur" required>
-                                                                        <option selected="" disabled="" value="" >--Sélectionner--</option>
-
-                                                                        <?php foreach(select_table('epaisseur') as $ep) :?>
-                                                                        <option value="<?= $ep->mat_epaisseur ?>"><?= $ep->epaisseur ?></option>
-                                                                        <?php endforeach; ?> 
+                                                                            
+                                                                            <!-- zone d'insertion -->
+                                                                            
 
                                                                     </select>
                                                                 </div>
+                                                                </div>
+
+                                                                <div class="col-sm-4 mb-3">
+                                                                    <div class="fallback">
+                                                                    
+                                                                            <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#myModal"><i class="ti-plus"></i></button>
+                                                                            <!-- sample modal content -->
+                                                                            <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                                <div class="modal-dialog">
+                                                                                    <div class="modal-content">
+                                                                                        <div class="modal-header">
+                                                                                            <h5 class="modal-title mt-0" id="myModalLabel">Ajout d'une taille</h5>
+                                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                                                
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <form action="aj_dim-gam-ep" method='post'>
+                                                                                            <div class="modal-body">
+                                                                                                <input type="hidden" name='mat_type' value="<?php echo $mat_type ?>">
+                                                                                                <input type="text" name="aj_dimension"  multiple class="form-control" placeholder='Ajoutez une taille ' />
+                                                                                            </div>
+                                                                                            <div class="modal-footer">
+                                                                                                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Fermer</button>
+                                                                                                <button type="submit" name='submit_dimension' class="btn btn-primary waves-effect waves-light">Sauvegarder</button>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div><!-- /.modal-content -->
+                                                                                </div><!-- /.modal-dialog -->
+                                                                            </div><!-- /.modal -->
+                                                                        <br>
+                                                                        <label class="form-label" for="productdes">Taille</label>
+                                                                        <select class="form-select" name="dimension" required>
+                                                                            <option selected=""   value="" >--Sélectionner--</option>
+
+                                                                                <!-- zone d'insertion -->
+
+                                                                        </select>
+                                                                    </div>   
+                                                                </div>
+
+
+                                                                <div class="col-sm-4 mb-3">
+                                                                    <div class="fallback">
+                                                                            <!-- Small modal -->
+                                                                            <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable"><i class="ti-plus"></i></button>
+                                                                        
+                                                                            <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                                                                <div class="modal-dialog modal-dialog-scrollable">
+                                                                                    <div class="modal-content">
+                                                                                        <div class="modal-header">
+                                                                                            <h5 class="modal-title mt-0" id="exampleModalScrollableTitle">Ajout d'un Pack</h5>
+                                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                                                
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <form action="aj_dim-gam-ep" method='post'>
+                                                                                            <div class="modal-body">
+                                                                                                <input type="hidden" name='mat_type' value="<?php echo $mat_type ?>">
+                                                                                                <input type="text" name="epaisseur"  multiple class="form-control" placeholder='Ajoutez un Pack'/>
+                                                                                            </div>
+                                                                                            <div class="modal-footer">
+                                                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                                                                <button type="submit" name='submit_epaisseur' class="btn btn-primary">Sauvegarder</button>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div><!-- /.modal-content -->
+                                                                                </div><!-- /.modal-dialog -->
+                                                                            </div><!-- /.modal -->
+                                                                        <br>
+                                                                        <label class="form-label" for="productdesc">Pack</label>
+                                                                        <select class="form-select" name="epaisseur" required>
+                                                                            <option selected="" value="" >--Sélectionner--</option>
+
+                                                                            
+                                                                                                 <!-- zone d'insertion -->
+                                                                             
+
+                                                                        </select>
+                                                                    </div>                                                                    
+                                                                </div>
+
+                                                 <?php endif;?> 
+
+
+                                                    <form action="aj_produits_super-admin" id="" method="post" enctype="multipart/form-data">
+                                                                    
+                                                                    <div class="row">
+                                                            
+                                                                        
+
+                                                                    <?php if($mat_type == 'Type-149'): //Ajout du champ Prix/cm pour le type de Produit Mousse?>
+                                                                    
+                                                                        <div class="col-sm-4 mb-3">
+                                                                            <div class="fallback">
+                                                                                <label class="form-label" for="productdesc">Prix / cm</label>
+                                                                                <input type="text" name="prix_achat" class="form-control"/>
+                                                                            </div>
+                                                                            
+                                                                        </div>
+                                                                    <?php endif; ?>    
+
+
+                                                                        <div class="col-sm-4 mb-3">
+                                                                            <div class="fallback">
+                                                                                <label class="form-label" for="productdesc">Prix Achat</label>
+                                                                                <input type="number" id="prix_achat" name="prix_achat" step="0.01" onchange="calculerPrixVente()" required class="form-control"/>
+                                                                            </div>
+                                                                            
+                                                                        </div>
+
+                                                                        <div class="col-sm-4 mb-3">
+                                                                            <div class="fallback">
+                                                                                <label class="form-label" for="productdesc">Coef. de vente</label>
+                                                                                <input type="number" id="coef_vente" name="coef_vente" step="0.01" onchange="calculerPrixVente()" required class="form-control"/>
+                                                                            </div>
+                                                                            
+                                                                        </div>
+
+                                                                        <div class="col-sm-4 mb-3">
+                                                                            <div class="fallback">
+                                                                                <label class="form-label" for="productdesc">Prix de vente</label>
+                                                                                <input type="number" id="prix_vente" name="prix_vente" class="form-control" />
+                                                                            </div>
+
+                                                                        </div>
+
+
+                                                                        <div class="col-sm-4 mb-3">
+                                                                            <div class="fallback">
+                                                                                <label class="form-label" for="productdesc">Remise</label>
+                                                                                <input type="text" name="prix_vente" class="form-control" />
+                                                                            </div>
+
+                                                                        </div>
                                                                 
+                                                                    </div>
+
+                                                            <!-- end row -->
+
+                                                        <?php //if ($mat_type == 'Type-125'):?>
+                                                                
+                                                            <div class="mb-3">
+                                                                <label class="form-label" for="productdesc">Description du Produit</label>
+                                                                <textarea class="form-control" name="decription" id="productdesc" rows="5" placeholder="Entrez la description de votre produit"></textarea>
                                                             </div>
+                                                        <?php //endif; ?>
 
+                                                            <div class="tab-pane" id="product-img">
+                                                            <h4 class="header-title">Images du Produit</h4>
+                                                            <p class="card-title-desc">Télécharger les images de votre Produit</p>
 
+                                                            <div class="row">
+                                                                <div class="col-sm-4 mb-3">
+                                                                    <div class="fallback">
+                                                                        <input type="file" name="images[]"  class="form-control" id="imgUpload1" accept="image/*" />
+                                                                    </div>
+                                                                    <!-- voir image avant de soumettre -->
+                                                                    <img id="imgPreview1" class="mt-3" src=""  alt="Aperçu de l'image" style="max-width: 100px; display: none;">
+                                                                </div>
 
-
-
-
-
-
-                                            <form action="aj_produits_super-admin" id="" method="post" enctype="multipart/form-data">
-                                                       
-                                                    <div class="row">
-                                               
-
-                                                        <div class="col-sm-4 mb-3">
-                                                            <div class="fallback">
-                                                                <label class="form-label" for="productdesc">Prix Achat</label>
-                                                                <input type="text" name="prix_achat" class="form-control"/>
+                                                                <div class="col-sm-4 mb-3">
+                                                                    <div class="fallback">
+                                                                        <input type="file" name="images[]" class="form-control" id="imgUpload2" accept="image/*" />
+                                                                    </div>
+                                                                    <img id="imgPreview2" class="mt-3" src="" alt="Aperçu de l'image" style="max-width: 100px; display: none;">
+                                                                </div>
+                                                                
+                                                                <div class="col-sm-4 mb-3">
+                                                                    <div class="fallback">
+                                                                        <input type="file" name="images[]" class="form-control" id="imgUpload3" accept="image/*" />
+                                                                    </div>
+                                                                    <img id="imgPreview3" src="" class="mt-3" alt="Aperçu de l'image"  style="max-width: 100px; display: none;">
+                                                                </div>
                                                             </div>
-                                                            
-                                                        </div>
-
-                                                        <div class="col-sm-4 mb-3">
-                                                            <div class="fallback">
-                                                                <label class="form-label" for="productdesc">Coef. de vente</label>
-                                                                <input type="text" name="coef_vente" class="form-control"/>
+                                                            <input type="hidden" name='mat_type' value="<?php echo $mat_type ?>">
                                                             </div>
-                                                            
-                                                        </div>
-
-                                                        <div class="col-sm-4 mb-3">
-                                                            <div class="fallback">
-                                                                <label class="form-label" for="productdesc">Prix de vente</label>
-                                                                <input type="text" name="prix_vente" class="form-control" />
-                                                            </div>
-
-                                                        </div>
-                                                
-                                                    </div>
-
-                                            <!-- end row -->
-
-                                            <div class="tab-pane" id="product-img">
-                                            <h4 class="header-title">Images du Produit</h4>
-                                            <p class="card-title-desc">Télécharger les images de votre Produit</p>
-
-                                            <div class="row">
-                                                <div class="col-sm-4 mb-3">
-                                                    <div class="fallback">
-                                                        <input type="file" name="images[]"  class="form-control" id="imgUpload1" accept="image/*" />
-                                                    </div>
-                                                    <!-- voir image avant de soumettre -->
-                                                    <img id="imgPreview1" class="mt-3" src=""  alt="Aperçu de l'image" style="max-width: 100px; display: none;">
-                                                </div>
-
-                                                <div class="col-sm-4 mb-3">
-                                                    <div class="fallback">
-                                                        <input type="file" name="images[]" class="form-control" id="imgUpload2" accept="image/*" />
-                                                    </div>
-                                                    <img id="imgPreview2" class="mt-3" src="" alt="Aperçu de l'image" style="max-width: 100px; display: none;">
-                                                </div>
-                                                
-                                                <div class="col-sm-4 mb-3">
-                                                    <div class="fallback">
-                                                        <input type="file" name="images[]" class="form-control" id="imgUpload3" accept="image/*" />
-                                                    </div>
-                                                    <img id="imgPreview3" src="" class="mt-3" alt="Aperçu de l'image"  style="max-width: 100px; display: none;">
-                                                </div>
-                                            </div>
-                                            <input type="hidden" name='mat_type' value="<?php echo $mat_type ?>">
-                                            </div>
-                                                        <ul class="pager wizard twitter-bs-wizard-pager-link">
-                                                            <li class="next"><button class="btn btn-primary" type='submit' name="enregistrer">Enregistrer</button></li>
-                                                        </ul>
+                                                                        <ul class="pager wizard twitter-bs-wizard-pager-link">
+                                                                            <li class="next"><button class="btn btn-primary" type='submit' name="enregistrer">Enregistrer</button></li>
+                                                                        </ul>
                                                     </form>
-
+                                <?php endif; ?>
                                                     <div id="uploadStatus"></div>
                                                     <!-- end tabpane -->
                                                 </div>
@@ -344,6 +497,22 @@
 
         <!-- dropzone plugin -->
         <script src="assets/libs/dropzone/min/dropzone.min.js"></script>
+
+        <script>
+        function calculerPrixVente() {
+            // Récupérer les valeurs des champs
+            const prixAchat = parseFloat(document.getElementById('prix_achat').value) || 0;
+            const coef = parseFloat(document.getElementById('coef_vente').value) || 0;
+
+            // Calculer le prix total
+            const prixVente = prixAchat * coef;
+
+            // Afficher le résultat dans le champ Prix Total
+            document.getElementById('prix_vente').value = prixVente;
+        }
+    </script>
+
+
 
         <!-- init js -->
         <script src="assets/js/pages/ecommerce-add-product.init.js"></script>

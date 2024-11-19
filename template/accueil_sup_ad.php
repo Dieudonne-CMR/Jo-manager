@@ -59,7 +59,7 @@
                          </div>
                          <div class="col-sm-6">
                             <div class="float-end d-none d-sm-block">
-                                <a href="#" class="btn btn-success">Add Widget</a>
+                                <a href="add-type_produit" class="btn btn-success">Ajouter un type de Produit</a>
                             </div>
                          </div>
                      </div>
