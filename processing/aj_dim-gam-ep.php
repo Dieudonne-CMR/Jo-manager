@@ -29,7 +29,7 @@
         //var_dump($aj_dimension);
 
 
-        $DB->query("INSERT INTO dimension (mat_dim, dimension, mat_type) VALUES (:mat_dim , :dimension, :mat_type)",
+        $DB->query("INSERT INTO dimensions (mat_dim, dimension, mat_type) VALUES (:mat_dim , :dimension, :mat_type)",
         [
           'mat_dim'=>$mat_dim,
           'dimension'=>$aj_dimension,
