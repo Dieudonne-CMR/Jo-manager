@@ -48,7 +48,8 @@
               'remise'=> $remise,
             ]
           );
-    
+          
+          //$_SESSION['ok']='ok';
           header("location:accueil_sup_ad");
 
 

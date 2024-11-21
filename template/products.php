@@ -89,26 +89,26 @@
                                                 <thead>
                                                 <tr>
                                                     <th>Image</th>
-                                                    <th>Nom</th>
-                                                    <th>Prix</th>
-                                                    <th>Prix_Promo</th>
-                                                    <th>Quantité</th>
+                                                    <th>Gamme</th>
+                                                    <th>Prix_Achat</th>
+                                                    <th>Prix_Vente</th>
+                                                    <th>Matricule_Type</th>
                                                     <th>Date d'Ajout</th>
                                                 </tr>
                                                 </thead>
 
                                                 <tbody>
-                                                <?php foreach ($produits as $value): ?>
+                                                <?php foreach (select_table('produicts_all') as $value): ?>
                                                 <?php  ?>
                                                 <tr>
                                                     <td class="small-frame"><img class="img-fluid" src="<?php echo $image_produit.$value -> Img1; ?>" alt=""></td>
-                                                    <td><?php echo $value -> Nom_Produit; ?></td>
-                                                    <td><?php echo $value -> Prix; ?></td>
-                                                    <td><?php echo $value -> Prix_Promo; ?></td>
-                                                    <td><?php echo $value -> quantite; ?></td>
-                                                    <td><?php echo $value -> Date_Ajout; ?></td>
+                                                    <td><?php echo $value -> nom_gamme; ?></td>
+                                                    <td><?php echo $value -> prix_achat; ?></td>
+                                                    <td><?php echo $value -> prix_de_vente; ?></td>
+                                                    <td><?php echo $value -> mat_type; ?></td>
+                                                    <td><?php echo $value -> date_aj; ?></td>
                                                     <td style="text-align: center; vertical-align: middle;">
-                                                        <a href="modifi-product/<?php echo $value->Mat_Produit; ?>" name="envoyer" class="btn btn-primary">Modifier</a>
+                                                        <a href="modifi-product/<?php echo $value->mat_produit; ?>" name="envoyer" class="btn btn-primary">Modifier</a>
                                                     </td>
                                                 </tr>
                                                 <?php endforeach; ?>

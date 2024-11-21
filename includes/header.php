@@ -271,9 +271,24 @@
                     </ul>
                 </li>
                             <!-- ------------------------------------------------- -->
-               
 
+                
                 <?php if($gest_boutik==1): // zone des gerant de boutique?>
+
+                            <!-- zone de selection des produits par un gerant pour sa boutique -->
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="ti-plus"></i>
+                            <span>Selection Produits</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <?php foreach(select_table('type_produit') as $value): ?>
+                                <li><a href="add-product/<?= $value->mat_type; ?>"><?php echo $value-> nom_type ?></a></li>
+                            <?php endforeach;?>    
+                        </ul>
+                    </li>
+                                <!-- ---------------------------------------------------------- -->
+
                     <li>
                         
                         <a href="modifi-shop" class=" waves-effect">
@@ -281,15 +296,8 @@
                             <span>Modification Boutique</span>
                         </a>
                     </li>
-                    <?php /*
-                        <li>
-                            
-                            <a href="modifi-gerant" class="">
-                                <i class="fas fa-cog"></i>
-                                <span>Modification Infos Gerant</span>
-                            </a> 
-                        </li>
-                    */?>
+                   
+
                 <?php endif ?>
                 <!-- permission admin -->
                 <?php if($gest_boutik==0): ?>

@@ -1,7 +1,11 @@
 
 <!doctype html>
 <html lang="en">
-
+<?php
+    $recup = [];
+    $recup = select_table_where('produits_boutik', 'mat_produit', $mat_produit);
+    var_dump($recup);
+?>
     
 <!-- Mirrored from themesdesign.in/morvin/layouts/ecommerce-products.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2024 05:00:53 GMT -->
 <head>
@@ -71,8 +75,8 @@
                         <div class="page-content-wrapper">
 
                             <div class="row" >
-                                <?php foreach(select_table_where("produits_boutik","Mat_Shop",$mat_shop) as $value): 
-                                     $mat_product=$value->Mat_Produit  //-- du produits
+                                <?php //foreach(select_table_where("produicts_all","mat_shop",$mat_shop) as $value): 
+                                     //$mat_product=$value->mat_produit  //-- du produits
                                 ?>
 
                                     <div class="col-xl-4 col-sm-6">
@@ -83,16 +87,16 @@
                                                     25% Off
                                                 </div> */?>
                                                 
-                                                <img src="<?php echo $image_produit . $value -> Img1 ?>" alt="" class="img-fluid mx-auto d-block">
+                                                <img src="<?php //echo $image_produit . $value -> Img1 ?>" alt="" class="img-fluid mx-auto d-block">
                                             </div>
     
                                             <div class="text-center">
     
                                                 <a href="#" class="text-dark " >
-                                                    <h5 class="font-size-18"><?php echo $value -> Nom_Produit; ?></h5>
+                                                    <h5 class="font-size-18"><?php //echo $value -> nom_gamme; ?></h5>
                                                 </a>
     
-                                                <h4 class="mt-3 mb-0"><?php echo $value -> Prix; ?> <span class="font-size-14 text-muted me-2"><del><?php echo $value -> Prix_Promo; ?></del></span></h4>
+                                                <h4 class="mt-3 mb-0"><?php //echo $value -> mat_produit; ?> <span class="font-size-14 text-muted me-2"><del><?php //echo $value -> Prix_Promo; ?></del></span></h4>
     
                                                 <div class="mt-3">
                                                     <ul class="list-inline">
@@ -122,7 +126,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                <?php endforeach;    ?>
+                                <?php //endforeach;    ?>
 
                                 
                             </div>

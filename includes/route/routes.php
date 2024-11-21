@@ -61,11 +61,11 @@ if(@$url[0]=='products'):
     $produits=[];
     if($gest_boutik==0 AND empty($mat_shop)): //--
         //------recuper les produits de toutes les boutiques
-        $produits= select_table("Produits");
+        $produits= select_table("produicts_all");
         $titre='Produits dans les boutiques';
     else:
         //------recuper les produits d'une boutique
-        $produits= select_table_where("Produits", "Mat_Shop", $mat_shop);
+        $produits= select_table_where("produicts_all", "Mat_Shop", $mat_shop);
         $titre='Liste des Produits';
 
     endif;
@@ -121,8 +121,15 @@ if(@$url[0]=='panier'):
     include_once('template/panier.php');
 endif;
 
-if(@$url[0]=='add-product'):
-    include_once('template/add-product.php');
+if(@$url[0]=='add-product'):  //route permettant a un gerant de selectionner le type de produit qu'il souhaite ajouter dans sa boutique
+
+    $mat_type = $url[1]; 
+    $verif_mat_type = select_table_where('type_produit', 'mat_type', $mat_type);
+    if (!empty($verif_mat_type)):
+        include_once('template/add-product.php');
+    else:
+        header('Location:../home');
+    endif; 
 endif;
 
 //--------Chechout de la commande
@@ -233,6 +240,11 @@ if(@$url[0]=='aj_prospect'):
     include_once 'processing/aj_prospect.php'; 
 endif;
 
+
+//--------route pour le traitement de la selection d'un produit par un gerant(ajout dans produi_boutik)
+if(@$url[0]=='select_produit'):
+    include_once 'processing/select_produit.php'; 
+endif;
 
 
 //--------traitement d'ajout d'un type de produit
