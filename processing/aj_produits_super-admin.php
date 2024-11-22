@@ -15,6 +15,7 @@
             $prix_de_vente = test_input($_POST['prix_vente']);
             $mat_produit='p-'.random_int(0,80000);
             $mat_type = test_input($_POST['mat_type']);
+            $nom_type = test_input($_POST['nom_type']);
             $mat_gamme = test_input($_POST['mat_gamme']);
             $nom_dim = test_input($_POST['nom_dim']);
             $nom_gamme = test_input($_POST['nom_gamme']);
@@ -28,8 +29,8 @@
             endif;
 
 
-            $DB->query("INSERT INTO produicts_all (mat_type, mat_gamme, nom_gamme, mat_produit, dimensions, epaisseur, prix_achat, Coef_vente, prix_de_vente, description_produit, remise, taie, Img1, Img2, Img3) 
-                        VALUES (:mat_type, :mat_gamme, :nom_gamme, :mat_produit, :dimensions, :epaisseur, :prix_achat, :Coef_vente, :prix_de_vente, :description_produit, :remise, :taie, :Img1, :Img2, :Img3)",
+            $DB->query("INSERT INTO produicts_all (mat_type, nom_produit, mat_gamme, nom_gamme, mat_produit, dimensions, epaisseur, prix_achat, Coef_vente, prix_de_vente, description_produit, remise, taie, Img1, Img2, Img3) 
+                        VALUES (:mat_type, :nom_produit, :mat_gamme, :nom_gamme, :mat_produit, :dimensions, :epaisseur, :prix_achat, :Coef_vente, :prix_de_vente, :description_produit, :remise, :taie, :Img1, :Img2, :Img3)",
             [
               'mat_produit'=>$mat_produit,
               'prix_achat'=>$prix_achat,
@@ -46,6 +47,7 @@
               'taie'=> $taie,
               'description_produit'=> $description,
               'remise'=> $remise,
+              'nom_produit'=>$nom_type
             ]
           );
           

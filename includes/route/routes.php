@@ -46,6 +46,7 @@ if($gest_boutik==0):
 elseif($gest_boutik==1): 
     //-------- page d'accueil pour les gerants dans boutiques
     if(@$url[0]=='home' || @$url=='' || @$url[0]=='accueil_sup_ad'):
+        
         include_once("template/home.php");
     endif;
 endif;
@@ -83,7 +84,6 @@ endif;
 
 //page d'ajout d'un produit par un admin
 if(@$url[0]=='aj_produit_admin'):
-
     $mat_type = $url[1]; 
     $verif_mat_type = select_table_where('type_produit', 'mat_type', $mat_type);
     //var_dump($verif_mat_type);

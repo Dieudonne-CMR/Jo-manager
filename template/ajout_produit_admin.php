@@ -1,18 +1,11 @@
 <!doctype html>
 <html lang="en">
-<?php
-     
-    /* if (!isset($_GET['matricule'])):
-         die("Type de produit non sélectionné.");
-     else:
-         $matricule_type = $_GET['matricule'];
-     endif;*/
 
-?>
 
 <!-- Mirrored from themesdesign.in/morvin/layouts/ecommerce-add-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2024 05:02:48 GMT -->
 
 <head>
+
 
 
     <meta charset="utf-8" />
@@ -68,6 +61,7 @@
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
                                         <!-- <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li> -->
                                         <li class="breadcrumb-item active">Ajout Produits</li>
+    
                                     </ol>
                                 </div>
                             </div>
@@ -97,9 +91,12 @@
                                             <div class="tab-content twitter-bs-wizard-tab-content">
                                                 <div class="tab-pane" style="display: block;" >
                                                     <h4 class="header-title">Informations basiques</h4>
-                                                    <p class="card-title-desc">Remplissez toutes les informations ci-dessous</p><br>
+                                                    <p class="card-title-desc">Remplissez toutes les informations ci-dessous
+                                                        
+                                                    </p><br>
                                                     
                                 <?php if($mat_type): ?>
+                                    
 
                                             <div class='row'>
                                                         <div class="col-sm-4 mb-3">
@@ -223,7 +220,7 @@
                                                                     </div>   
                                                                 </div>
                                                                 
-                                                                
+
                                                                 <div class="col-sm-4 mb-3">
                                                                     <div class="fallback">
                                                                             <!-- Small modal -->
@@ -388,7 +385,7 @@
                                                             </div>
                                                             <input type="hidden" name='mat_type' value="<?php echo $mat_type ?>">
                                                             <input type="hidden" name='mat_gamme' value="<?php echo $mat_gamme ?>">
-                                                            
+                                                            <input type="hidden" name='nom_type' value="<?php echo $nom_produit ?>">
                                                             <input type="hidden" name='nom_gamme' value="<?php echo $nom_gamme ?>">
                                                             <input type="hidden" name='nom_dim' value="<?php echo $nom_dim ?>">
                                                             <input type="hidden" name='nom_epaisseur' value="<?php echo $nom_epaisseur ?>">
@@ -397,7 +394,6 @@
                                                                             <li class="next"><button class="btn btn-primary" type='submit' name="enregistrer">Enregistrer</button></li>
                                                                         </ul>
                                                     </form>
-                                <?php endif; ?>
                                                     <div id="uploadStatus"></div>
                                                     <!-- end tabpane -->
                                                 </div>
@@ -407,7 +403,7 @@
                                 </div>
                             </div>
                             <!-- end row -->
-
+                        <?php endif; ?>
                         </div>
 
 

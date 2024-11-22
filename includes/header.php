@@ -309,7 +309,7 @@
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
                             <?php foreach(select_table('type_produit') as $value): ?>
-                                <li><a href="aj_produit_admin/<?= $value->mat_type; ?>"><?php echo $value-> nom_type ?></a></li>
+                                <li><a href="aj_produit_admin/<?= $value->mat_type; ?>"><?php echo $value->nom_type; ?></a></li>
                             <?php endforeach;?>    
                         </ul>
                     </li>
