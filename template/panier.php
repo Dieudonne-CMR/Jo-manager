@@ -73,9 +73,9 @@
                                                 <table class="table table-centered mb-0 table-nowrap">
                                                     <thead class="bg-light">
                                                         <tr>
-                                                            <th style="width: 120px">Produit</th>
-                                                            <th>Nom du Produit</th>  
-                                                            <th>Prix Unitaire</th>
+                                                            <th style="width: 120px">Image</th>
+                                                            <th>Nom_ du Produit</th>  
+                                                            <th>Prix de Vente</th>
                                                             <th>Quantité</th>
                                                             <th>Total</th>
                                                             <th class="text-center">Action</th>
@@ -88,12 +88,12 @@
                                                     // var_dump($panier);
                                                         $totalPanier = 0;
                                                         foreach ($panier as $produit):
-                                                            $mat_produit= $produit['mat_produit']; //--- matricule de produits
+                                                            $mat_produit= $produit['mat_product']; //--- matricule de produits
                                                             $totalProduit = $produit['prix'] * $produit['quantite']; //---- prix total de produits
                                                             $totalPanier += $totalProduit; //---- Prix total du panier
                                                             // var_dump($totalPanier);
                                                         ?>
-                                                        <tr id="produit-<?= $produit['mat_produit']; ?>">
+                                                        <tr id="produit-<?= $mat_produit; ?>">
                                                             <td>
                                                                 <img src="<?= $image_produit . $produit['image'] ?>" alt="product-img"
                                                                     title="product-img" class="avatar-md" />
@@ -120,7 +120,7 @@
                                                             </td>
 
                                                             <td style="width: 90px;" class="text-center">
-                                                                <button class="supprimer" data-id="<?= $produit['mat_produit']; ?>" class="action-icon text-danger" title="Supprimer"> 
+                                                                <button class="supprimer" data-id="<?= $produit['mat_product'] ?>" class="action-icon text-danger" title="Supprimer"> 
                                                                     <i class="mdi mdi-trash-can font-size-18"></i>
                                                                 </button>
                                                             </td>

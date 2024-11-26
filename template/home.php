@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="en">
 
+
     
 <!-- Mirrored from themesdesign.in/morvin/layouts/ecommerce-products.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2024 05:00:53 GMT -->
 <head>
@@ -71,9 +72,17 @@
                         <div class="page-content-wrapper">
 
                             <div class="row" >
-                                <?php foreach(select_table_where("produits_boutik","Mat_Shop",$mat_shop) as $value): 
-                                     $mat_product=$value->Mat_Produit  //-- du produits
+
+                            <?php
+                                foreach(select_table_where('produits_boutik', 'mat_shop', $mat_shop) as $val):
+                                    $mat_produit = $val->mat_produit; // recuperation des matricules des produits qui sont lies a la boutiques dans laquelle on est
+                                    //var_dump($mat_produit);       
+                            ?>
+
+                                <?php foreach(select_table_where("produicts_all","mat_produit",$mat_produit) as $value): 
+                                     //$mat_type=$value->nom_type  //-- du produits
                                 ?>
+                                
 
                                     <div class="col-xl-4 col-sm-6">
                                         <div class="card">
@@ -89,10 +98,10 @@
                                             <div class="text-center">
     
                                                 <a href="#" class="text-dark " >
-                                                    <h5 class="font-size-18"><?php echo $value -> Nom_Produit; ?></h5>
+                                                    <h5 class="font-size-18"><?php echo select_table_where('type_produit', 'mat_type', $value -> mat_type)[0]->nom_type. '  |  '. $value -> nom_gamme. '  |  '. $value -> dimensions ; ?></h5>
                                                 </a>
     
-                                                <h4 class="mt-3 mb-0"><?php echo $value -> Prix; ?> <span class="font-size-14 text-muted me-2"><del><?php echo $value -> Prix_Promo; ?></del></span></h4>
+                                                <h4 class="mt-3 mb-0"><?php echo $value -> prix_de_vente; ?> <span class="font-size-14 text-muted me-2"><del><?php //echo $type; ?></del></span></h4>
     
                                                 <div class="mt-3">
                                                     <ul class="list-inline">
@@ -105,25 +114,26 @@
                                                         </li>
                                                     </ul>
                                                 </div>
-
+  
                                                 <div class="product-action mt-2">
                                                     <form class='ajpanier' action="aj_panier" method="POST">
-                                                        <input type="hidden" name="mat_product" value="<?php echo $mat_product; ?>">
-                                                        <input type="hidden" name="nom" value="<?php echo $value -> Nom_Produit; ?>">
-                                                        <input type="hidden" name="prix" value="<?php echo $value -> Prix; ?>">
+                                                        <input type="hidden" name="mat_product" value="<?php echo $mat_produit; ?>">
+                                                        <input type="hidden" name="nom" value="<?php echo $value -> nom_gamme; ?>">
+                                                        <input type="hidden" name="prix" value="<?php echo $value -> prix_de_vente; ?>">
                                                         <input type="hidden" name="image" value="<?php echo $value -> Img1; ?>">
                                                         <div class="d-grid">
                                                             <button type="submit" class="btn btn-primary"> Ajouter au panier</button>
                                                         </div>
                                                     </form>
                                                 </div>
-    
+                                                
                                             </div>
                                             </div>
                                         </div>
                                     </div>
                                 <?php endforeach;    ?>
-
+                            <?php endforeach; ?>
+                                
                                 
                             </div>
                             <!-- end row -->

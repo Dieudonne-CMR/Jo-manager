@@ -17,7 +17,7 @@ if (!isset($_SESSION['panier'][$mat_shop])) {
 
 // Ajouter le produit au panier
 $_SESSION['panier'][$mat_shop][$mat_product] = [
-    'mat_produit'=>$mat_product,
+    'mat_product'=>$mat_product,
     'nom' => $nom,
     'prix' => $prix,
     'image' => $image,
