@@ -117,9 +117,9 @@
   
                                                 <div class="product-action mt-2">
                                                     <form class='ajpanier' action="aj_panier" method="POST">
-                                                        <input type="hidden" name="mat_product" value="<?php echo $mat_product; ?>">
-                                                        <input type="hidden" name="nom" value="<?php echo $value -> Nom_Produit; ?>">
-                                                        <input type="hidden" name="prix" value="<?php echo $value -> Prix; ?>">
+                                                        <input type="hidden" name="mat_product" value="<?php echo $mat_produit; ?>">
+                                                        <input type="hidden" name="nom" value="<?php echo $value -> nom_gamme; ?>">
+                                                        <input type="hidden" name="prix" value="<?php echo $value -> prix_de_vente; ?>">
                                                         <input type="hidden" name="image" value="<?php echo $value -> Img1; ?>">
                                                         <div class="d-grid">
                                                             <button type="submit" class="btn btn-primary"> Ajouter au panier</button>

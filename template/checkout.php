@@ -84,7 +84,7 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                                     // var_dump($panier);
                                                         $totalPanier = 0;
                                                         foreach ($panier as $produit):
-                                                            $mat_produit= $produit['mat_produit']; //--- matricule de produits
+                                                            $mat_produit= $produit['mat_product']; //--- matricule de produits
                                                             $totalProduit = $produit['prix'] * $produit['quantite']; //---- prix total de produits
                                                             $totalPanier += $totalProduit; //---- Prix total du panier
                                                             // var_dump($totalPanier);

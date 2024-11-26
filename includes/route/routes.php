@@ -66,7 +66,8 @@ if(@$url[0]=='products'):
         $titre='Produits dans les boutiques';
     else:
         //------recuper les produits d'une boutique
-        $produits= select_table_where("produicts_all", "Mat_Shop", $mat_shop);
+        $produits= select_table_where("produits_boutik", "Mat_shop", $mat_shop); //on recupere tout les matricules des boutiques des gerants
+        //var_dump($produits);
         $titre='Liste des Produits';
 
     endif;

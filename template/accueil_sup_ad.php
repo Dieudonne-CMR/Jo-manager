@@ -766,7 +766,8 @@
                                         <h4 class="header-title mb-4">Boutiques</h4>
 
                                         <ul class="inbox-wid list-unstyled mb-0">
-                                        <?php foreach (select_table('shop') as $key => $value) : if($key<6): ?>    
+                                        <?php foreach (select_table('shop') as $key => $value) : if($key<6): ?>
+                                            
                                             <li class="inbox-list-item">
                                                 <a href="#">
                                                     <div class="media">
@@ -781,7 +782,9 @@
                                                             <h5 class="font-size-15 mb-1"><?php echo $value -> Nom_Shop ; ?></h5>
                                                         </div>
                                                         <p class="ms-2 pt-3">
-                                                            <?php echo count(select_table_where('produits_boutik', 'Mat_shop', $value->Mat_Shop)); ?>
+                                                            <?php echo count(select_table_where('produits_boutik', 'mat_produit', $mat_shop));
+                                                            
+                                                            //var_dump($test);  ?>
                                                         </p>
                                                     </div>
                                                 </a>

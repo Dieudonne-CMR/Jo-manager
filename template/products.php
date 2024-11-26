@@ -55,11 +55,11 @@
                          <div class="row align-items-center">
                              <div class="col-sm-6">
                                  <div class="page-title">
-                                     <h4>Data Tables</h4>
+                                     <h4><?php echo $titre; ?></h4>
                                          <ol class="breadcrumb m-0">
-                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
-                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                             <li class="breadcrumb-item active">Data Tables</li>
+                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Jo-Retail</a></li>
+                                             <li class="breadcrumb-item"><a href="javascript: void(0);">E-Ccommerce</a></li>
+                                             <li class="breadcrumb-item active">Produits</li>
                                          </ol>
                                  </div>
                              </div>
@@ -89,28 +89,39 @@
                                                 <thead>
                                                 <tr>
                                                     <th>Image</th>
+                                                    <th>Type_Produit</th>
                                                     <th>Gamme</th>
                                                     <th>Prix_Achat</th>
                                                     <th>Prix_Vente</th>
-                                                    <th>Matricule_Type</th>
+                                                    <th>Quantite</th>
                                                     <th>Date d'Ajout</th>
                                                 </tr>
                                                 </thead>
 
                                                 <tbody>
-                                                <?php foreach (select_table('produicts_all') as $value): ?>
+                                                <?php foreach ($produits as $value): 
+                                                    $produit = $value -> mat_produit; //on recupere et stocke les matricules des produits lies a chaque boutique ?>
                                                 <?php  ?>
+                                                    <?php foreach(select_table_where('produicts_all', 'mat_produit', $produit) as $produit): //on accede enfin a toutes leurs informations pour les aficher grace a $mat_produit ?>
                                                 <tr>
-                                                    <td class="small-frame"><img class="img-fluid" src="<?php echo $image_produit.$value -> Img1; ?>" alt=""></td>
-                                                    <td><?php echo $value -> nom_gamme; ?></td>
-                                                    <td><?php echo $value -> prix_achat; ?></td>
-                                                    <td><?php echo $value -> prix_de_vente; ?></td>
-                                                    <td><?php echo $value -> mat_type; ?></td>
-                                                    <td><?php echo $value -> date_aj; ?></td>
+                                                    <td class="small-frame"><img class="img-fluid" src="<?php echo $image_produit.$produit -> Img1; ?>" alt=""></td>
+                                                    <td><?php echo select_table_where('type_produit', 'mat_type', $produit -> mat_type)[0]->nom_type; ?></td>
+                                                    <td><?php echo $produit -> nom_gamme ; ?></td>
+                                                    <td><?php echo $produit -> prix_achat; ?></td>
+                                                    <td><?php echo $produit -> prix_de_vente; ?></td>
+                                                    <td>
+                                                        <?php   if($gest_boutik==0): //ne pas aficher la quantite de produits lorsqu'il sagit d'un admin
+                                                                    echo '-'; 
+                                                                else:
+                                                                    echo $value -> quantite;
+                                                                endif; ?>
+                                                    </td>
+                                                    <td><?php echo $produit -> date_aj; ?></td>
                                                     <td style="text-align: center; vertical-align: middle;">
                                                         <a href="modifi-product/<?php echo $value->mat_produit; ?>" name="envoyer" class="btn btn-primary">Modifier</a>
                                                     </td>
                                                 </tr>
+                                                <?php endforeach; ?>
                                                 <?php endforeach; ?>
                                                 </tbody>
                                             </table>
