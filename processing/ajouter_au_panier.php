@@ -9,7 +9,6 @@ $mat_product = test_input($_POST['mat_product']);
 $nom = test_input($_POST['nom']);
 $prix = test_input($_POST['prix']);
 $image = test_input($_POST['image']);
-$type = test_input($_POST['type']);
 
 // Vérifier si le panier est déjà créé dans la session
 if (!isset($_SESSION['panier'][$mat_shop])) {
