@@ -65,6 +65,7 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
 
                         <div class="page-content-wrapper">
                             <div class="row">
+
                                 <div class="col-xl-5">
                                     <div class="card">
                                         <div class="card-body">
@@ -74,21 +75,25 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                                     <th class="border-top-0" style="width: 100px;" scope="col">Photo</th>
                                                     <th class="border-top-0" scope="col">Produit</th>
                                                     <th class="border-top-0" scope="col">Total</th>
+                                         <?php if (!empty($panier)): ?>
+                                        <?php
+                                        
+                                        // var_dump($panier);
+                                            $totalPanier = 0;
+                                            foreach ($panier as $produit):
+                                                $mat_produit= $produit['mat_product']; //--- matricule de produits
+                                                $totalProduit = $produit['prix'] * $produit['quantite']; //---- prix total de produits
+                                                $totalPanier += $totalProduit; //---- Prix total du panier
+                                                    //var_dump($produit['quantite']);
+                                                    $tab = select_table_where('produits_boutik', 'mat_produit', $mat_produit);
+                                                        $qte_disponible = $tab[0]->quantite;
+                                                       // var_dump($produit['quantite']);
+                                        ?>
                                                     
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <?php if (!empty($panier)): ?>
-                                                    <?php
-                                                    
-                                                    // var_dump($panier);
-                                                        $totalPanier = 0;
-                                                        foreach ($panier as $produit):
-                                                            $mat_produit= $produit['mat_product']; //--- matricule de produits
-                                                            $totalProduit = $produit['prix'] * $produit['quantite']; //---- prix total de produits
-                                                            $totalPanier += $totalProduit; //---- Prix total du panier
-                                                            // var_dump($totalPanier);
-                                                 ?>
+                                                
                                                 <tr>
                                                     <td><img src="<?= $image_produit . $produit['image'] ?>" alt="product-img" title="product-img" class="avatar-md"></td>
                                                     <td>
@@ -98,10 +103,11 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                                     <td id='total-<?php echo $mat_produit; ?>'>
                                                         <?php echo $totalProduit ?> Fcfa</td>
                                                     </tr>
-                                                    <?php endforeach; ?>
-                                                        <?php else: ?>
-                                                            <p>Votre panier est vide.</p>
-                                                            <?php $totalPanier = 0; ?>                                                        <?php endif; ?>
+                                                    
+                                                        <?php //else: ?>
+                                                            <!-- <p>Votre panier est vide.</p> -->
+                                                            <?php //$totalPanier = 0; ?>                                                        
+                                                            <?php endforeach; ?>    
                                                     <tr>
                                                         <td colspan="1">
                                                         </td>
@@ -111,13 +117,16 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                                         <td id="total-panier">
                                                             <?= $totalPanier ?> Fcfa
                                                         </td>
-                                                    </tr>
-                                                    
+                                                    </tr>  
                                                 </tbody><!-- end tbody -->
                                             </table><!-- end table -->
                                         </div><!-- end cardbody -->
                                     </div><!-- end card -->
-                                </div><!-- end col -->
+                                </div><!-- end col -->  
+
+                                                    <!-- condition : si la quantite disponible est superieure alors le formulaire du client s'affiche -->
+                                                        <?php if($qte_disponible >= $produit['quantite']): ?>
+                               
                                 <div class="col-xl-7">
                                     <div class="card">
                                         <div class="card-body">
@@ -170,10 +179,10 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                                                         <input type='text' class="form-control" name='adresse_client' id="billing-address" rows="3" placeholder="Entrez votre adresse complete"></input>
                                                                     </div>
                                     
-                                                                    <input type="hidden" name='prix_total_commande' value='<?= $totalPanier //je recupere le prix total de ma commande ?>'>
-                                                                    <input type="hidden" name='mat_produit' value='<?= $mat_produit //je recupere le prix total de ma commande ?>'>
-                                                                    <input type="hidden" name='panier' value='<?= $panier //je recupere mon panier ?>'>
-                                                                    <input type="hidden" name='shop' value='<?= $mat_shop //je recupere le matricule de la boutique dans laquelle je suis ?>'>
+                                                                    <input type="hidden" name='prix_total_commande' value='<?= $totalPanier //--- je recupere le prix total de ma commande ?>'>
+                                                                    <input type="hidden" name='mat_produit' value='<?= $mat_produit //---- je recupere le matricule du produit ?>'>
+                                                                    <input type="hidden" name='panier' value='<?= $panier //--- je recupere mon panier ?>'>
+                                                                    <input type="hidden" name='shop' value='<?= $mat_shop //---- je recupere le matricule de la boutique dans laquelle je suis ?>'>
                                                                     <button type='submit' name='soumettre' class="btn btn-primary">
                                                                              Soumettre
                                                                     </button> 
@@ -185,7 +194,15 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                <?php else:  //----- si la quantite dispo est inferieure, alors alors on affiche une alert contenant un message d'erreur
+                                    include_once('processing/conditions.php'); 
+                                    exit;
+                                endif;
+                                ?>
+                        <?php else: //---- si le panier est vide
+                            echo 'panier vide';?>
+                        <?php endif; ?>
+                                </div>         
                             </div><!-- end row -->
                         </div>  
                     </div> <!-- container-fluid -->

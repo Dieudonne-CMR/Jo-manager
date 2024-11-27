@@ -39,9 +39,11 @@
             
                 $tab = select_table_where('produits_boutik', 'mat_produit', $mat_product);
                 $qte_disponible = $tab[0]->quantite;
-                //var_dump($tab);
+                //var_dump($qte_disponible);
                 if($qte_disponible >= $quantite_commande):
                     $dif_quantite = $qte_disponible - $quantite_commande;
+
+                    
 
                     //requete d'insertion des informations de la commande 
 
@@ -65,13 +67,12 @@
                                     'mat_produit' => $mat_product,
                                 ]
                             );*/
-                    $sql = update_table_where('produits_boutik', 'quantite', $dif_quantite, 'mat_produit', $mat_product);
+                            $sql = update_table_where('produits_boutik', 'quantite', $dif_quantite, 'mat_produit', $mat_product);
+                    
                 else:
                     echo 'Quantite disponible insuffisante';
-                    
+                    exit;
                  endif;
-
-
            
             endforeach;
                     
