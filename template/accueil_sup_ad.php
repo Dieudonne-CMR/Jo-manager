@@ -766,7 +766,14 @@
                                         <h4 class="header-title mb-4">Boutiques</h4>
 
                                         <ul class="inbox-wid list-unstyled mb-0">
-                                        <?php foreach (select_table('shop') as $key => $value) : if($key<6): ?>
+                                        <?php $boutik = select_table('shop');
+                                               $boutik_recents = array_slice($boutik, -6);   ?>
+                                        <?php foreach ($boutik_recents as $key => $value) : 
+                                            $shop = $value -> Mat_Shop;
+                                            //var_dump($shop);
+                                            $rec = count(select_table_where('produits_boutik', 'Mat_Shop', $shop )); //---- recuperation du nombre de produits contenu dans une boutique
+                                            //$rec2 = $rec->mat_produit;
+                                            //var_dump($rec);?>
                                             
                                             <li class="inbox-list-item">
                                                 <a href="#">
@@ -782,15 +789,12 @@
                                                             <h5 class="font-size-15 mb-1"><?php echo $value -> Nom_Shop ; ?></h5>
                                                         </div>
                                                         <p class="ms-2 pt-3">
-                                                            <?php echo count(select_table_where('produits_boutik', 'mat_produit', $mat_shop));
-                                                            
-                                                            //var_dump($test);  ?>
+                                                            <?php  echo $rec;  ?>
                                                         </p>
                                                     </div>
                                                 </a>
                                             </li>
-                                            <?php else: break; endif; ?>
-                                                    <?php endforeach; ?>
+                                                <?php endforeach; ?>
                                         </ul>
                                     
 
@@ -815,7 +819,10 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                <?php foreach (select_table('commande') as $key => $value) : if($key<6): ?>
+                                                    <?php $commande = select_table('commande');  //---- recuperations de toutes les commandes
+                                                        $commande_recents = array_slice($commande, -6) //--- tri des 6 dernieres commandes uniquement ?>
+                                                <?php foreach ($commande_recents as $key => $value) :
+                                                    ?>
                                                     <tr>
                                                     
                                                         <td><?php echo $value -> Mat_Com ; ?></td>
@@ -827,7 +834,6 @@
                                                                 class="badge badge-pill badge-soft-primary font-size-13">Pending</span>
                                                         </td>
                                                     </tr>
-                                                    <?php else: break; endif; ?>
                                                     <?php endforeach; ?>
                                                 </tbody>
                                             </table>

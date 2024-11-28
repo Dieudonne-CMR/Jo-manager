@@ -86,7 +86,8 @@
         
         
  
-
+        else:
+            header('location:checkout');
     endif;
 endif;
 ?>

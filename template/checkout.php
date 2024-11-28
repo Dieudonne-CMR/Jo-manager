@@ -88,6 +88,7 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                                     $tab = select_table_where('produits_boutik', 'mat_produit', $mat_produit);
                                                         $qte_disponible = $tab[0]->quantite;
                                                        // var_dump($produit['quantite']);
+                                                       $nom_type = select_table_where('produicts_all', 'mat_produit', $mat_produit)[0] -> nom_produit; //--- on recupere le nom de chaque type de produit pour l'afficher ensuite
                                         ?>
                                                     
                                                 </tr>
@@ -97,7 +98,7 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                                 <tr>
                                                     <td><img src="<?= $image_produit . $produit['image'] ?>" alt="product-img" title="product-img" class="avatar-md"></td>
                                                     <td>
-                                                        <h5 class="font-size-16 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset"><?php echo $produit['nom'];  ?></a></h5>
+                                                        <h5 class="font-size-16 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset"><?php echo $nom_type. ' - ' .$produit['nom'];  ?></a></h5>
                                                         <p class="font-size-14 mb-0 text-muted"><?php echo $produit['prix']. ' x '. $produit['quantite'];  ?></p>
                                                     </td>
                                                     <td id='total-<?php echo $mat_produit; ?>'>
@@ -150,13 +151,13 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                                                         <div class="col-lg-4">
                                                                             <div class="mb-4">
                                                                                 <label class="form-label" for="billing-name">Nom</label>
-                                                                                <input type="text" name='nom_client' class="form-control" id="billing-name" placeholder="Entrez votre nom">
+                                                                                <input type="text" name='nom_client' class="form-control" id="billing-name" placeholder="Entrez votre nom" required>
                                                                             </div>
                                                                         </div><!-- end col -->
                                                                         <div class="col-lg-4">
                                                                         <div class="mb-4 mb-lg-0">
                                                                                 <label class="form-label">Ville</label>
-                                                                                <select class="form-select" name='ville_client' title="Ville">
+                                                                                <select class="form-select" name='ville_client' title="Ville" required>
                                                                                     <option value="0">Selectionner une ville</option>
                                                                                     <option value="Douala">Douala</option>
                                                                                     <option value="Yaounde">Yaounde</option>
@@ -170,13 +171,13 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                                                         <div class="col-lg-4">
                                                                             <div class="mb-4">
                                                                                 <label class="form-label" for="billing-phone">Telephone</label>
-                                                                                <input type="number" name='tel_client' class="form-control" id="billing-phone" placeholder="Entrer num. tel.">
+                                                                                <input type="number" name='tel_client' class="form-control" id="billing-phone" placeholder="Entrer num. tel." required>
                                                                             </div>
                                                                         </div><!-- end col -->
                                                                     </div><!-- end row -->
                                                                     <div class="mb-4">
                                                                         <label class="form-label" for="billing-address">Adresse</label>
-                                                                        <input type='text' class="form-control" name='adresse_client' id="billing-address" rows="3" placeholder="Entrez votre adresse complete"></input>
+                                                                        <input type='text' class="form-control" name='adresse_client' required id="billing-address" rows="3" placeholder="Entrez votre adresse complete"></input>
                                                                     </div>
                                     
                                                                     <input type="hidden" name='prix_total_commande' value='<?= $totalPanier //--- je recupere le prix total de ma commande ?>'>
@@ -196,7 +197,7 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                     </div>
                                 <?php else:  //----- si la quantite dispo est inferieure, alors alors on affiche une alert contenant un message d'erreur
                                     include_once('processing/conditions.php'); 
-                                    exit;
+                                    
                                 endif;
                                 ?>
                         <?php else: //---- si le panier est vide

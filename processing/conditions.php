@@ -1,5 +1,5 @@
 <?php
-     $panier = $_SESSION['panier'][$mat_shop];
+     //$panier = $_SESSION['panier'][$mat_shop];
 
      foreach ($panier as $produit) :
         $mat_product = $produit['mat_product'];

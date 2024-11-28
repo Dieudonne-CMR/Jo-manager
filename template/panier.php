@@ -92,6 +92,8 @@
                                                             $totalProduit = $produit['prix'] * $produit['quantite']; //---- prix total de produits
                                                             $totalPanier += $totalProduit; //---- Prix total du panier
                                                             // var_dump($totalPanier);
+                                                            $nom_type = select_table_where('produicts_all', 'mat_produit', $mat_produit)[0] -> nom_produit; //--- on recupere le nom de chaque type de produit pour l'afficher ensuite 
+                                                        //var_dump($nom_type);
                                                         ?>
                                                         <tr id="produit-<?= $mat_produit; ?>">
                                                             <td>
@@ -99,7 +101,7 @@
                                                                     title="product-img" class="avatar-md" />
                                                             </td>
                                                             <td>
-                                                                <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset"><?php echo $produit['nom'];  ?></a></h5>
+                                                                <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset"><?php echo $nom_type.' - '. $produit['nom'];  ?></a></h5>
                                                             </td>
                                                             
                                                             <!-- Prix de unitaire d'un produits -->

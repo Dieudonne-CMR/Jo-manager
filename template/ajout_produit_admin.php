@@ -95,8 +95,8 @@
                                                         
                                                     </p><br>
                                                     
-                                <?php if($mat_type): ?>
-                                    
+                                <?php if($mat_type): ?> 
+                                    <?php $nom_type = select_table_where('type_produit', 'mat_type', $mat_type)[0] -> nom_type; //--- on recupere le nom de chaque type de produit pour l'afficher ensuite ?>
 
                                             <div class='row'>
                                                         <div class="col-sm-4 mb-3">
@@ -190,6 +190,7 @@
                                                                                                                                                                                 echo "Ajoutez une dimension"; ?>
                                                                                                                                                                         <?php endif; ?> '
                                                                                                                                                                          />
+                                                                                                                                                
                                                                                             </div>
                                                                                             <div class="modal-footer">
                                                                                                 <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Fermer</button>
@@ -338,6 +339,7 @@
 
                                                                         <div class="col-sm-4 mb-3">
                                                                             <div class="fallback">
+                                                                                
                                                                                 <label class="form-label" for="productdesc">Remise</label>
                                                                                 <input type="text" name="remise" class="form-control" />
                                                                             </div>
@@ -385,7 +387,7 @@
                                                             </div>
                                                             <input type="hidden" name='mat_type' value="<?php echo $mat_type ?>">
                                                             <input type="hidden" name='mat_gamme' value="<?php echo $mat_gamme ?>">
-                                                            <input type="hidden" name='nom_type' value="<?php echo $nom_produit ?>">
+                                                            <input type="hidden" name='nom_type' value="<?php echo $nom_type ?>">
                                                             <input type="hidden" name='nom_gamme' value="<?php echo $nom_gamme ?>">
                                                             <input type="hidden" name='nom_dim' value="<?php echo $nom_dim ?>">
                                                             <input type="hidden" name='nom_epaisseur' value="<?php echo $nom_epaisseur ?>">
