@@ -149,8 +149,11 @@ if(@$url[0]=='modifi-product'):
         header("location:../products");
     else:
         $mat_pro= test_input($url[1]);
+
         //-------- ici nous allons verifier que le produit existe avant de modifier 
-        $product = select_table_where("Produits", "Mat_Produit", $mat_pro) ;
+        $product = select_table_where("produicts_all", "mat_produit", $mat_pro) ;
+        $type = $product[0] -> nom_produit; //----- recuperation du nom du type de produits
+        //var_dump($type);
         if(sizeof($product)>0):
             include_once('template/modifi-product.php');
         else:
