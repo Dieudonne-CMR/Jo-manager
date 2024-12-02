@@ -117,9 +117,11 @@
                                                                 endif; ?>
                                                     </td>
                                                     <td><?php echo $produit -> date_aj; ?></td>
+                                                        <?php   if($gest_boutik==0):  //---afficher le bouton 'Modifier' uniquement s'il s'agit d'un admin ?>
                                                     <td style="text-align: center; vertical-align: middle;">
                                                         <a href="modifi-product/<?php echo $value->mat_produit; ?>" name="envoyer" class="btn btn-primary">Modifier</a>
                                                     </td>
+                                                        <?php endif; ?>
                                                 </tr>
                                                 <?php endforeach; ?>
                                                 <?php endforeach; ?>

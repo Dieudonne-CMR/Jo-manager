@@ -24,6 +24,7 @@
             $remise = test_input($_POST['remise']);  
             $taie = test_input($_POST['taie']);   
             
+            
             if($mat_type == 'type-190'):  //Oreillers :condition pour specifier que ces champs sont vides dans la BD
               $nom_dim = $taie = $nom_epaisseur ='';
             endif;
