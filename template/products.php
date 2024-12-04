@@ -95,6 +95,7 @@
                                                     <th>Prix_Vente</th>
                                                     <th>Quantite</th>
                                                     <th>Date d'Ajout</th>
+                                                    
                                                 </tr>
                                                 </thead>
 

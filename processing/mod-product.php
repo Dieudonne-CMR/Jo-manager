@@ -54,9 +54,9 @@
             // ici nous allons verifier si le produit exuste dans la BD avent de faire des modifications
             // var_dump($verification_produit);
             if(sizeof($verification_produit)>0) :
-                $gamme = test_input($_POST['gamme']);
-                $dimension = test_input($_POST['dimension']);
-                $epaisseur = test_input($_POST['epaisseur']);
+               // $gamme = test_input($_POST['gamme']);
+               // $dimension = test_input($_POST['dimension']);
+               // $epaisseur = test_input($_POST['epaisseur']);
                 $coef_vente = test_input($_POST['Coef_vente']);
                 $prix_de_vente = test_input($_POST['prix_de_vente']) ;
                 $prix_achat = test_input($_POST['prix_achat']) ;
@@ -67,27 +67,47 @@
                 // var_dump($mat_produit);
                 
 
-                $DB->query(
-                    "UPDATE produicts_all SET nom_gamme = :nom_gamme, dimensions = :dimensions, epaisseur = :epaisseur, prix_achat = :prix_achat, Coef_vente = :Coef_vente,
-                     prix_de_vente = :prix_de_vente, description_produit = :description_produit, remise = :remise WHERE mat_produit = '$mat_produit' LIMIT 1",
-                    [
-                        'gamme' => $gamme,
-                       // 'dimensions' => $dimension,
-                       // 'epaisseur' => $epaisseur,
+
+
+                $DB->query("UPDATE produicts_all SET   prix_achat = :prix_achat,
+                Coef_vente = :Coef_vente, remise = :remise, prix_de_vente = :prix_de_vente, description_produit = :description_produit  WHERE mat_produit = :mat_produit LIMIT 1",
+                [
+                        //'gamme' => $gamme,
+                        //'dimensions' => $dimension,
+                        //'epaisseur' => $epaisseur,
                         'prix_achat' => $prix_achat,
-                        'Coef_vente' => $Coef_vente,
+                        'Coef_vente' => $coef_vente,
                         'prix_de_vente' => $prix_de_vente,
                         'remise' => $remise,
                         'description_produit' => $description,
+                        'mat_produit' => $mat_produit
                         //'mat_cat' => $mat_cat
+                       // 'mat_produit' => $mat_produit
+                ]
+                );
+
+               /* $DB->query("UPDATE produicts_all SET nom_gamme = :nom_gamme, dimensions = :dimensions, epaisseur = :epaisseur, prix_achat = :prix_achat, Coef_vente = :Coef_vente,
+                     prix_de_vente = :prix_de_vente, description_produit = :description_produit, remise = :remise WHERE mat_produit = ':mat_produit' LIMIT 1",
+                    [
+                        'gamme' => $gamme,
+                        'dimensions' => $dimension,
+                        'epaisseur' => $epaisseur,
+                        'prix_achat' => $prix_achat,
+                        'Coef_vente' => $coef_vente,
+                        'prix_de_vente' => $prix_de_vente,
+                        'remise' => $remise,
+                        'description_produit' => $description,
+                        'mat_produit' => $mat_produit
+                        //'mat_cat' => $mat_cat
+                       // 'mat_produit' => $mat_produit
                         
                     ]
-                );
+                );*/
                 $_SESSION['ok']='ok';
-               // header("Location: modifi-product/$mat_produit");
+                header("Location: products");
             
             else:
-             //   header("Location: products");
+               header("Location: modifi-product/$mat_produit");
             endif;
    
         else :

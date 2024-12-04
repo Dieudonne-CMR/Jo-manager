@@ -7,7 +7,7 @@
         $quantite_commande = $produit['quantite'];
         //var_dump($quantite_commande);
     
-        $tab = select_table_where('produits_boutik', 'mat_produit', $mat_product);
+        $tab = select_table_where_2('produits_boutik', 'mat_produit', $mat_product, 'Mat_Shop', $mat_shop);
         $qte_disponible = $tab[0]->quantite;
         //var_dump($qte_disponible);
         if($qte_disponible >= $quantite_commande):
