@@ -82,8 +82,6 @@
                                 <?php foreach(select_table_where("produicts_all","mat_produit",$mat_produit) as $value): 
                                      //$mat_type=$value->nom_type  //-- du produits
                                 ?>
-                                
-
                                     <div class="col-xl-4 col-sm-6">
                                         <div class="card">
                                             <div class="card-body">

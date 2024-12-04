@@ -272,6 +272,11 @@ if(@$url[0]=='aj_produits_super-admin'):
     include_once 'processing/aj_produits_super-admin.php';
 endif;
 
+//suppression d'un produit dans la commande
+if(@$url[0]=='supprimer_panier'):
+    include_once "processing/$url[0].php";
+endif;
+
 //======== Les actions 
 //------deconnexion
 
