@@ -528,173 +528,59 @@
 
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="header-title mb-4">Best Selling Product</h4>
+                                        <h4 class="header-title mb-4">Liste des Produits</h4>
 
 
 
                                         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                                            <div class="carousel-indicators">
-                                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                              </div>
+                                        <!--  -->
+                                        <div class="carousel-indicators">
+                                             <?php $slides = select_table('produicts_all');
+                                                    foreach($slides as $index => $slide):  ?>
+                                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>" aria-current="true" aria-label="Slide <?= $index + 1 ?>"></button>
+                                            <?php endforeach;  ?>   
+                                        </div>
+                                    
+
+                                        
+                                        
                                             <div class="carousel-inner">
+                                                <?php foreach($slides as $index => $slide): ?>
 
-                                                <div class="carousel-item active">
-                                                    <div class="row align-items-center mb-5">
-                                                        <div class="col-md-4">
-                                                            <img src="assets/images/product/img-3.png"
-                                                                class="img-fluid me-3" alt="">
-                                                        </div>
-                                                        <div class="col-md-7 offset-md-1">
+                                                    <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+                                                        <div class="row align-items-center mb-5">
+                                                            <div class="col-md-4">
+                                                                <img src="<?php echo $image_produit . $slide -> Img1 ?>"
+                                                                    class="img-fluid me-3" alt="">
+                                                            </div>
+                                                            <div class="col-md-7 offset-md-1">
 
-                                                          <div class="mt-4 mt-sm-0">
-                                                            <p class="text-muted mb-2">Headphone</p>
+                                                                <div class="mt-4 mt-sm-0">
+                                                                    <p class="text-muted mb-2"><?php echo $slide -> nom_produit  ?></p>
 
-                                                            <h5 class="text-primary">Blue Headphone</h5>
-
-
-
-                                                            <div class="row no-gutters mt-4">
-
-                                                                <div class="col-4">
-
-                                                                    <div class="mt-1">
-                                                                        <h4>1200</h4>
-                                                                        <p class="text-muted mb-1">Sold</p>
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="col-4">
-
-                                                                    <div class="mt-1">
-                                                                        <h4>450</h4>
-                                                                        <p class="text-muted mb-1">Stock</p>
-                                                                    </div>
+                                                                    <h5 class="text-primary"><?php echo $slide -> nom_gamme  ?></h5>
 
 
-                                                                </div>
 
-                                                                <div class="col-4">
-                                                                    <div class="mt-4 pt-1">
-                                                                        <a href="#" class="btn btn-primary btn-sm">Buy
-                                                                            Now</a>
+                                                                    <div class="row no-gutters mt-4">
+
+                                                                        <div class="col-8">
+
+                                                                            <div class="mt-1">
+                                                                                <p class="text-muted mb-1">Prix :</p>
+                                                                                <h4><?php echo $slide -> prix_de_vente. 'FCFA'  ?> </h4>    
+                                                                            </div>
+
+                                                                        </div>
+
                                                                     </div>
                                                                 </div>
-
 
                                                             </div>
-                                                          </div>
-
-
                                                         </div>
                                                     </div>
-                                                </div>
-
-                                                <div class="carousel-item">
-                                                    <div class="row align-items-center mb-5">
-                                                        <div class="col-md-4">
-                                                            <img src="assets/images/product/img-5.png"
-                                                                class="img-fluid me-3" alt="">
-                                                        </div>
-                                                        <div class="col-md-7 offset-md-1">
-
-                                                           <div class="mt-4 mt-sm-0">
-                                                            <p class="text-muted mb-2">T-shirt</p>
-
-                                                            <h5 class="text-primary">Blue T-shirt</h5>
-
-
-
-                                                            <div class="row no-gutters mt-4">
-
-                                                                <div class="col-4">
-
-                                                                    <div class="mt-1">
-                                                                        <h4>800</h4>
-                                                                        <p class="text-muted mb-1">Sold</p>
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="col-4">
-
-                                                                    <div class="mt-1">
-                                                                        <h4>250</h4>
-                                                                        <p class="text-muted mb-1">Stock</p>
-                                                                    </div>
-
-
-                                                                </div>
-
-                                                                <div class="col-4">
-                                                                    <div class="mt-4 pt-1">
-                                                                        <a href="#" class="btn btn-primary btn-sm">Buy
-                                                                            Now</a>
-                                                                    </div>
-                                                                </div>
-
-
-                                                            </div>
-                                                           </div>
-
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-
-                                                <div class="carousel-item">
-                                                    <div class="row align-items-center mb-5">
-                                                        <div class="col-md-4">
-                                                            <img src="assets/images/product/img-1.png"
-                                                                class="img-fluid me-3" alt="">
-                                                        </div>
-                                                        <div class="col-md-7 offset-md-1">
-
-                                                           <div class="mt-4 mt-sm-0">
-                                                            <p class="text-muted mb-2">Sonic</p>
-
-                                                            <h5 class="text-primary">Alarm clock</h5>
-
-
-
-                                                            <div class="row no-gutters mt-4">
-
-                                                                <div class="col-4">
-
-                                                                    <div class="mt-1">
-                                                                        <h4>600</h4>
-                                                                        <p class="text-muted mb-1">Sold</p>
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="col-4">
-
-                                                                    <div class="mt-1">
-                                                                        <h4>150</h4>
-                                                                        <p class="text-muted mb-1">Stock</p>
-                                                                    </div>
-
-
-                                                                </div>
-
-                                                                <div class="col-4">
-                                                                    <div class="mt-4 pt-1">
-                                                                        <a href="#" class="btn btn-primary btn-sm">Buy
-                                                                            Now</a>
-                                                                    </div>
-                                                                </div>
-
-
-                                                            </div>
-                                                           </div>
-
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
+                                                
+                                                <?php endforeach; ?>
                                             </div>
 
                                         </div>
