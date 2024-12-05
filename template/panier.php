@@ -261,9 +261,66 @@
             });
         });
     });
+
+
+ // Ajouter un événement de clic à chaque bouton de suppression
+    $('.supprimer').click(function() {
+
+       
+            const mat_produit = this.getAttribute('data-id');
+            // console.log( mat_produit);
+            $('#produit-' + mat_produit).remove();
+         
+         
+
+            $.post('supprimer_panier', {mat_produit: mat_produit} , function(response) {
+            console.log(response); // Affiche la réponse dans la console
+           <?php /* if (response == 0) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Succès',
+                    text: 'Connexion réussie !',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    window.location.href = 'home';
+                });
+            }  */?>
+            
+
+        <?php /*
+
+            $.ajax({
+                url: 'supprimer_panier',
+                method: 'POST',
+                data: {
+                    mat_produit: mat_produit,
+                    // action: action
+                },
+                success: function(response) {
+                    try {
+                        var data = JSON.parse(response);
+                        console.log(data)
+                            
+                        if (data.success) {
+                            // $('#quantite-' + mat_produit).text(data.quantite);
+                            // $('#total-' + mat_produit).text(data.totalProduit + ' Fcfa');
+                            // $('#total-panier').text(data.totalPanier + ' Fcfa');
+                        } else {
+                            // alert(data.message || 'Erreur lors de la mise à jour.');
+                        }
+                    } catch (e) {
+                        // console.error('Erreur lors du traitement de la réponse JSON:', e);
+                        // alert('Une erreur est survenue. Veuillez réessayer.');
+                    }
+                }
+                */?>
+            });
+    })
+
+
 </script>
 <!-- ---------------------------------------------------------------------------------------- -->
-<script>
+<?php /*<script>
     // Attendre que la page soit chargée
     document.addEventListener('DOMContentLoaded', function () {
     // Sélectionner tous les boutons de suppression
@@ -299,8 +356,7 @@
         });
     });
 });
-
-</script>
+</script> */?>
 
     </body>
 
