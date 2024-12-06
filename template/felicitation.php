@@ -7,7 +7,7 @@
         
         
         <meta charset="utf-8" />
-        <title>Data Tables | Morvin - Admin & Dashboard Template</title>
+        <title>Facture</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
@@ -56,11 +56,11 @@
                          <div class="row align-items-center">
                              <div class="col-sm-6">
                                  <div class="page-title">
-                                     <h4>Data Tables</h4>
+                                     <h4>Facture</h4>
                                          <ol class="breadcrumb m-0">
-                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
-                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                             <li class="breadcrumb-item active">Data Tables</li>
+                                             <li class="breadcrumb-item"><a href="javascript: void(0);">E-Commerce</a></li>
+                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Commande</a></li>
+                                             <li class="breadcrumb-item active">Facture</li>
                                          </ol>
                                  </div>
                              </div>
@@ -93,7 +93,7 @@
                                         </p>
 
                                         <p class="mt-0 font-size-16">Vous pouvez telecharger votre facture en 
-                                        cliquant sur le bouton PDF ci-dessous</p>
+                                        cliquant sur le <strong>bouton PDF</strong> ci-dessous</p>
 
                                         <hr/>
             

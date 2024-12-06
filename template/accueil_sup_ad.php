@@ -708,14 +708,17 @@
                                                     <?php $commande = select_table('commande');  //---- recuperations de toutes les commandes
                                                         $commande_recents = array_slice($commande, -6) //--- tri des 6 dernieres commandes uniquement ?>
                                                 <?php foreach ($commande_recents as $key => $value) :
+                                                        $nombre = $value -> Produit_acheter;
+                                                        $nombre_produit = explode(" / ", $nombre); //--- transformation des produits achetes en tableau
+                                                        //var_dump($nombre_produit);
                                                     ?>
                                                     <tr>
                                                     
                                                         <td><?php echo $value -> Mat_Com ; ?></td>
-                                                        <td><i class="dripicons-stack"></i> <?php echo $value -> Produit_acheter ; ?></td>
+                                                        <td><i class="dripicons-stack"></i> <?php echo $nombre; ?></td>
                                                         <td><?php echo select_table_where('shop', 'Mat_Shop', $value-> Mat_Shop)[0] -> Nom_Shop; ?></td>
                                                         <td><?php echo $value -> Prix ; ?> Fcfa</td>
-                                                        <td><?php  ?></td>
+                                                        <td><?php echo count($nombre_produit); ?></td>
                                                         <td><span
                                                                 class="badge badge-pill badge-soft-primary font-size-13">Pending</span>
                                                         </td>
