@@ -60,7 +60,7 @@
                              </div>
                              <div class="col-sm-6">
                                 <div class="float-end d-none d-sm-block">
-                                    <a href="#" class="btn btn-success">Ajouter une boutique</a>
+                                    <a href="add-shop" class="btn btn-success">Ajouter une boutique</a>
                                 </div>
                              </div>
                          </div>

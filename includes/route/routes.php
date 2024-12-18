@@ -185,6 +185,14 @@ endif;
     include_once("template/modifi-gerant.php");
 endif;
 
+//------- route pour la page de felicitations apres la sauvegarde d'une commande
+if(@$url[0]=='felicitation'):
+    $test = select_table('commande');  //--- recuperation de toutes les commandes effectuees
+    $commande = $test[count($test) - 1]; //--- recuperation de la derniere commande effectue juste apres la sauvegarde
+    //var_dump($last);
+    include_once 'template/felicitation.php'; 
+endif;
+
 
 
 //=== les routes en POST : routes d'insertions checkout

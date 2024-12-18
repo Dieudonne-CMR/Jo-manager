@@ -102,77 +102,14 @@
 
                                             <form action="mod-product" id="mod-product" method="post" enctype="multipart/form-data">        
 
-                                                        <div class="col-sm-4 mb-3">
-                                                                    <div class="fallback">
-                                                                    <label class="form-label" for="productdesc">
-                                                                        <?php if ($type == 'Draps'):
-                                                                                echo 'Matiere'; ?>
-                                                                        <?php else:
-                                                                                echo "Gamme"; ?>
-                                                                        <?php endif; ?>
-                                                                    </label>
-                                                                    <select class="form-select" name="gamme" required>
-
-                                                                            <?php foreach(select_table('gamme_produit') as $gam) : //requete permettant de trier les gammes en fonction du type de produit
-                                                                                $nom_gamme = $gam -> nom_gamme;
-                                                                                $mat_gamme = $gam -> mat_gamme; ?>
-                                                                            <option name="gamme" <?php echo $product[0]-> mat_gamme == $gam -> mat_gamme ? 'selected' : '' ?> value="<?= $gam -> mat_gamme ?>"> <?= $gam -> nom_gamme ?>
-                                                                            <?php endforeach; ?> 
-
-                                                                    </select>
-                                                        </div>
-                                                        </div>
+                                                        
                                                                 
                                                                 
                                                         
 
-                                                            <?php if($type !== 'Oreillers'): //Condition pour illustrer que le type 'Oreiller' n'a pas dimension et epaisseur?>
-                                                                <div class="col-sm-4 mb-3">
-                                                                    <div class="fallback">
-                                                                        <label class="form-label" for="productdes">
-                                                                            <?php if ($type == 'Draps'):
-                                                                                    echo 'Taille'; ?>
-                                                                            <?php else:
-                                                                                    echo "Dimension"; ?>
-                                                                            <?php endif; ?>
-                                                                        </label>
-                                                                        <select class="form-select" name="dimension" required>
-                                                                            
-
-                                                                                <?php foreach(select_table('produicts_all') as $dim) : //requete permettant de trier les dimensions en fonction du type de produit
-                                                                                   // $mat_dim = $dim->mat_dim;
-                                                                                   // $nom_dim = $dim -> dimension;
-                                                                                   // var_dump($nom_dim) ?>
-                                                                                <option name="dimension" <?php echo $product[0]-> dimensions == $dim -> dimensions ? 'selected' : '' ?> value="<?= $dim -> dimensions ?>"> <?= $dim -> dimensions ?>   
-                                                                                
-                                                                                <?php endforeach; ?> 
-
-                                                                        </select>
-                                                                    </div>   
-                                                                </div>
-                                                                
-
-                                                                <div class="col-sm-4 mb-3">
-                                                                    <div class="fallback">
-                                                                        <label class="form-label" for="productdesc">
-                                                                            <?php if ($type == 'Draps'):
-                                                                                    echo 'Pack'; ?>
-                                                                            <?php else:
-                                                                                    echo "Epaisseur"; ?>
-                                                                            <?php endif; ?>
-                                                                        </label>
-                                                                        <select class="form-select" name="epaisseur" required>
-
-                                                                            <?php foreach(select_table('produicts_all') as $ep ): ?>
-                                                                                <option name="epaisseur" <?php echo $product[0]-> epaisseur == $ep-> epaisseur ? 'selected' : '' ?> value="<?= $ep-> epaisseur ?>"> <?= $ep-> epaisseur ?> 
-                                                                            
-                                                                            <?php endforeach; ?> 
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-
-                                                            <?php endif; ?>
-
+                                                            
+                                                            
+<!--  -->
 
                                                     
                                                                     
@@ -212,7 +149,7 @@
                                                                         <div class="col-sm-4 mb-3">
                                                                             <div class="fallback">
                                                                                 <label class="form-label" for="productdesc">Coef. de vente</label>
-                                                                                <input type="number" id="coef_vente" name="coef_vente" step="0.01" value="<?php echo $product[0]-> Coef_vente; ?>" onchange="calculerPrixVente()" required class="form-control"/>
+                                                                                <input type="number" id="coef_vente" name="Coef_vente" step="0.01" value="<?php echo $product[0]-> Coef_vente; ?>" onchange="calculerPrixVente()" required class="form-control"/>
                                                                             </div>
                                                                             
                                                                         </div>
@@ -220,7 +157,7 @@
                                                                         <div class="col-sm-4 mb-3">
                                                                             <div class="fallback">
                                                                                 <label class="form-label" for="productdesc">Prix de vente</label>
-                                                                                <input type="number" id="prix_vente" name="prix_vente" value="<?php echo $product[0]->prix_de_vente; ?>" class="form-control" />
+                                                                                <input type="number" id="prix_vente" name="prix_de_vente" value="<?php echo $product[0]->prix_de_vente; ?>" class="form-control" />
                                                                             </div>
 
                                                                         </div>
@@ -243,7 +180,7 @@
                                                                 
                                                             <div class="mb-3">
                                                                 <label class="form-label" for="productdesc">Description du Produit</label>
-                                                                <textarea class="form-control" name="description" id="productdesc" value="<?php echo $product[0]->description_produit; ?>" rows="5"><?php echo $product[0]->description_produit; ?></textarea>
+                                                                <textarea class="form-control" name="description_produit" id="productdesc" value="<?php echo $product[0]->description_produit; ?>" rows="5"><?php echo $product[0]->description_produit; ?></textarea>
                                                             </div>
                                                         <?php //endif; ?>
 
@@ -277,9 +214,9 @@
                                                                     <img id="imgPreview3" src="" class="mt-3" alt="Aperçu de l'image"  style="max-width: 100px; display: none;">
                                                                 </div>
                                                             </div>
-                                                            <input type="hidden" name='gamme' value="<?= $gam -> nom_gamme ?>">
-                                                            <input type="hidden" name='dimension' value="<?= $dim -> dimensions ?>">
-                                                            <input type="hidden" name='epaisseur' value="<?= $ep-> epaisseur ?> ">
+                                                            <input type="hidden" name='gamme' value="<?//= $gam -> nom_gamme ?>">
+                                                            <input type="hidden" name='dimension' value="<?//= $dim -> dimensions ?>">
+                                                            <input type="hidden" name='epaisseur' value="<?//= $ep-> epaisseur ?> ">
                                                             <input type="hidden" name='mat_produit' value="<?= $product[0]-> mat_produit ?> ">
                                                             </div>
                                                                         <ul class="pager wizard twitter-bs-wizard-pager-link">
@@ -362,6 +299,9 @@
 
 
 </body>
+                                                            
+
+                                                        
 
 <!-- Mirrored from themesdesign.in/morvin/layouts/ecommerce-add-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2024 05:02:50 GMT -->
 

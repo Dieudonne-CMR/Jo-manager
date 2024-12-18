@@ -68,6 +68,8 @@
                                 ]
                             );*/
                             $sql = update_table_where('produits_boutik', 'quantite', $dif_quantite, 'mat_produit', $mat_product);
+
+                            
                     
                 else:
                     echo 'Quantite disponible insuffisante';
@@ -81,9 +83,8 @@
         
 
         $_SESSION['ok']='ok';
+        header("location:felicitation"); 
         unset($_SESSION['panier'][$mat_shop]);
-        header("location:home"); 
-        
         
  
         else:

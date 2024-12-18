@@ -66,49 +66,48 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                         <div class="page-content-wrapper">
                             <div class="row">
 
-                                <div class="col-xl-5">
+                                <div class="col-xl-6">
                                     <div class="card">
                                         <div class="card-body">
                                             <table class="table table-centered mb-0 table-nowrap">
                                                 <thead>
-                                                <tr>
-                                                    <th class="border-top-0" style="width: 100px;" scope="col">Photo</th>
-                                                    <th class="border-top-0" scope="col">Produit</th>
-                                                    <th class="border-top-0" scope="col">Total</th>
-                                         <?php if (!empty($panier)): ?>
-                                        <?php
-                                        
-                                        // var_dump($panier);
-                                            $totalPanier = 0;
-                                            foreach ($panier as $produit):
-                                                $mat_produit= $produit['mat_product']; //--- matricule de produits
-                                                $totalProduit = $produit['prix'] * $produit['quantite']; //---- prix total de produits
-                                                $totalPanier += $totalProduit; //---- Prix total du panier
-                                                    //var_dump($produit['quantite']);
-                                                    $tab = select_table_where('produits_boutik', 'mat_produit', $mat_produit);
-                                                        $qte_disponible = $tab[0]->quantite;
-                                                       // var_dump($produit['quantite']);
-                                                       $nom_type = select_table_where('produicts_all', 'mat_produit', $mat_produit)[0] -> nom_produit; //--- on recupere le nom de chaque type de produit pour l'afficher ensuite
-                                        ?>
+                                                    <tr>
+                                                        <th class="border-top-0" style="width: 100px;" scope="col">Photo</th>
+                                                        <th class="border-top-0" scope="col">Produit</th>
+                                                        <th class="border-top-0" scope="col">Total</th>
+                                                        
                                                     
-                                                </tr>
+                                                    </tr>
                                                 </thead>
                                                 <tbody>
-                                                
-                                                <tr>
-                                                    <td><img src="<?= $image_produit . $produit['image'] ?>" alt="product-img" title="product-img" class="avatar-md"></td>
-                                                    <td>
-                                                        <h5 class="font-size-16 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset"><?php echo $nom_type. ' - ' .$produit['nom'];  ?></a></h5>
-                                                        <p class="font-size-14 mb-0 text-muted"><?php echo $produit['prix']. ' x '. $produit['quantite'];  ?></p>
-                                                    </td>
-                                                    <td id='total-<?php echo $mat_produit; ?>'>
-                                                        <?php echo $totalProduit ?> Fcfa</td>
-                                                    </tr>
+                                                    <?php if (!empty($panier)): 
+                                                            
+                                                        // var_dump($panier);
+                                                        $totalPanier = 0;
+                                                        foreach ($panier as $produit):
+                                                            $mat_produit= $produit['mat_product']; //--- matricule de produits
+                                                            $quantite_commande = $produit['quantite'];
+                                                            $totalProduit = $produit['prix'] * $produit['quantite']; //---- prix total de produits
+                                                            $totalPanier += $totalProduit; //---- Prix total du panier
+                                                            //----- recuperation de la quantite de produits qui se trouve dans la boutique ou l'on est
+                                                            $tab = select_table_where_2('produits_boutik', 'mat_produit',$mat_produit, 'Mat_Shop', $mat_shop);
+                                                            $qte_disponible = $tab[0]->quantite; //---qte d'un produit dans une boutik
+                                                            $dif_qte = $qte_disponible - $quantite_commande; //--- difference de quantite d'un produit disponible dans une boutik et de sa quantite commandee
+                                                            $nom_type = select_table_where('produicts_all', 'mat_produit', $mat_produit)[0] -> nom_produit; //--- on recupere le nom de chaque type de produit pour l'afficher ensuite
+                                                            ?>
                                                     
-                                                        <?php //else: ?>
-                                                            <!-- <p>Votre panier est vide.</p> -->
-                                                            <?php //$totalPanier = 0; ?>                                                        
-                                                            <?php endforeach; ?>    
+                                                        <tr <?=  ($dif_qte < 1) ?  "class = 'alert alert-danger'" : '' ?>:>
+                                                            <td><img src="<?= $image_produit . $produit['image'] ?>" alt="product-img" title="product-img" class="avatar-md"></td>
+                                                            <td>
+                                                                <h5 class="font-size-16 text-truncate"><a href="ecommerce-product-detail.html" class="text-reset"><?php echo $nom_type. ' - ' .$produit['nom'];  ?></a></h5>
+                                                                <p class="font-size-14 mb-0 text-muted"><?php echo $produit['prix']. ' x '. $produit['quantite'];  ?></p>
+                                                            </td>
+                                                            <td id='total-<?php echo $mat_produit; ?>'>
+                                                                <?php echo $totalProduit ?> Fcfa</td>
+                                                        </tr>
+                                                
+                                                    <?php endforeach; ?>  
+                                                    
                                                     <tr>
                                                         <td colspan="1">
                                                         </td>
@@ -125,10 +124,9 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                     </div><!-- end card -->
                                 </div><!-- end col -->  
 
-                                                    <!-- condition : si la quantite disponible est superieure alors le formulaire du client s'affiche -->
-                                                        <?php if($qte_disponible >= $produit['quantite']): ?>
-                               
-                                <div class="col-xl-7">
+
+                                    <?php if  ($dif_qte > 1): // si la difference est positive alors affiche il doit afficher le formulaire?>
+                                <div class="col-xl-6">
                                     <div class="card">
                                         <div class="card-body">
                                             <div id="checkout-nav-pills-wizard" class="twitter-bs-wizard">
@@ -195,16 +193,20 @@ $panier = $_SESSION['panier'][$mat_shop] ?? [];
                                             </div>
                                         </div>
                                     </div>
-                                <?php else:  //----- si la quantite dispo est inferieure, alors alors on affiche une alert contenant un message d'erreur
-                                    include_once('processing/conditions.php'); 
-                                    
-                                endif;
-                                ?>
-                        <?php else: //---- si le panier est vide
-                            echo 'panier vide';?>
-                        <?php endif; ?>
-                                </div>         
+
+                                    <?php else : // si au contraire elle est negative, alors il doit afficher ce message?>
+                                        <div class="col-xl-6 mt-5">
+                                            <div class="alert alert-danger" style="width: 150px, height: 50px;" role="alert">
+                                                        Quantite insufisante des produits colores en rouge
+                                            </div>
+                                        </div> 
+                                    <?php endif;?>
+
+                                </div>               
                             </div><!-- end row -->
+                            <?php else: //---- si le panier est vide
+                                        echo 'panier vide';?>
+                                    <?php endif; ?>
                         </div>  
                     </div> <!-- container-fluid -->
                 </div>
