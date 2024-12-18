@@ -4,7 +4,9 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 // Démarrer la session
 // var_dump($_POST);
+
 //var_dump($_SESSION['panier'][$mat_shop]);
+
 
 if(isset($_POST['mat_produit'])):
     $mat_produit= strip_tags($_POST['mat_produit']);
