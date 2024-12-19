@@ -339,7 +339,7 @@
 
                             </div> */?> 
 
-                        <div class="row">
+                        <?php /*<div class="row">
 
                             <div class="col-xl-4">
                                 <div class="card">
@@ -349,7 +349,7 @@
 
 
                                         <ul class="list-unstyled activity-wid mb-0">
-
+ 
                                             <li class="activity-list activity-border">
                                                 <div class="activity-icon avatar-sm">
                                                
@@ -642,7 +642,7 @@
                           
 
 
-                        </div>
+                        </div> */?>
 
                         <div class="row">
 
@@ -691,7 +691,7 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="header-title mb-4">Commande recentes</h4>
+                                        <h4 class="header-title mb-4">Commande recentes dans les boutiques</h4>
                                         <div class="table-responsive">
                                             <table class="table table-centered table-nowrap mb-0">
                                                 <thead class="thead-light">

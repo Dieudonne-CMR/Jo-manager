@@ -11,7 +11,9 @@
     <meta charset="utf-8" />
 
     <?php $titre = 'ajouter un produit';
-    include_once('includes/meta.php'); ?>
+    include_once('includes/meta.php'); 
+    $ok = isset($_SESSION['ok']) ?  $_SESSION['ok']: '' ; unset($_SESSION['ok']);
+    ?>
 
      <base href="../"> 
 
@@ -446,18 +448,31 @@
         <script src="assets/libs/dropzone/min/dropzone.min.js"></script>
 
         <script>
-        function calculerPrixVente() {
-            // Récupérer les valeurs des champs
-            const prixAchat = parseFloat(document.getElementById('prix_achat').value) || 0;
-            const coef = parseFloat(document.getElementById('coef_vente').value) || 0;
+            function calculerPrixVente() {
+                // Récupérer les valeurs des champs
+                const prixAchat = parseFloat(document.getElementById('prix_achat').value) || 0;
+                const coef = parseFloat(document.getElementById('coef_vente').value) || 0;
 
-            // Calculer le prix total
-            const prixVente = prixAchat * coef;
+                // Calculer le prix total
+                const prixVente = prixAchat * coef;
 
-            // Afficher le résultat dans le champ Prix Total
-            document.getElementById('prix_vente').value = prixVente;
-        }
-    </script>
+                // Afficher le résultat dans le champ Prix Total
+                document.getElementById('prix_vente').value = prixVente;
+            }
+        </script>
+
+        <script>
+            // message d'alerte
+            <?php if ( $ok == 'ok'): ?>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Succès',
+                    text: 'Produit Ajouté avec succès !',
+                }).then(() => {
+                    window.location.href = 'products';
+                });
+            <?php endif ?>
+        </script>
 
 
 

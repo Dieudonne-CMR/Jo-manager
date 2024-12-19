@@ -52,8 +52,11 @@
             ]
           );
           
+          $_SESSION['ok']= 'ok';
+          var_dump($_SESSION['ok'], $nom_banniere );
+          // header("location:add-shop");
           //$_SESSION['ok']='ok';
-          header("location:accueil_sup_ad");
+          header("location:aj_produit_admin/$mat_type");
 
 
 

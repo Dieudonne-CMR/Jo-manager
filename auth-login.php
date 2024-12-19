@@ -92,7 +92,7 @@
 
                         <div class="mt-5 text-center text-white">
                             <p>Vous n'avez pas de compte ?<a href="auth-register.html" class="fw-bold text-white"> Enregistrez-vous</a> </p>
-                            <p>© <script>document.write(new Date().getFullYear())</script> Morvin. Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="https://1.envato.market/themesdesign" target="_blank">Themesdesign</a></p>
+                            <p>© <script>document.write(new Date().getFullYear())</script> Jo Retail. Developper par <i class="mdi mdi-heart text-danger"></i> par <a href="https://www.goldenrock.io" target="_blank">Golden Rock</a></p>
                         </div>
                     </div>
                 </div>

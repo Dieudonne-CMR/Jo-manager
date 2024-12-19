@@ -6,7 +6,7 @@
             var_dump($mat_produit);
 
             $verification_produit=select_table_where('produicts_all','mat_produit',$mat_produit);
-            var_dump($verification_produit);
+            // var_dump($verification_produit);
 
             //---recuper les nom des images  sous la forme name_fille[n+1] avec n=0
             // var_dump($_FILES['images']);
@@ -27,7 +27,7 @@
                     delect_file($image_produit, $imag); //----permet de superimer Ancienne images avant la modification
                     $DB->query(
                                 "UPDATE produicts_all SET Img1 = :Img1 
-                                    WHERE mat_roduit = '$mat_produit' LIMIT 1",['Img1' => $name_fille1,]
+                                    WHERE mat_produit = '$mat_produit' LIMIT 1",['Img1' => $name_fille1,]
                                 );
                 endif;
 
@@ -103,8 +103,9 @@
                         
                     ]
                 );*/
-                $_SESSION['ok']='ok';
-                header("Location: products");
+                $_SESSION['ok']= 0;
+                header("Location: modifi-product/$mat_produit");
+                // header("Location: products");
             
             else:
                header("Location: modifi-product/$mat_produit");

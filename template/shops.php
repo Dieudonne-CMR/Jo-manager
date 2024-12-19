@@ -73,56 +73,50 @@
 
                         <div class="page-content-wrapper">
                          
-
-
-
                             <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="card m-b-30">
+                                <div class="col-12">
+                                    <div class="card">
                                         <div class="card-body">
-                                            <h4 class="mt-0 header-title mb-4">Boutiques</h4>
-                                            <div class="table-responsive">
-                                                <table class="table table-centered table-nowrap table-hover mb-0">
-                                                    <thead>
+            
+                                            <h4 class="header-title">Les boutiques</h4>
+            
+                                            <table id="datatable" class="table table-centered table-nowrap table-hover mb-0" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">Logo</th>
+                                                    <th scope="col">Nom de la boutique</th>
+                                                    <th scope="col">Localisation</th>
+                                                    <th scope="col">Telephone</th>
+                                                    <th scope="col" style="text-align: center">Action</th>
+                                                </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <?php foreach(select_table('shop') as $value):?>
                                                         <tr>
-                                                            <th scope="col">Logo</th>
-                                                            <th scope="col">Nom de la boutique</th>
-                                                            <th scope="col">Localisation</th>
-                                                            <th scope="col">Email</th>
-                                                            <th scope="col">Telephone</th>
-                                                            <th scope="col" style="text-align: center">Action</th>
+                                                            <td>
+                                                                <img src="<?php echo @$dossier_logo.$value -> logo ; ?>" alt="" class="avatar-sm">
+                                                            </td>
+                                                            <td>
+                                                            <h5 class="font-size-16"> <?php echo @$value -> Nom_Shop ; ?> </h5>
+                                                            <p class="text-muted mb-0">
+                                                                <i class="mdi mdi-account me-1"></i> <?php echo @select_table_where('membre','Mat_Shop', $value -> Mat_Shop)[0]->Nom; ?>
+                                                            </p>
+                                                            </td>
+                                                            <td><?php echo $value -> Localisation ; ?></td>
+                                                            <td><?php echo $value -> Telephone ; ?></td>
+                                                            <td style="text-align: center; vertical-align: middle;">
+                                                                <button class="btn btn-primary">Voir</button>
+                                                            </td>
                                                         </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php foreach(select_table('shop') as $value):?>
-                                                            <tr>
-                                                                <td>
-                                                                    <img src="<?php echo @$dossier_logo.$value -> logo ; ?>" alt="" class="avatar-sm">
-                                                                </td>
-                                                                <td>
-                                                                <h5 class="font-size-16"> <?php echo @$value -> Nom_Shop ; ?> </h5>
-                                                                <p class="text-muted mb-0">
-                                                                    <i class="mdi mdi-account me-1"></i> <?php echo @select_table_where('membre','Mat_Shop', $value -> Mat_Shop)[0]->Nom; ?>
-                                                                </p>
-                                                                </td>
-                                                                <td><?php echo $value -> Localisation ; ?></td>
-                                                                <td><?php echo $value -> Email ; ?></td>
-                                                                <td><?php echo $value -> Telephone ; ?></td>
-                                                                <td style="text-align: center; vertical-align: middle;">
-                                                                    <button class="btn btn-primary">Voir</button>
-                                                                </td>
-                                                            </tr>
-                                                        <?php endforeach; ?>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-        
+                                                    <?php endforeach; ?>
+                                                </tbody>
+                                            </table>
+            
                                         </div>
                                     </div>
-                                </div>
-        
-                            </div>
-                            <!-- END ROW -->
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
         
                                 
                             <div class="row">
@@ -166,12 +160,18 @@
         <script src="assets/libs/simplebar/simplebar.min.js"></script>
         <script src="assets/libs/node-waves/waves.min.js"></script>
 
+        <!-- Required datatable js -->
+        <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+         <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+
         <!-- Plugins js-->
         <script src="assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
         <script src="assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
 
         <script src="assets/js/pages/ecommerce-shop.init.js"></script>
 
+          <!-- Datatable init js -->
+          <script src="assets/js/pages/datatables.init.js"></script>
 
         <script src="assets/js/app.js"></script>
 

@@ -71,9 +71,6 @@
                     <div class="container-fluid">
 
                         <div class="page-content-wrapper">
-
-                        
-
                             
                             <div class="row">
                                 <div class="col-12">

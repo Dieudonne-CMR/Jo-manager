@@ -100,6 +100,7 @@
                                                                 placeholder="Entrez le numéro de téléphone"> 
                                                         </div>
                                                     </div>
+                                                    <?php /*
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label for="validationCustom04" class="form-label">Email</label>
@@ -109,10 +110,8 @@
                                                                 Veuillez fournir un email valide
                                                             </div>
                                                         </div>
-                                                    </div>    
-                                                </div>
-                                                <div class="row">
-
+                                                    </div>
+                                                     */?>    
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label for="validationCustom01" class="form-label">Logo</label>
@@ -127,8 +126,11 @@
 
                                                         </div>
                                                     </div>
+                                                </div>
+                                                <div class="row">
+
                                                     
-                                                    <div class="col-md-6">
+                                                    <?php /*<div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label for="validationCustom05" class="form-label">Bannière</label>
 
@@ -142,7 +144,7 @@
                                                             <img id="bannerPreview" src="" alt="Aperçu de l'image" style="max-width: 100px; display: none;">
 
                                                         </div>
-                                                    </div>
+                                                    </div> */?>
                                                 </div>
                                                
                                                 <div>
@@ -154,6 +156,7 @@
                                 </div>
                             </div>
                             <!-- end row -->
+                             
 
                         </div>
     
@@ -195,7 +198,7 @@
                 Swal.fire({
                     icon: 'success',
                     title: 'Succès',
-                    text: 'Connexion réussie !',
+                    text: 'Boutique Crée avec sccès !',
                 }).then(() => {
                     window.location.href = 'shops   ';
                 });
