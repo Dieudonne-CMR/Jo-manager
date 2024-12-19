@@ -70,7 +70,7 @@ function traite_image_multiple($dossier_image,$name_fille){
 function delect_file($pash, $name_file)
 {
     $file = $pash . $name_file;
-    unlink($file);
+    @unlink($file);
     return 'ok';
 }
 //==========fonction de suppression

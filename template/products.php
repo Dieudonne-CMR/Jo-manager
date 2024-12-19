@@ -3,13 +3,8 @@
    
 <!-- Mirrored from themesdesign.in/morvin/layouts/tables-datatable.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2024 05:03:44 GMT -->
 <head>
-    <meta charset="utf-8" />
-    <title>Liste des Produits</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesdesign" name="author" />
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <?php $titre='Voir les produits';
+     include_once('includes/meta.php') ?>
 
     <!-- Bootstrap Css -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -60,11 +55,11 @@
                          <div class="row align-items-center">
                              <div class="col-sm-6">
                                  <div class="page-title">
-                                     <h4>Data Tables</h4>
+                                     <h4><?php echo $titre; ?></h4>
                                          <ol class="breadcrumb m-0">
-                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Morvin</a></li>
-                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                             <li class="breadcrumb-item active">Data Tables</li>
+                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Jo-Retail</a></li>
+                                             <li class="breadcrumb-item"><a href="javascript: void(0);">E-Ccommerce</a></li>
+                                             <li class="breadcrumb-item active">Produits</li>
                                          </ol>
                                  </div>
                              </div>
@@ -82,11 +77,6 @@
                     <div class="container-fluid">
 
                         <div class="page-content-wrapper">
-
-                        
-
-
-                            
             
                             <div class="row">
                                 <div class="col-12">
@@ -99,28 +89,42 @@
                                                 <thead>
                                                 <tr>
                                                     <th>Image</th>
-                                                    <th>Nom</th>
-                                                    <th>Prix</th>
-                                                    <th>Prix_Promo</th>
-                                                    <th>Quantité</th>
+                                                    <th>Type_Produit</th>
+                                                    <th>Gamme</th>
+                                                    <th>Prix_Achat</th>
+                                                    <th>Prix_Vente</th>
+                                                    <th>Quantite</th>
                                                     <th>Date d'Ajout</th>
+                                                    
                                                 </tr>
                                                 </thead>
 
                                                 <tbody>
-                                                <?php foreach ($produits as $value): ?>
+                                                <?php foreach ($produits as $value): 
+                                                    $produit = $value -> mat_produit; //on recupere et stocke les matricules des produits lies a chaque boutique ?>
                                                 <?php  ?>
+                                                    <?php foreach(select_table_where('produicts_all', 'mat_produit', $produit) as $produit): //on accede enfin a toutes leurs informations pour les aficher grace a $mat_produit ?>
                                                 <tr>
-                                                    <td class="small-frame"><img class="img-fluid" src="<?php echo $image_produit.$value -> Img1; ?>" alt=""></td>
-                                                    <td><?php echo $value -> Nom_Produit; ?></td>
-                                                    <td><?php echo $value -> Prix; ?></td>
-                                                    <td><?php echo $value -> Prix_Promo; ?></td>
-                                                    <td><?php echo $value -> quantite; ?></td>
-                                                    <td><?php echo $value -> Date_Ajout; ?></td>
-                                                    <td style="text-align: center; vertical-align: middle;">
-                                                        <a href="modifi-product/<?php echo $value->Mat_Produit; ?>" name="envoyer" class="btn btn-primary">Modifier</a>
+                                                    <td class="small-frame"><img class="img-fluid" src="<?php echo $image_produit.$produit -> Img1; ?>" alt=""></td>
+                                                    <td><?php echo select_table_where('type_produit', 'mat_type', $produit -> mat_type)[0]->nom_type; ?></td>
+                                                    <td><?php echo $produit -> nom_gamme ; ?></td>
+                                                    <td><?php echo $produit -> prix_achat; ?></td>
+                                                    <td><?php echo $produit -> prix_de_vente; ?></td>
+                                                    <td>
+                                                        <?php   if($gest_boutik==0): //ne pas aficher la quantite de produits lorsqu'il sagit d'un admin
+                                                                    echo '-'; 
+                                                                else:
+                                                                    echo $value -> quantite;
+                                                                endif; ?>
                                                     </td>
+                                                    <td><?php echo $produit -> date_aj; ?></td>
+                                                        <?php   if($gest_boutik==0):  //---afficher le bouton 'Modifier' uniquement s'il s'agit d'un admin ?>
+                                                    <td style="text-align: center; vertical-align: middle;">
+                                                        <a href="modifi-product/<?php echo $value->mat_produit; ?>" name="envoyer" class="btn btn-primary">Modifier</a>
+                                                    </td>
+                                                        <?php endif; ?>
                                                 </tr>
+                                                <?php endforeach; ?>
                                                 <?php endforeach; ?>
                                                 </tbody>
                                             </table>

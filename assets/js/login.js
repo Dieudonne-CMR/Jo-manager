@@ -39,6 +39,7 @@ $(document).ready(function() {
                     icon: 'success',
                     title: 'Succès',
                     text: 'Connexion réussie !',
+                    confirmButtonText: 'OK'
                 }).then(() => {
                     window.location.href = 'home';
                 });
@@ -49,6 +50,7 @@ $(document).ready(function() {
                   icon: 'error',
                   title: 'Erreur',
                   text: 'Vos informations sont incorrect.',
+                  confirmButtonText: 'OK'
                 })
             } 
            
