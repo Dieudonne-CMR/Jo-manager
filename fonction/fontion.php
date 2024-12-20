@@ -79,3 +79,9 @@ function supprimer_data($Nom_table, $Nom_champ,$value){
     $data = $DB->query("DELETE FROM $Nom_table WHERE $Nom_champ ='$value' LIMIT 1");
     return $data;
 }
+
+//==========fonction de transformation des premiers mots de chaque phrase en majuscule'
+
+function capitalisation($phrase){
+    return ucwords(strtolower($phrase));
+}
