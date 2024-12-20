@@ -82,6 +82,6 @@ function supprimer_data($Nom_table, $Nom_champ,$value){
 
 //==========fonction de transformation des premiers mots de chaque phrase en majuscule'
 
-function capitalisation($phrase){
+function majuscule_Premiere_lettre($phrase){
     return ucwords(strtolower($phrase));
 }
