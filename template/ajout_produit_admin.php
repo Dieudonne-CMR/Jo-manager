@@ -94,7 +94,7 @@
                                                     <p class="card-title-desc">Remplissez toutes les informations ci-dessous
                                                         
                                                     </p><br>
-                                                    
+                                              
                                 <?php if($mat_type): ?> 
                                     <?php $nom_type = select_table_where('type_produit', 'mat_type', $mat_type)[0] -> nom_type; //--- on recupere le nom de chaque type de produit pour l'afficher ensuite ?>
 
@@ -171,12 +171,14 @@
                                                                                     <div class="modal-content">
                                                                                         <div class="modal-header">
                                                                                             <h5 class="modal-title mt-0" id="myModalLabel">
-                                                                                                <?php if ($mat_type == 'Type-125'):
+                                                                                            <?php if ($mat_type == 'type-170'):
+                                                                                                        echo "Ajout d'une Puissance Electrique";?>
+                                                                                            <?php elseif($mat_type == 'type-125') :
                                                                                                         echo "Ajout d'une Taille"; ?>
-                                                                                                <?php else:
+                                                                                            <?php else:
                                                                                                         echo "Ajout d'une Dimension"; ?>
-                                                                                                <?php endif; ?>
-                                                                                            </h5>
+                                                                                            <?php   endif; ?> 
+                                                                                            </h5> 
                                                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                                                                                                 
                                                                                             </button>
@@ -184,11 +186,13 @@
                                                                                         <form action="aj_dim-gam-ep" method='post'>
                                                                                             <div class="modal-body">
                                                                                                 <input type="hidden" name='mat_type' value="<?php echo $mat_type ?>">
-                                                                                                <input type="text" name="aj_dimension"  multiple class="form-control" placeholder='<?php if ($mat_type == 'Type-125'):
-                                                                                                                                                                                echo "Ajoutez une taille"; ?>
+                                                                                                <input type="text" name="aj_dimension"  multiple class="form-control" placeholder='<?php if ($mat_type == 'Type-170'):
+                                                                                                                                                                                echo "Ajout d'une Puissance Electrique"; ?>                                                                                                                                            
+                                                                                                                                                                        <?php elseif ($mat_type == 'Type-125'):
+                                                                                                                                                                                echo "Ajoutez une taille";   ?>
                                                                                                                                                                         <?php else:
                                                                                                                                                                                 echo "Ajoutez une dimension"; ?>
-                                                                                                                                                                        <?php endif; ?> '
+                                                                                                                                                                        <?php endif; ?>' 
                                                                                                                                                                          />
                                                                                                                                                 
                                                                                             </div>
@@ -202,11 +206,13 @@
                                                                             </div><!-- /.modal -->
                                                                         <br>
                                                                         <label class="form-label" for="productdes">
-                                                                            <?php if ($mat_type == 'Type-125'):
+                                                                            <?php if ($mat_type == 'type-170'):
+                                                                                    echo "Puissance";?>                                                                       
+                                                                            <?php elseif($mat_type == 'type-125'):
                                                                                     echo 'Taille'; ?>
                                                                             <?php else:
                                                                                     echo "Dimension"; ?>
-                                                                            <?php endif; ?>
+                                                                            <?php endif; ?> 
                                                                         </label>
                                                                         <select class="form-select" name="dimension" required>
                                                                             <option selected="" disabled="" value="" >--Sélectionner--</option>
@@ -232,8 +238,10 @@
                                                                                     <div class="modal-content">
                                                                                         <div class="modal-header">
                                                                                             <h5 class="modal-title mt-0" id="exampleModalScrollableTitle">
-                                                                                                <?php if ($mat_type == 'Type-125'):
-                                                                                                        echo "Ajout d'un Pack"; ?>
+                                                                                                <?php if ($mat_type == 'type-125'):
+                                                                                                        echo "Ajout d'un Pack"; ?>                                                                                                 
+                                                                                                <?php elseif ($mat_type == 'type-170'):
+                                                                                                        echo "Ajout d'une Marque"; ?>
                                                                                                 <?php else:
                                                                                                         echo "Ajout d'une Epaisseur"; ?>
                                                                                                 <?php endif; ?>
@@ -245,8 +253,10 @@
                                                                                         <form action="aj_dim-gam-ep" method='post'>
                                                                                             <div class="modal-body">
                                                                                                 <input type="hidden" name='mat_type' value="<?php echo $mat_type ?>">
-                                                                                                <input type="text" name="epaisseur"  multiple class="form-control" placeholder='<?php if ($mat_type == 'Type-125'): // Type de produit Drap
+                                                                                                <input type="text" name="epaisseur"  multiple class="form-control" placeholder='<?php if ($mat_type == 'type-125'): // Type de produit Drap
                                                                                                                                                                                         echo "Ajoutez un pack"; ?>
+                                                                                                                                                                                 <?php elseif ($mat_type == 'type-170'):
+                                                                                                                                                                                        echo "Ajout d'une Marque"; ?>
                                                                                                                                                                                 <?php else:
                                                                                                                                                                                         echo "Ajoutez une epaisseur"; ?>
                                                                                                                                                                                 <?php endif; ?>'
@@ -262,8 +272,10 @@
                                                                             </div><!-- /.modal -->
                                                                         <br>
                                                                         <label class="form-label" for="productdesc">
-                                                                            <?php if ($mat_type == 'Type-125'):
-                                                                                    echo 'Pack'; ?>
+                                                                            <?php if ($mat_type == 'type-125'):
+                                                                                    echo 'Pack'; ?>                                                                            
+                                                                            <?php elseif ($mat_type == 'type-170'):
+                                                                                    echo "Marque"; ?>
                                                                             <?php else:
                                                                                     echo "Epaisseur"; ?>
                                                                             <?php endif; ?>
@@ -301,7 +313,7 @@
                                                                         </div>
                                                                     <?php endif; ?>    
 
-                                                                    <?php if($mat_type == 'Type-125'): ?>
+                                                                    <?php if($mat_type == 'type-125'): ?>
                                                                         <div class="col-sm-4 mb-3">
                                                                             <div class="fallback">
                                                                                 <label class="form-label" for="productdesc">Taie</label>
@@ -345,9 +357,14 @@
                                                                             </div>
 
                                                                         </div>
-                                                                
-                                                                    </div>
-
+                                                                        <?php if($mat_type == "type-170") :
+                                                                   echo"<div class='col-sm-4 mb-3'>
+                                                                            <div class='fallback'>                                                                      
+                                                                                <label class='form-label' for='productdesc'>Nom du produit</label>
+                                                                                <input type='text' name='nom_produit' placeholder='Entrez le nom de votre produit' class='form-control' />
+                                                                            </div>
+                                                                        </div>";
+                                                                            endif; ?>
                                                             <!-- end row -->
 
                                                         <?php //if ($mat_type == 'Type-125'):?>
@@ -475,4 +492,4 @@
 
 <!-- Mirrored from themesdesign.in/morvin/layouts/ecommerce-add-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2024 05:02:50 GMT -->
 
-</html>
+</html> 

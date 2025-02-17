@@ -65,7 +65,7 @@
 
                         <div class="page-content-wrapper">
                             <div class="row">
-                                <div class="col-lg-12">
+                                <div class="col-lg-8">
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="table-responsive">
@@ -188,6 +188,10 @@
                                         </div><!-- end cardbody -->
                                     </div><!-- end card -->
                                 </div><!-- end col -->
+
+                                <div class="col-lg-4">
+
+                                </div>
                             </div><!-- end row -->
 
                         </div>
