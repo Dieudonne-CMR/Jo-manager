@@ -173,7 +173,15 @@ endif;
     $recup = $recup[0];
     include_once("template/modifi-shop.php");
 endif;
-
+//------ ccette route permet de voir les devis 
+if(@$url[0]=='devis'): 
+    $panier = !empty($_SESSION['panier'][$mat_shop]) ? $_SESSION['panier'][$mat_shop]: [];
+    include_once("template/devis.php");
+endif;
+//------ cette route permet de voir les bons de livraison
+if(@$url[0]=='bon-livraison'):  
+    include_once("template/bon-livraison.php");
+endif;
  //------cette route nous permet de faire la modification d'un membre
  if(@$url[0]=='modifi-gerant'):
     $recup = select_table_where('membre','Mat_Shop',$mat_shop);

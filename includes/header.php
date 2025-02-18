@@ -296,7 +296,20 @@
                             <span>Modification Boutique</span>
                         </a>
                     </li>
-                   
+                    <li>
+                        
+                        <a href="devis" class="waves-effect">
+                            <i class="dripicons-cart"></i>
+                            <span>Nos Devis</span>
+                        </a>
+                    </li>
+                    <li>
+                        
+                        <a href="bon-livraison" class=" waves-effect">
+                            <i class="dripicons-cart"></i>
+                            <span>Bon De Livraison</span>
+                        </a>
+                    </li>
 
                 <?php endif ?>
                 <!-- permission admin -->
