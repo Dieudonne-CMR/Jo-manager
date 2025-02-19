@@ -8,5 +8,5 @@ $dossier_logo= "assets/src/logo_shop/";
 $image_produit="assets/src/image_produit/";
 
 //== les routes
-include_once ("includes/route/routes.php");
+include_once ("route/routes.php");
 

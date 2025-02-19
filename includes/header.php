@@ -185,7 +185,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle-outline font-size-16 align-middle me-1"></i> Profile</a>
+                    <a class="dropdown-item" href="modifi-gerant"><i class="mdi mdi-account-circle-outline font-size-16 align-middle me-1"></i> Profile</a>
                     <?php /*<a class="dropdown-item" href="#"><i class="mdi mdi-wallet-outline font-size-16 align-middle me-1"></i> My Wallet</a> */?>
                     <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-end">11</span><i class="mdi mdi-cog-outline font-size-16 align-middle me-1"></i> Settings</a>
                     <div class="dropdown-divider"></div>
@@ -203,103 +203,4 @@
     </div>
 </header>
 
-<!-- ========== Left Sidebar Start ========== -->
-<div class="vertical-menu">
-
-    <div data-simplebar class="h-100">
-
-
-        <div class="user-sidebar text-center">
-            <div class="dropdown">
-                <div class="user-img">
-                    <img src="assets/images/users/avatar-7.jpg" alt="" class="rounded-circle">
-                    <span class="avatar-online bg-success"></span>
-                </div>
-                <div class="user-info">
-                    <h5 class="mt-3 font-size-16 text-white"><?= explode(' ',$nom_membre)[0] ?></h5>
-                    <span class="font-size-13 text-white-50"><?= $role_membre ?></span>
-                </div>
-            </div>
-        </div>
-
-
-
-        <!--- Sidemenu -->
-        <div id="sidebar-menu">
-            <!-- Left Menu Start -->
-            <ul class="metismenu list-unstyled" id="side-menu">
-                <li class="menu-title">Menu</li>
-
-                <li>
-                    <a href="accueil_sup_ad" class="waves-effect">
-                        <i class="dripicons-home"></i><span class="badge rounded-pill bg-info float-end">3</span>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-
-            
-
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="dripicons-cart"></i>
-                        <span>Ecommerce</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="products">Produits</a></li>
-                        <li><a href="achat">Achat</a></li>
-                        <?php if($gest_boutik==1): // zone des gerant de boutique?>
-                            <li><a href="panier">Panier</a></li>
-                            <li><a href="add-product">Ajout Produits</a></li>
-                        <?php endif ?>
-                        
-                    </ul>
-                </li>
-
-                <?php if($gest_boutik==1): // zone des gerant de boutique?>
-                    <li>
-                        
-                        <a href="modifi-shop" class=" waves-effect">
-                            <i class="fas fa-cog"></i>
-                            <span>Modification Boutique</span>
-                        </a>
-                    </li>
-                <?php endif ?>
-                <!-- permission admin -->
-                <?php if($gest_boutik==0): ?>
-                    <li>
-                        <a href="shops" class=" waves-effect">
-                            <i class="dripicons-calendar"></i>
-                            <span>Boutiques</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="add-shop" class=" waves-effect">
-                            <i class="dripicons-wallet"></i>
-                            <span>Créé Boutique</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="add-gerant" class=" waves-effect">
-                            <i class="fas fa-people-arrows"></i>
-                            <span>Ajout Gerant</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="liste-gerant" class=" waves-effect">
-                            <i class="fas fa-atom"></i>
-                            <span>Liste des gerants</span>
-                        </a>
-                    </li>
-
-                    
-
-                <?php endif ?>
-
-            </ul>
-        </div>
-        <!-- Sidebar -->
-    </div>
-</div>
-<!-- Left Sidebar End -->
+<?php include "includes/Left_Sidebar.php" ?>
