@@ -12,7 +12,7 @@
 
             $prix_achat = test_input($_POST['prix_achat']);
             $Coef_vente = test_input($_POST['coef_vente']);
-            $prix_de_vente = test_input($_POST['prix_vente']);
+            $prix_de_vente1 = test_input($_POST['prix_vente']);
             $mat_produit='p-'.random_int(0,80000);
             $mat_type = test_input($_POST['mat_type']);
             $nom_type = test_input($_POST['nom_type']);
@@ -21,9 +21,13 @@
             $nom_gamme = test_input($_POST['nom_gamme']);
             $nom_epaisseur = test_input($_POST['nom_epaisseur']);
             $description = test_input($_POST['description']);
-            $remise = test_input($_POST['remise']);  
-            $taie = test_input($_POST['taie']);   
-            
+            $remise1 = test_input($_POST['remise']);
+            setlocale(LC_NUMERIC, 'en_US');
+            $remise1 = number_format($remise1, 2, '.', '');  
+            $taie = test_input($_POST['taie']);
+            $remise = calcul_remise($prix_de_vente1, $remise1); 
+            $prix_de_vente = prix_de_vente_final($prix_de_vente1, $remise1);
+
             
             if($mat_type == 'type-190'):  //Oreillers :condition pour specifier que ces champs sont vides dans la BD
               $nom_dim = $taie = $nom_epaisseur ='';
